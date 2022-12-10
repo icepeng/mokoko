@@ -1,0 +1,9 @@
+{
+    "name": "@mokoko/sdk",
+    "description": "Unofficial SDK of Lostark Open API",
+    "devDependencies": {
+        "@graphql-mesh/cli": "^0.82.5",
+        "@graphql-mesh/openapi": "^0.35.5",
+        "graphql": "^16.6.0"
+    }
+}

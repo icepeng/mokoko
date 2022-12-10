@@ -1,0 +1,35 @@
+query GetAuctionItems($CategoryCode: Int = 200000, $ItemGrade: String = "", $ItemGradeQuality: Int = 90, $ItemTier: Int = 3, $PageNo: Int = 1, $Sort: queryInput_Auctions_GetItems_input_Sort = BUY_PRICE, $SortCondition: queryInput_Auctions_GetItems_input_SortCondition = ASC) {
+  Auctions_GetItems(
+    input: {CategoryCode: $CategoryCode, ItemGrade: $ItemGrade, ItemTier: $ItemTier, PageNo: $PageNo, Sort: $Sort, SortCondition: $SortCondition, ItemGradeQuality: $ItemGradeQuality}
+  ) {
+    Items {
+      AuctionInfo {
+        BidCount
+        BidPrice
+        BidStartPrice
+        BuyPrice
+        EndDate
+        IsCompetitive
+        StartPrice
+        TradeAllowCount
+      }
+      Grade
+      GradeQuality
+      Icon
+      Level
+      Name
+      Options {
+        ClassName
+        IsPenalty
+        OptionName
+        OptionNameTripod
+        Type
+        Value
+      }
+      Tier
+    }
+    PageNo
+    PageSize
+    TotalCount
+  }
+}
