@@ -1,9 +1,10 @@
 {
-  "name": "@mokoko/sdk",
+  "name": "@mokoko/engrave",
   "version": "0.0.1",
-  "description": "Unofficial SDK of Lostark Open API",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "description": "Lostark engraving calcuation utilities",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "src",
@@ -16,13 +17,16 @@
   "repository": {
     "name": "mokoko",
     "url": "https://github.com/icepeng/mokoko",
-    "directory": "packages/sdk"
+    "directory": "packages/engrave"
   },
   "scripts": {
+    "build-fast": "tsup src/index.ts --format esm,cjs",
     "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts"
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "test": "node test.mjs"
   },
   "devDependencies": {
+    "@mokoko/sdk": "^0.0.1",
     "node-fetch": "^3.3.0",
     "tsup": "^6.5.0"
   }
