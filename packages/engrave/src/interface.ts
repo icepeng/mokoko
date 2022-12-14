@@ -1,3 +1,5 @@
+import type { AuctionItem } from "@mokoko/sdk";
+
 export type AccSlot = "목걸이" | "귀걸이1" | "귀걸이2" | "반지1" | "반지2";
 
 export type AccCategory = "목걸이" | "귀걸이" | "반지";
@@ -16,6 +18,7 @@ export type ItemGrade =
 
 export interface AccInfo {
   category: AccCategory;
+  slot: AccSlot;
   quality: number;
   dealOptions: {
     name: DealOption;
@@ -23,6 +26,14 @@ export interface AccInfo {
   }[];
 }
 
-export type AccMap = Record<AccSlot, AccInfo>;
+export interface Engrave {
+  name: string;
+  amount: number;
+}
 
-export type Engrave = Record<string, number>;
+export type EngravePair = [Engrave, Engrave];
+export type EngraveSum = Record<string, number>;
+
+export interface IndexedAuctionItem extends AuctionItem {
+  id: string;
+}

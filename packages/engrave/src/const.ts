@@ -115,3 +115,12 @@ export const imprintOptionMap: Record<string, number> = {
   질풍노도: 307,
   이슬비: 308,
 };
+
+export const penaltyOptions = [
+  "공격력 감소",
+  "공격속도 감소",
+  "방어력 감소",
+  "이동속도 감소",
+];
+
+export const ANY_ENGRAVE = "잡옵";

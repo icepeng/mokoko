@@ -2,9 +2,8 @@
   "name": "@mokoko/engrave",
   "version": "0.0.1",
   "description": "Lostark engraving calcuation utilities",
-  "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "src",
@@ -19,15 +18,26 @@
     "url": "https://github.com/icepeng/mokoko",
     "directory": "packages/engrave"
   },
+  "license": "MIT",
   "scripts": {
     "build-fast": "tsup src/index.ts --format esm,cjs",
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
-    "test": "node test.mjs"
+    "test": "uvu -r tsm test",
+    "test:watch": "watchlist src test -- yarn test",
+    "e2e": "uvu -r tsm e2e"
   },
   "devDependencies": {
     "@mokoko/sdk": "^0.0.1",
+    "@types/node": "^18.11.15",
     "node-fetch": "^3.3.0",
-    "tsup": "^6.5.0"
+    "tsm": "^2.3.0",
+    "tsup": "^6.5.0",
+    "typescript": "4.9.3",
+    "uvu": "^0.5.6",
+    "watchlist": "^0.3.1"
+  },
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^6.1.4"
   }
 }

@@ -46,3 +46,5 @@ export type { Tendency } from "./models/Tendency";
 export type { Tripod } from "./models/Tripod";
 
 export { getSDK } from "./sdk";
+export type { SdkProps } from "./sdk";
+export type { Reporter } from "./reporter";

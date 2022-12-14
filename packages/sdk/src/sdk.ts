@@ -21,25 +21,51 @@ import type {
   RequestInit as NodeRequestInit,
   Response as NodeResponse,
 } from "node-fetch";
+import { RateLimit } from "async-sema";
+import { Reporter } from "./reporter";
 
 const baseUrl = "https://developer-lostark.game.onstove.com";
+
+export interface SdkProps {
+  /**
+   * Fetch function for isomorphic usage.
+   */
+  fetchFn:
+    | ((url: string, init?: RequestInit) => Promise<Response>)
+    | ((url: string, init?: NodeRequestInit) => Promise<NodeResponse>);
+
+  /**
+   * API Key from Lostark Open API Developer Portal.
+   */
+  apiKey: string;
+
+  /**
+   * API Rate limit for throttling
+   * @default 100
+   */
+  limit?: number;
+
+  /**
+   * Reporter for logging usage.
+   */
+  reporter?: Reporter;
+}
 
 export function getSDK({
   fetchFn = fetch,
   apiKey,
-}: {
-  fetchFn:
-    | ((url: string, init?: RequestInit) => Promise<Response>)
-    | ((url: string, init?: NodeRequestInit) => Promise<NodeResponse>);
-  apiKey: string;
-}) {
+  limit = 100,
+  reporter,
+}: SdkProps) {
+  const rateLimit = RateLimit(limit, { timeUnit: 60 * 1000 });
+
   async function _request({
-    url,
+    path,
     method = "GET",
     body,
     query,
   }: {
-    url: string;
+    path: string;
     method?: "GET" | "POST";
     body?: unknown;
     query?: Record<string, string>;
@@ -53,14 +79,32 @@ export function getSDK({
           .join("&")
       : "";
 
-    return fetchFn(baseUrl + url + queryStr, {
+    await rateLimit();
+
+    const url = baseUrl + path + queryStr;
+
+    reporter?.info(`Request ${url}`);
+    const res = await fetchFn(url, {
       method,
       body: body ? JSON.stringify(body) : undefined,
       headers: {
         authorization: "bearer " + apiKey,
         "content-type": "application/json",
       },
-    }).then((res) => res.json());
+    });
+    reporter?.info(`Response ${res.status} ${url}`);
+
+    const data: any = await res.json();
+    if (res.status === 200) {
+      return data;
+    }
+    if (res.status === 429) {
+      throw new Error("Rate Limit Exceeded");
+    }
+    if (data?.["Message"]) {
+      throw new Error(data["Message"]);
+    }
+    throw new Error(res.status.toString());
   }
 
   /**
@@ -68,7 +112,7 @@ export function getSDK({
    * @returns Event OK
    */
   async function getNews(): Promise<Event> {
-    return _request({ url: "/news/events" });
+    return _request({ path: "/news/events" });
   }
   /**
    * Returns a summary of the basic stats by a character name.
@@ -80,7 +124,7 @@ export function getSDK({
   ): Promise<ArmoryProfile> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/profiles`,
+      path: `/armories/characters/${characterName}/profiles`,
     });
   }
 
@@ -94,7 +138,7 @@ export function getSDK({
   ): Promise<Array<ArmoryEquipment>> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/equipment`,
+      path: `/armories/characters/${characterName}/equipment`,
     });
   }
 
@@ -108,7 +152,7 @@ export function getSDK({
   ): Promise<Array<ArmoryAvatar>> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/avatars`,
+      path: `/armories/characters/${characterName}/avatars`,
     });
   }
 
@@ -122,7 +166,7 @@ export function getSDK({
   ): Promise<Array<ArmorySkill>> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/combat-skills`,
+      path: `/armories/characters/${characterName}/combat-skills`,
     });
   }
 
@@ -136,7 +180,7 @@ export function getSDK({
   ): Promise<ArmoryEngraving> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/engravings`,
+      path: `/armories/characters/${characterName}/engravings`,
     });
   }
 
@@ -148,7 +192,7 @@ export function getSDK({
   async function armoriesGetCard(characterName: string): Promise<ArmoryCard> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/cards`,
+      path: `/armories/characters/${characterName}/cards`,
     });
   }
 
@@ -160,7 +204,7 @@ export function getSDK({
   async function armoriesGetGem(characterName: string): Promise<ArmoryGem> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/gems`,
+      path: `/armories/characters/${characterName}/gems`,
     });
   }
 
@@ -174,7 +218,7 @@ export function getSDK({
   ): Promise<ColosseumInfo> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/colosseums`,
+      path: `/armories/characters/${characterName}/colosseums`,
     });
   }
 
@@ -188,7 +232,7 @@ export function getSDK({
   ): Promise<Array<Collectible>> {
     return _request({
       method: "GET",
-      url: `/armories/characters/${characterName}/collectibles`,
+      path: `/armories/characters/${characterName}/collectibles`,
     });
   }
 
@@ -199,7 +243,7 @@ export function getSDK({
   async function auctionsGetOptions(): Promise<AuctionOption> {
     return _request({
       method: "GET",
-      url: "/auctions/options",
+      path: "/auctions/options",
     });
   }
 
@@ -213,7 +257,7 @@ export function getSDK({
   ): Promise<Auction> {
     return _request({
       method: "POST",
-      url: "/auctions/items",
+      path: "/auctions/items",
       body: requestAuctionItems,
     });
   }
@@ -228,7 +272,7 @@ export function getSDK({
   ): Promise<Array<CharacterInfo>> {
     return _request({
       method: "GET",
-      url: `/characters/${characterName}/siblings`,
+      path: `/characters/${characterName}/siblings`,
     });
   }
 
@@ -250,7 +294,7 @@ export function getSDK({
   ): Promise<Array<GuildRanking>> {
     return _request({
       method: "GET",
-      url: "/guilds/rankings",
+      path: "/guilds/rankings",
       query: {
         serverName: serverName,
       },
@@ -264,7 +308,7 @@ export function getSDK({
   async function marketsGetOptions(): Promise<MarketOption> {
     return _request({
       method: "GET",
-      url: "/markets/options",
+      path: "/markets/options",
     });
   }
 
@@ -278,7 +322,7 @@ export function getSDK({
   ): Promise<Array<MarketItemStats>> {
     return _request({
       method: "GET",
-      url: `/markets/items/${itemId}`,
+      path: `/markets/items/${itemId}`,
     });
   }
 
@@ -292,7 +336,7 @@ export function getSDK({
   ): Promise<MarketList> {
     return _request({
       method: "POST",
-      url: "/markets/items",
+      path: "/markets/items",
       body: requestMarketItems,
     });
   }

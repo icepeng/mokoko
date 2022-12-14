@@ -1,7 +1,8 @@
-import { Engrave } from "./interface";
+import { ANY_ENGRAVE } from "./const";
+import { EngravePair, EngraveSum } from "./interface";
 import { product } from "./util";
 
-export function splitNumber(num: number, limit: number): number[][] {
+export function splitNumber(num: number, max: number): number[][] {
   const result: number[][] = [];
   function rec(arr: number[], sum: number) {
     if (sum === num) {
@@ -9,12 +10,12 @@ export function splitNumber(num: number, limit: number): number[][] {
       return;
     }
     if (sum > num) {
-      if (arr[arr.length - 1] === 3) {
+      if (arr[arr.length - 1] <= 3) {
         result.push(arr);
       }
       return;
     }
-    for (let i = arr[arr.length - 1] || 3; i <= limit; i += 1) {
+    for (let i = arr[arr.length - 1] || 3; i <= max; i += 1) {
       rec([...arr, i], sum + i);
     }
   }
@@ -24,17 +25,17 @@ export function splitNumber(num: number, limit: number): number[][] {
 
 export function combine(
   splits: number[][],
-  length: number,
-  groupNames: string[]
+  groupNames: string[],
+  length: number
 ) {
   const arr = splits.flatMap((split, index) =>
     split.map((num) => ({ num, group: groupNames[index] }))
   );
-  const result: Engrave[][] = [];
+  const result: EngravePair[][] = [];
   const visited = new Set();
 
   function rec(
-    list: Engrave[],
+    list: EngravePair[],
     used: Record<string, boolean>,
     si: number,
     sj: number
@@ -70,10 +71,10 @@ export function combine(
           rec(
             [
               ...list,
-              {
-                [arr[i].group]: arr[i].num,
-                [arr[j].group]: arr[j].num,
-              },
+              [
+                { name: arr[i].group, amount: arr[i].num },
+                { name: arr[j].group, amount: arr[j].num },
+              ],
             ],
             { ...used, [i]: true, [j]: true },
             i + 1,
@@ -87,15 +88,31 @@ export function combine(
   return result;
 }
 
-export function getCombinations(
-  target: Engrave,
-  length: number,
-  imprintLimit: number
-) {
+export interface GetCombinationsProps {
+  target: EngraveSum;
+
+  /**
+   * Length of combination
+   * @max 5
+   * @min 1
+   */
+  length: number;
+
+  itemGrade: "유물" | "고대";
+}
+
+export function getCombinations({
+  target,
+  length,
+  itemGrade,
+}: GetCombinationsProps) {
+  const higherMax = {
+    유물: 5,
+    고대: 6,
+  }[itemGrade];
+
   return [
-    ...product(
-      ...Object.values(target).map((x) => splitNumber(x, imprintLimit))
-    ),
+    ...product(...Object.values(target).map((x) => splitNumber(x, higherMax))),
   ]
     .filter((splits) => splits.flat().length <= length * 2)
     .filter((splits) => splits.flat().filter((num) => num > 3).length <= length)
@@ -104,6 +121,6 @@ export function getCombinations(
       return [...splits, Array.from({ length: padding }, () => 3)];
     })
     .flatMap((splits) =>
-      combine(splits, length, [...Object.keys(target), "잡옵"])
+      combine(splits, [...Object.keys(target), ANY_ENGRAVE], length)
     );
 }
