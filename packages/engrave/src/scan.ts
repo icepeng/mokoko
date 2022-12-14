@@ -2,7 +2,12 @@ import { ANY_ENGRAVE } from "./const";
 import { EngravePair, EngraveSum } from "./interface";
 import { product } from "./util";
 
-export function splitNumber(num: number, max: number): number[][] {
+export function splitNumber(
+  num: number,
+  higherMax: number,
+  higherMin: number,
+  lowerMin: number
+): number[][] {
   const result: number[][] = [];
   function rec(arr: number[], sum: number) {
     if (sum === num) {
@@ -10,12 +15,12 @@ export function splitNumber(num: number, max: number): number[][] {
       return;
     }
     if (sum > num) {
-      if (arr[arr.length - 1] <= 3) {
+      if (arr[arr.length - 1] <= higherMin) {
         result.push(arr);
       }
       return;
     }
-    for (let i = arr[arr.length - 1] || 3; i <= max; i += 1) {
+    for (let i = arr[arr.length - 1] || lowerMin; i <= higherMax; i += 1) {
       rec([...arr, i], sum + i);
     }
   }
@@ -26,7 +31,9 @@ export function splitNumber(num: number, max: number): number[][] {
 export function combine(
   splits: number[][],
   groupNames: string[],
-  length: number
+  length: number,
+  higherMin: number,
+  lowerMin: number
 ) {
   const arr = splits.flatMap((split, index) =>
     split.map((num) => ({ num, group: groupNames[index] }))
@@ -61,25 +68,27 @@ export function combine(
           ? sj
           : i + 1;
       for (let j = start; j < arr.length; j += 1) {
-        if (arr[i].num > 3 && arr[j].num > 3) {
+        if (arr[i].num > lowerMin && arr[j].num > lowerMin) {
           continue;
         }
         if (used[j]) {
           continue;
         }
         if (arr[i].group !== arr[j].group) {
-          rec(
-            [
-              ...list,
+          if (arr[i].num >= higherMin || arr[j].num >= higherMin) {
+            rec(
               [
-                { name: arr[i].group, amount: arr[i].num },
-                { name: arr[j].group, amount: arr[j].num },
+                ...list,
+                [
+                  { name: arr[i].group, amount: arr[i].num },
+                  { name: arr[j].group, amount: arr[j].num },
+                ],
               ],
-            ],
-            { ...used, [i]: true, [j]: true },
-            i + 1,
-            j + 1
-          );
+              { ...used, [i]: true, [j]: true },
+              i + 1,
+              j + 1
+            );
+          }
         }
       }
     }
@@ -110,17 +119,34 @@ export function getCombinations({
     유물: 5,
     고대: 6,
   }[itemGrade];
+  const higherMin = {
+    유물: 3,
+    고대: 4,
+  }[itemGrade];
+  const lowerMin = 3;
 
   return [
-    ...product(...Object.values(target).map((x) => splitNumber(x, higherMax))),
+    ...product(
+      ...Object.values(target).map((x) =>
+        splitNumber(x, higherMax, higherMin, lowerMin)
+      )
+    ),
   ]
     .filter((splits) => splits.flat().length <= length * 2)
-    .filter((splits) => splits.flat().filter((num) => num > 3).length <= length)
+    .filter(
+      (splits) => splits.flat().filter((num) => num > lowerMin).length <= length
+    )
     .map((splits) => {
       const padding = length * 2 - splits.flat().length;
-      return [...splits, Array.from({ length: padding }, () => 3)];
+      return [...splits, Array.from({ length: padding }, () => lowerMin)];
     })
     .flatMap((splits) =>
-      combine(splits, [...Object.keys(target), ANY_ENGRAVE], length)
+      combine(
+        splits,
+        [...Object.keys(target), ANY_ENGRAVE],
+        length,
+        higherMin,
+        lowerMin
+      )
     );
 }

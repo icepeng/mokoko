@@ -7,7 +7,7 @@ import * as assert from "uvu/assert";
 import { EngraveSum } from "interface";
 
 test("splitNumber", () => {
-  const splits = splitNumber(15, 5);
+  const splits = splitNumber(15, 5, 3, 3);
 
   assert.equal(splits, [
     [3, 3, 3, 3, 3],
@@ -18,23 +18,27 @@ test("splitNumber", () => {
 });
 
 test("splitNumber - ancient 15", () => {
-  const splits = splitNumber(15, 6);
+  const splits = splitNumber(15, 6, 4, 3);
 
   assert.equal(splits, [
     [3, 3, 3, 3, 3],
+    [3, 3, 3, 3, 4],
+    [3, 3, 3, 4, 4],
     [3, 3, 3, 6],
+    [3, 3, 4, 4, 4],
     [3, 3, 4, 5],
     [3, 4, 4, 4],
     [3, 6, 6],
+    [4, 4, 4, 4],
     [4, 5, 6],
     [5, 5, 5],
   ]);
 });
 
 test("splitNumber - ancient 6", () => {
-  const splits = splitNumber(6, 6);
+  const splits = splitNumber(6, 6, 4, 3);
 
-  assert.equal(splits, [[3, 3], [6]]);
+  assert.equal(splits, [[3, 3], [3, 4], [4, 4], [6]]);
 });
 
 test("getCombinations - relic snapshot", () => {
@@ -114,6 +118,20 @@ targets.forEach((target, i) => {
     });
 
     assert.is(result.length > 0, true);
+  });
+
+  test(`getCombinations - ancient should not have 3,3 pair ${i}`, () => {
+    const result = getCombinations({
+      target,
+      length: 5,
+      itemGrade: "고대",
+    });
+
+    const has33 = !!result
+      .flat()
+      .find((pair) => pair[0].amount === 3 && pair[1].amount === 3);
+
+    assert.is(has33, false);
   });
 
   test(`getCombinations - ancient should not have duplication ${i}`, () => {
