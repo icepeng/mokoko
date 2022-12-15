@@ -21,7 +21,7 @@ import type {
   RequestInit as NodeRequestInit,
   Response as NodeResponse,
 } from "node-fetch";
-import { RateLimit } from "async-sema";
+import { Sema } from "async-sema";
 import { Reporter } from "./reporter";
 
 const baseUrl = "https://developer-lostark.game.onstove.com";
@@ -46,18 +46,42 @@ export interface SdkProps {
   limit?: number;
 
   /**
+   * Maximum retry attempt on 429 error
+   * @default 3
+   */
+  maxRetry?: number;
+
+  /**
    * Reporter for logging usage.
    */
   reporter?: Reporter;
+}
+
+function qs(query?: Record<string, string>) {
+  return query
+    ? "?" +
+        Object.keys(query)
+          .map(
+            (k) => encodeURIComponent(k) + "=" + encodeURIComponent(query[k])
+          )
+          .join("&")
+    : "";
 }
 
 export function getSDK({
   fetchFn = fetch,
   apiKey,
   limit = 100,
+  maxRetry = 3,
   reporter,
 }: SdkProps) {
-  const rateLimit = RateLimit(limit, { timeUnit: 60 * 1000 });
+  const sema = new Sema(limit);
+  const RPS = 60 * 1000;
+
+  async function rateLimit() {
+    await sema.acquire();
+    setTimeout(() => sema.release(), RPS);
+  }
 
   async function _request({
     path,
@@ -70,41 +94,44 @@ export function getSDK({
     body?: unknown;
     query?: Record<string, string>;
   }) {
-    const queryStr = query
-      ? "?" +
-        Object.keys(query)
-          .map(
-            (k) => encodeURIComponent(k) + "=" + encodeURIComponent(query[k])
-          )
-          .join("&")
-      : "";
+    let retryCount = 0;
 
-    await rateLimit();
+    async function tryRequest(): Promise<any> {
+      await rateLimit();
 
-    const url = baseUrl + path + queryStr;
+      const queryStr = qs(query);
+      const url = baseUrl + path + queryStr;
 
-    reporter?.info(`Request ${url}`);
-    const res = await fetchFn(url, {
-      method,
-      body: body ? JSON.stringify(body) : undefined,
-      headers: {
-        authorization: "bearer " + apiKey,
-        "content-type": "application/json",
-      },
-    });
-    reporter?.info(`Response ${res.status} ${url}`);
+      reporter?.info(`Request ${url}`);
+      reporter?.info(`Queued jobs ${sema.nrWaiting()}`);
+      const res = await fetchFn(url, {
+        method,
+        body: body ? JSON.stringify(body) : undefined,
+        headers: {
+          authorization: "bearer " + apiKey,
+          "content-type": "application/json",
+        },
+      });
+      reporter?.info(`Response ${res.status} ${url}`);
 
-    const data: any = await res.json();
-    if (res.status === 200) {
-      return data;
+      const data: any = await res.json();
+      if (res.status === 200) {
+        return data;
+      }
+      if (res.status === 429) {
+        if (retryCount >= maxRetry) {
+          throw new Error("Rate Limit Exceeded");
+        }
+        await new Promise((resolve) => setTimeout(resolve, RPS));
+        return tryRequest();
+      }
+      if (data?.["Message"]) {
+        throw new Error(data["Message"]);
+      }
+      throw new Error(res.status.toString());
     }
-    if (res.status === 429) {
-      throw new Error("Rate Limit Exceeded");
-    }
-    if (data?.["Message"]) {
-      throw new Error(data["Message"]);
-    }
-    throw new Error(res.status.toString());
+
+    return tryRequest();
   }
 
   /**
