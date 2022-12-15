@@ -66,6 +66,12 @@ export interface SdkProps {
   limit?: number;
 
   /**
+   * Maximum retry attempt on 429 error
+   * @default 3
+   */
+  maxRetry?: number;
+
+  /**
    * Reporter for logging usage.
    */
   reporter?: Reporter;
