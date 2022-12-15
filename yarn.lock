@@ -359,7 +359,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mokoko/sdk@workspace:packages/sdk"
   dependencies:
-    async-sema: ^3.1.1
+    "@shopify/semaphore": ^3.0.1
     node-fetch: ^3.3.0
     tsup: ^6.5.0
     typescript: 4.9.3
@@ -410,6 +410,13 @@ __metadata:
     mkdirp: ^1.0.4
     rimraf: ^3.0.2
   checksum: 52dc02259d98da517fae4cb3a0a3850227bdae4939dda1980b788a7670636ca2b4a01b58df03dd5f65c1e3cb70c50fa8ce5762b582b3f499ec30ee5ce1fd9380
+  languageName: node
+  linkType: hard
+
+"@shopify/semaphore@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@shopify/semaphore@npm:3.0.1"
+  checksum: ea2cab85150c41705ffc8117192900457e3c1dbbbbd7d72c72bad8c9e2c1fb88eb0d1e027920d2517588b13083744c3057cbdb8f145883b2b04b17246e23254d
   languageName: node
   linkType: hard
 
@@ -615,13 +622,6 @@ __metadata:
   version: 1.0.1
   resolution: "arrify@npm:1.0.1"
   checksum: 745075dd4a4624ff0225c331dacb99be501a515d39bcb7c84d24660314a6ec28e68131b137e6f7e16318170842ce97538cd298fc4cd6b2cc798e0b957f2747e7
-  languageName: node
-  linkType: hard
-
-"async-sema@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "async-sema@npm:3.1.1"
-  checksum: 07b8c51f6cab107417ecdd8126b7a9fe5a75151b7f69fdd420dcc8ee08f9e37c473a217247e894b56e999b088b32e902dbe41637e4e9b594d3f8dfcdddfadc5e
   languageName: node
   linkType: hard
 

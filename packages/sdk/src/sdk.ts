@@ -21,7 +21,7 @@ import type {
   RequestInit as NodeRequestInit,
   Response as NodeResponse,
 } from "node-fetch";
-import { Sema } from "async-sema";
+import { Semaphore } from "@shopify/semaphore";
 import { Reporter } from "./reporter";
 
 const baseUrl = "https://developer-lostark.game.onstove.com";
@@ -75,12 +75,12 @@ export function getSDK({
   maxRetry = 3,
   reporter,
 }: SdkProps) {
-  const sema = new Sema(limit);
+  const sema = new Semaphore(limit);
   const RPS = 60 * 1000;
 
   async function rateLimit() {
-    await sema.acquire();
-    setTimeout(() => sema.release(), RPS);
+    const permit = await sema.acquire();
+    setTimeout(() => permit.release(), RPS);
   }
 
   async function _request({
@@ -103,7 +103,6 @@ export function getSDK({
       const url = baseUrl + path + queryStr;
 
       reporter?.info(`Request ${url}`);
-      reporter?.info(`Queued jobs ${sema.nrWaiting()}`);
       const res = await fetchFn(url, {
         method,
         body: body ? JSON.stringify(body) : undefined,
