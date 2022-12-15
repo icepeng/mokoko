@@ -39,5 +39,8 @@
   },
   "dependencies": {
     "@datastructures-js/priority-queue": "^6.1.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
