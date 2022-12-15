@@ -61,10 +61,35 @@ interface ComposeProps {
   items: IndexedAuctionItem[];
   combinations: EngravePair[][];
   accInfos: AccInfo[];
+
+  /**
+   * Max size of result array.
+   */
   capacity?: number;
+
+  /**
+   * Function that returns price of item.
+   * Useful when you need to use BidPrice.
+   */
   priceFn?: (item: AuctionItem) => number;
+
+  /**
+   * Filter function that runs on item composition pushes to result array.
+   * Useful when you have to filter about composed items e.g. total deal option.
+   */
   filterOnPush?: FilterFn;
+
+  /**
+   * Filter function that runs on every step of item composition.
+   * Useful when you can early-quit before items are fully composed e.g. penalty option.
+   * Setting this filter may increase performance.
+   */
   filterOnStep?: FilterFn;
+
+  /**
+   * Callback function that called on each chunk finished.
+   * Useful for progress report.
+   */
   onProgress?: (progress: { total: number; current: number }) => void;
 }
 

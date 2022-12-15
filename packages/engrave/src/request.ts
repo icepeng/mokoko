@@ -11,24 +11,24 @@ import { product } from "./util";
 
 export interface GetAuctionRequestProps {
   engravePair: EngravePair;
-  acc: AccInfo;
+  accInfo: AccInfo;
   itemGrade: ItemGrade;
 }
 
 export function getAuctionRequest({
   engravePair,
-  acc,
+  accInfo,
   itemGrade,
 }: GetAuctionRequestProps): RequestAuctionItems {
   return {
-    CategoryCode: categoryMap[acc.category],
+    CategoryCode: categoryMap[accInfo.category],
     Sort: "BUY_PRICE",
     SortCondition: "ASC",
     ItemTier: 3,
     ItemGrade: itemGrade,
-    ItemGradeQuality: acc.quality,
+    ItemGradeQuality: accInfo.quality,
     EtcOptions: [
-      ...acc.dealOptions.map(({ name, amount }) => ({
+      ...accInfo.dealOptions.map(({ name, amount }) => ({
         FirstOption: 2,
         SecondOption: dealOptionMap[name],
         MinValue: amount,
@@ -61,7 +61,8 @@ export function getRequestBundle({
   const accInfosToSearch = dedupeAccInfos(accInfos);
 
   return [...product(pairsToSearch, accInfosToSearch)].map(
-    ([engravePair, acc]) => getAuctionRequest({ engravePair, acc, itemGrade })
+    ([engravePair, acc]) =>
+      getAuctionRequest({ engravePair, accInfo: acc, itemGrade })
   );
 }
 
