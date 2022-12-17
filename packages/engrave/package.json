@@ -28,7 +28,7 @@
     "e2e": "uvu -r tsm e2e"
   },
   "devDependencies": {
-    "@mokoko/sdk": "^0.0.2",
+    "@mokoko/sdk": "^0.0.3",
     "@types/node": "^18.11.15",
     "node-fetch": "^3.3.0",
     "tsm": "^2.3.0",
