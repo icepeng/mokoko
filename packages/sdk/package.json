@@ -25,7 +25,6 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts"
   },
   "devDependencies": {
-    "node-fetch": "^3.3.0",
     "tsup": "^6.5.0",
     "typescript": "4.9.3"
   },

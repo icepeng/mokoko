@@ -17,10 +17,6 @@ import { MarketList } from "./models/MarketList";
 import { MarketOption } from "./models/MarketOption";
 import { RequestAuctionItems } from "./models/RequestAuctionItems";
 import { RequestMarketItems } from "./models/RequestMarketItems";
-import type {
-  RequestInit as NodeRequestInit,
-  Response as NodeResponse,
-} from "node-fetch";
 import { Semaphore } from "@shopify/semaphore";
 import { Reporter } from "./reporter";
 
@@ -30,9 +26,7 @@ export interface SdkProps {
   /**
    * Fetch function for isomorphic usage.
    */
-  fetchFn:
-    | ((url: string, init?: RequestInit) => Promise<Response>)
-    | ((url: string, init?: NodeRequestInit) => Promise<NodeResponse>);
+  fetchFn: (url: string, init?: RequestInit) => Promise<Response>;
 
   /**
    * API Key from Lostark Open API Developer Portal.

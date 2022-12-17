@@ -360,7 +360,6 @@ __metadata:
   resolution: "@mokoko/sdk@workspace:packages/sdk"
   dependencies:
     "@shopify/semaphore": ^3.0.1
-    node-fetch: ^3.3.0
     tsup: ^6.5.0
     typescript: 4.9.3
   languageName: unknown
