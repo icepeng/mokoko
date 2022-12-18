@@ -22,11 +22,20 @@ import { Reporter } from "./reporter";
 
 const baseUrl = "https://developer-lostark.game.onstove.com";
 
+type LooseFetchFn = (
+  url: string,
+  init?: { method?: string; body?: string; headers?: Record<string, string> }
+) => Promise<{
+  readonly status: number;
+  readonly statusText: string;
+  json(): Promise<any>;
+}>;
+
 export interface SdkProps {
   /**
    * Fetch function for isomorphic usage.
    */
-  fetchFn: (url: string, init?: RequestInit) => Promise<Response>;
+  fetchFn: LooseFetchFn;
 
   /**
    * API Key from Lostark Open API Developer Portal.
@@ -63,7 +72,7 @@ function qs(query?: Record<string, string>) {
 }
 
 export function getSDK({
-  fetchFn = fetch,
+  fetchFn,
   apiKey,
   limit = 100,
   maxRetry = 3,
