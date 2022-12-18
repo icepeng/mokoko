@@ -1,10 +1,10 @@
 import * as fs from "fs";
 import * as path from "path";
-import { getCombinations, splitNumber } from "../src/scan";
-
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import { EngraveSum } from "interface";
+
+import { EngraveSum } from "../src/interface";
+import { getCombinations, splitNumber } from "../src/scan";
 
 test("splitNumber", () => {
   const splits = splitNumber(15, 5);

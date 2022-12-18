@@ -12,3 +12,5 @@
 node_modules
 
 .ultra.cache.json
+
+.env

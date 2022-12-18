@@ -25,11 +25,12 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "test": "uvu -r tsm test",
     "test:watch": "watchlist src test -- yarn test",
-    "e2e": "uvu -r tsm e2e"
+    "e2e": "env-cmd uvu -r tsm e2e"
   },
   "devDependencies": {
     "@mokoko/sdk": "^0.0.3",
     "@types/node": "^18.11.15",
+    "env-cmd": "^10.1.0",
     "node-fetch": "^3.3.0",
     "tsm": "^2.3.0",
     "tsup": "^6.5.0",

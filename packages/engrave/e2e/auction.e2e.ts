@@ -1,12 +1,13 @@
 import { Auction, getSDK } from "@mokoko/sdk";
 import * as fs from "fs";
-import { AccInfo } from "interface";
 import fetch from "node-fetch";
 import * as path from "path";
 import { test } from "uvu";
 import * as assert from "uvu/assert";
+
 import { compose } from "../src/compose";
 import { filterPenalty } from "../src/filter";
+import { AccInfo } from "../src/interface";
 import { getRequestBundle, sanitizeItems } from "../src/request";
 import { getCombinations } from "../src/scan";
 
@@ -96,7 +97,9 @@ test("e2e", async () => {
 
   // 5. Sanitize and sort auction items
   const items = sanitizeItems(
-    auctions.flatMap((auction) => auction.Items ?? [])
+    auctions
+      .flatMap((auction) => auction.Items ?? [])
+      .filter((item) => item.AuctionInfo!.BuyPrice! > 0)
   );
 
   // 6. Calculate price-optimized item composition

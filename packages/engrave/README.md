@@ -79,7 +79,11 @@ const auctions = await Promise.all(
 );
 
 // 5. Sanitize and sort auction items
-const items = sanitizeItems(auctions.flatMap((auction) => auction.Items ?? []));
+const items = sanitizeItems(
+  auctions
+    .flatMap((auction) => auction.Items ?? [])
+    .filter((item) => item.AuctionInfo!.BuyPrice! > 0)
+);
 
 // 6. Calculate price-optimized item composition
 const results = compose({
@@ -105,7 +109,7 @@ interface ComposeProps {
 
   /**
    * Function that returns price of item.
-   * Useful when you need to use BidPrice.
+   * Useful when you need to use BidStartPrice.
    */
   priceFn?: (item: AuctionItem) => number;
 
@@ -129,3 +133,9 @@ interface ComposeProps {
   onProgress?: (progress: { total: number; current: number }) => void;
 }
 ```
+
+## Running e2e test
+
+1. Copy .env.example and rename to .env
+2. Set your API key in .env file
+3. run `yarn e2e`

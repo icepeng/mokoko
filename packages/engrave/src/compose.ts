@@ -69,7 +69,7 @@ interface ComposeProps {
 
   /**
    * Function that returns price of item.
-   * Useful when you need to use BidPrice.
+   * Useful when you need to use BidStartPrice.
    */
   priceFn?: (item: AuctionItem) => number;
 
