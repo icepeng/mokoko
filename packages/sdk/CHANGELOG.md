@@ -1,5 +1,11 @@
 # @mokoko/sdk
 
+## 0.0.4
+
+### Patch Changes
+
+- 66e7d18: better generic fetch interface
+
 ## 0.0.3
 
 ### Patch Changes
