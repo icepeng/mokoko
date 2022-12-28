@@ -5,4 +5,5 @@ export interface MarketItemStats {
   TradeRemainCount?: number;
   BundleCount?: number;
   Stats?: Array<MarketStatsInfo>;
+  ToolTip?: string;
 }
