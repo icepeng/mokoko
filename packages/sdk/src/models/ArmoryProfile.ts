@@ -10,6 +10,8 @@ export interface ArmoryProfile {
   Title?: string;
   GuildMemberGrade?: string;
   GuildName?: string;
+  UsingSkillPoint?: number;
+  TotalSkillPoint?: number;
   Stats?: Array<Stat>;
   Tendencies?: Array<Tendency>;
   ServerName?: string;
