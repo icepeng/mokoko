@@ -103,7 +103,7 @@ export function getSDK({
       await rateLimit();
 
       const queryStr = qs(query);
-      const url = baseUrl + path + queryStr;
+      const { href:url } = new URL(baseUrl + path + queryStr);
 
       reporter?.info(`Request ${url}`);
       const res = await fetchFn(url, {
