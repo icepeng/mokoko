@@ -40,7 +40,7 @@ export interface SdkProps {
   /**
    * API Key from Lostark Open API Developer Portal.
    */
-  apiKey: string;
+  apiKey: string[]|string;
 
   /**
    * API Rate limit for throttling
@@ -58,6 +58,11 @@ export interface SdkProps {
    * Reporter for logging usage.
    */
   reporter?: Reporter;
+}
+
+type KeyStorage = {
+  key: string;
+  limited: number;
 }
 
 function qs(query?: Record<string, string>) {
@@ -78,8 +83,47 @@ export function getSDK({
   maxRetry = 3,
   reporter,
 }: SdkProps) {
-  const sema = new Semaphore(limit);
   const RPS = 60 * 1000;
+  let keyStorages: KeyStorage[] = [];
+
+  if ( Array.isArray(apiKey) ) {
+    keyStorages = apiKey.map((key) => ({
+      key,
+      limited: Date.now(),
+    }));
+
+    // Since the key is changed in the limit+1 request, a limit equal to the number of apiKeys is added.
+    limit = (limit * apiKey.length) + apiKey.length;
+  }
+  const sema = new Semaphore(limit);
+
+  function isApiKeyAllLimited() {
+    const now = Date.now();
+    return !keyStorages.find(({ limited }) => limited < now);
+  }
+
+  function calcRPMS() {
+    if ( Array.isArray(apiKey) ) {
+      const leastTime = keyStorages.reduce(
+        (acc, current) => acc.limited < current.limited ? acc : current,
+        keyStorages[0],
+      ).limited;
+      
+      return leastTime - Date.now();
+    }
+    return RPS;
+  }
+
+  function getApiKey() {
+    if ( Array.isArray(apiKey) ) {
+      const now = Date.now();
+      return keyStorages.find(({ limited }) => limited < now) || keyStorages[0];
+    }
+    return {
+      key: apiKey,
+      limited: 0,
+    };
+  }
 
   async function rateLimit() {
     const permit = await sema.acquire();
@@ -98,6 +142,7 @@ export function getSDK({
     query?: Record<string, string>;
   }) {
     let retryCount = 0;
+    let currentKey = getApiKey();
 
     async function tryRequest(): Promise<any> {
       await rateLimit();
@@ -110,7 +155,7 @@ export function getSDK({
         method,
         body: body ? JSON.stringify(body) : undefined,
         headers: {
-          authorization: "bearer " + apiKey,
+          authorization: "bearer " + currentKey.key,
           "content-type": "application/json",
         },
       });
@@ -121,10 +166,15 @@ export function getSDK({
         return data;
       }
       if (res.status === 429) {
+        if ( !isApiKeyAllLimited() ) {
+          currentKey.limited = Date.now() + RPS;
+          currentKey = getApiKey();
+          return tryRequest();
+        }
         if (retryCount >= maxRetry) {
           throw new Error("Rate Limit Exceeded");
         }
-        await new Promise((resolve) => setTimeout(resolve, RPS));
+        await new Promise((resolve) => setTimeout(resolve, calcRPMS()));
         return tryRequest();
       }
       if (data?.["Message"]) {
