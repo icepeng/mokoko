@@ -1,5 +1,11 @@
 # @mokoko/sdk
 
+## 0.0.6
+
+### Patch Changes
+
+- d134a18: fix unescaped characters error when use custom fetch function
+
 ## 0.0.5
 
 ### Patch Changes

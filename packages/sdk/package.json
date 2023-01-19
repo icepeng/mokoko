@@ -1,6 +1,6 @@
 {
   "name": "@mokoko/sdk",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Unofficial SDK of Lostark Open API",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

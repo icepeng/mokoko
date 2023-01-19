@@ -344,7 +344,7 @@ __metadata:
   resolution: "@mokoko/engrave@workspace:packages/engrave"
   dependencies:
     "@datastructures-js/priority-queue": ^6.1.4
-    "@mokoko/sdk": ^0.0.5
+    "@mokoko/sdk": ^0.0.6
     "@types/node": ^18.11.15
     env-cmd: ^10.1.0
     node-fetch: ^3.3.0
@@ -356,7 +356,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@mokoko/sdk@^0.0.5, @mokoko/sdk@workspace:packages/sdk":
+"@mokoko/sdk@^0.0.6, @mokoko/sdk@workspace:packages/sdk":
   version: 0.0.0-use.local
   resolution: "@mokoko/sdk@workspace:packages/sdk"
   dependencies:
