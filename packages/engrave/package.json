@@ -28,7 +28,7 @@
     "e2e": "env-cmd uvu -r tsm e2e"
   },
   "devDependencies": {
-    "@mokoko/sdk": "^0.0.5",
+    "@mokoko/sdk": "^0.0.6",
     "@types/node": "^18.11.15",
     "env-cmd": "^10.1.0",
     "node-fetch": "^3.3.0",
