@@ -19,6 +19,7 @@ import { RequestAuctionItems } from "./models/RequestAuctionItems";
 import { RequestMarketItems } from "./models/RequestMarketItems";
 import { Semaphore } from "@shopify/semaphore";
 import { Reporter } from "./reporter";
+import { NullResponseError, RateLimitExceedError } from "./error";
 
 const baseUrl = "https://developer-lostark.game.onstove.com";
 
@@ -58,6 +59,13 @@ export interface SdkProps {
    * Reporter for logging usage.
    */
   reporter?: Reporter;
+
+  /**
+   * Whether to throw error on null response
+   */
+  throwOnNullResponse?: boolean;
+
+  _RPS?: number;
 }
 
 function qs(query?: Record<string, string>) {
@@ -77,9 +85,11 @@ export function getSDK({
   limit = 100,
   maxRetry = 3,
   reporter,
+  throwOnNullResponse,
+  _RPS = 60 * 1000
 }: SdkProps) {
   const sema = new Semaphore(limit);
-  const RPS = 60 * 1000;
+  const RPS = _RPS;
 
   async function rateLimit() {
     const permit = await sema.acquire();
@@ -118,11 +128,14 @@ export function getSDK({
 
       const data: any = await res.json();
       if (res.status === 200) {
+        if (data === null && throwOnNullResponse === true) {
+          throw new NullResponseError();
+        }
         return data;
       }
       if (res.status === 429) {
         if (retryCount >= maxRetry) {
-          throw new Error("Rate Limit Exceeded");
+          throw new RateLimitExceedError();
         }
         await new Promise((resolve) => setTimeout(resolve, RPS));
         return tryRequest();
