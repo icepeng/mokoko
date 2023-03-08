@@ -15,24 +15,18 @@ export function getInitialGameState(config: GameConfiguration): GameState {
         type: "none",
         power: 0,
         isRemoved: false,
-        effectIndex: null,
-        effectIndex2: null,
         councilId: "",
       },
       {
         type: "none",
         power: 0,
         isRemoved: false,
-        effectIndex: null,
-        effectIndex2: null,
         councilId: "",
       },
       {
         type: "none",
         power: 0,
         isRemoved: false,
-        effectIndex: null,
-        effectIndex2: null,
         councilId: "",
       },
     ],
@@ -40,38 +34,36 @@ export function getInitialGameState(config: GameConfiguration): GameState {
       {
         name: "자원의 축복",
         value: 0,
-        luckyRate: 0.1,
+        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "무기 공격력",
         value: 0,
-        luckyRate: 0.1,
+        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "민첩",
         value: 0,
-        luckyRate: 0.1,
+        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "보스 피해",
         value: 0,
-        luckyRate: 0.1,
+        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "무력화",
         value: 0,
-        luckyRate: 0.1,
+        luckyRatio: 0.1,
         isLocked: false,
       },
     ],
-    effectProbMutations: [],
+    mutations: [],
     selectedSageIndex: -1,
-    enchantIncreaseAmount: 1,
-    enchantEffectCount: 1,
   };
 
   return sageService.updateCouncils(state);
@@ -119,10 +111,10 @@ export function enchant(state: GameState): GameState {
   let effects = [...state.effects];
   for (let i = 0; i < patchedState.enchantEffectCount; i += 1) {
     const selectedEffectIndex = chance.weighted([0, 1, 2, 3, 4], weightProb);
-    const { luckyRate } = patchedState.effects[selectedEffectIndex];
+    const { luckyRatio } = patchedState.effects[selectedEffectIndex];
     weightProb[selectedEffectIndex] = 0;
 
-    const isLucky = chance.bool({ likelihood: luckyRate * 100 });
+    const isLucky = chance.bool({ likelihood: luckyRatio * 100 });
 
     effects = effects.map((effect, index) => {
       if (index === selectedEffectIndex) {
@@ -156,5 +148,17 @@ export function reroll(state: GameState): GameState {
   return {
     ...sageService.updateCouncils(state),
     rerollLeft: state.rerollLeft - 1,
+  };
+}
+
+// TODO: Sage Service를 public으로 제공하고, 여기는 제거할것
+export function updateSagePower(
+  state: GameState,
+  sageIndex: number
+): GameState {
+  return {
+    ...state,
+    turnLeft: state.turnLeft - 1,
+    sages: sageService.updatePowers(state.sages, sageIndex),
   };
 }

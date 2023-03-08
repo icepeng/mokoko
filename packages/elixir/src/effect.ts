@@ -37,9 +37,9 @@ export function queryEffectsProb(state: GameState) {
       : 0
   );
 
-  for (const mutation of state.effectProbMutations) {
+  for (const mutation of state.mutations) {
     const targetProb = pickRates[mutation.index];
-    const updatedProb = Math.max(Math.min(targetProb + mutation.diff, 1), 0);
+    const updatedProb = Math.max(Math.min(targetProb + mutation.value, 1), 0);
     const actualDiff = updatedProb - targetProb;
 
     for (let i = 0; i < 5; i += 1) {
