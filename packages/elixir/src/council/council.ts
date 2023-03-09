@@ -1,3 +1,4 @@
+import chance from "../rng";
 import { MAX_CHAOS, MAX_LAWFUL } from "../const";
 import { GameState, SageState } from "../interface";
 import councilData from "./data";
@@ -60,7 +61,16 @@ export function pickCouncil(state: GameState, sageIndex: number): string {
     throw new Error("No council available");
   }
 
-  const weightTable = currentTypeCouncils.map((council) => council.weight);
+  const weightTable = currentTypeCouncils.map((council) => council.pickupRatio);
   const selected = chance.weighted(currentTypeCouncils, weightTable);
   return selected.id;
+}
+
+export function getCouncilLogic(id: string) {
+  const council = councilRecord[id];
+  if (!council) {
+    throw new Error("Invalid council id");
+  }
+
+  return council.logic;
 }
