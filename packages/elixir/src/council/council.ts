@@ -66,26 +66,59 @@ function isTurnInRange(state: GameState, council: CouncilData) {
   return turn >= council.range[0] && turn < council.range[1];
 }
 
+const councilsPerType: Record<CouncilType, CouncilData[]> = {
+  common: councilData.filter((data) => data.type === "common"),
+  exhausted: councilData.filter((data) => data.type === "exhausted"),
+  lawful: councilData.filter((data) => data.type === "lawful"),
+  lawfulLock: councilData.filter((data) => data.type === "lawfulLock"),
+  chaos: councilData.filter((data) => data.type === "chaos"),
+  chaosLock: councilData.filter((data) => data.type === "chaosLock"),
+  lock: councilData.filter((data) => data.type === "lock"),
+};
+
+function isCouncilAvailable(
+  state: GameState,
+  council: CouncilData,
+  sageIndex: number,
+  pickedCouncils: string[]
+) {
+  if (isTurnInRange(state, council)) {
+    return true;
+  }
+
+  if (pickedCouncils.includes(council.id)) {
+    return false;
+  }
+
+  if (council.slotType === 3) {
+    return true;
+  }
+
+  return council.slotType === sageIndex;
+}
+
 export function pickCouncil(
   state: GameState,
   sageIndex: number,
   pickedCouncils: string[]
 ): string {
   const councilType = getCouncilType(state, sageIndex);
-  const availableCouncils = councilData
-    .filter((data) => data.type === councilType)
-    .filter((data) => isTurnInRange(state, data))
-    .filter((data) =>
-      data.slotType === 3 ? true : data.slotType === sageIndex
-    )
-    .filter((data) => data.logics.every((logic) => runLogicGuard(state, logic)))
-    .filter((data) => !pickedCouncils.includes(data.id));
+  const availableCouncils = councilsPerType[councilType].filter((data) =>
+    isCouncilAvailable(state, data, sageIndex, pickedCouncils)
+  );
   if (availableCouncils.length === 0) {
     throw new Error("No council available");
   }
 
   const weightTable = availableCouncils.map((council) => council.pickupRatio);
-  const selected = chance.weighted(availableCouncils, weightTable);
+
+  let selected: CouncilData;
+  while (true) {
+    selected = chance.weighted(availableCouncils, weightTable);
+    if (selected.logics.every((logic) => runLogicGuard(state, logic))) {
+      break;
+    }
+  }
   return selected.id;
 }
 
