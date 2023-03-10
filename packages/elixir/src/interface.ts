@@ -1,7 +1,6 @@
 export interface EffectState {
   name: string;
   value: number;
-  luckyRatio: number;
   isLocked: boolean;
 }
 
@@ -41,6 +40,6 @@ export interface GameState {
 }
 
 export interface UiState {
-  selectedSageIndex: number;
-  selectedEffectIndex: number;
+  selectedSageIndex: number | null;
+  selectedEffectIndex: number | null;
 }

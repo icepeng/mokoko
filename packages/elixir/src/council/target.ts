@@ -16,7 +16,7 @@ function random(state: GameState, ui: UiState, logic: CouncilLogicData) {
 }
 
 function proposed(state: GameState, ui: UiState, logic: CouncilLogicData) {
-  return [logic.targetCondition];
+  return [logic.targetCondition - 1];
 }
 
 function minValue(state: GameState, ui: UiState, logic: CouncilLogicData) {
@@ -52,6 +52,10 @@ function maxValue(state: GameState, ui: UiState, logic: CouncilLogicData) {
 }
 
 function userSelect(state: GameState, ui: UiState, logic: CouncilLogicData) {
+  if (ui.selectedEffectIndex == null) {
+    throw new Error("Effect is not selected");
+  }
+
   return [ui.selectedEffectIndex];
 }
 
@@ -60,11 +64,9 @@ function lteValue(state: GameState, ui: UiState, logic: CouncilLogicData) {
     isEffectMutable(state.effects[index], state.config.maxEnchant)
   );
 
-  const candidates = available.filter(
+  return available.filter(
     (index) => state.effects[index].value <= logic.targetCondition
   );
-
-  return chance.pickset(candidates, logic.targetCount);
 }
 
 function oneThreeFive(state: GameState) {
@@ -90,12 +92,10 @@ const targetFns: Record<
   twoFour,
 };
 
-function getTargets(
+export function getTargets(
   state: GameState,
   ui: UiState,
   logic: CouncilLogicData
 ): number[] {
   return targetFns[logic.targetType](state, ui, logic);
 }
-
-export default getTargets;

@@ -13,7 +13,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -38,7 +38,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -63,7 +63,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -88,7 +88,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -113,7 +113,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -138,7 +138,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -163,7 +163,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -188,7 +188,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -213,7 +213,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -238,7 +238,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -263,7 +263,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -288,7 +288,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -313,7 +313,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -338,7 +338,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -363,7 +363,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -388,7 +388,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -413,7 +413,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -438,7 +438,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -463,7 +463,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -488,7 +488,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -513,7 +513,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -538,7 +538,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -563,7 +563,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -588,7 +588,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -613,7 +613,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -638,7 +638,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -663,7 +663,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -688,7 +688,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -713,7 +713,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -738,7 +738,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -763,7 +763,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -788,7 +788,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -813,7 +813,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -838,7 +838,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -863,7 +863,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -888,7 +888,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -913,7 +913,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -938,7 +938,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -963,7 +963,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -988,7 +988,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -1013,7 +1013,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -1038,7 +1038,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -1063,7 +1063,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -1088,7 +1088,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -1113,7 +1113,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -1138,7 +1138,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -1163,7 +1163,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "proposed",
@@ -1188,7 +1188,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -1213,7 +1213,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1238,7 +1238,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1263,7 +1263,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1288,7 +1288,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1313,7 +1313,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1338,7 +1338,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "userSelect",
@@ -1356,14 +1356,14 @@ const data: CouncilData[] = [
     pickupRatio: 63000,
     range: [0, 0],
     descriptions: [
-      "이번에는 <{0}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.</br>",
+      "이번에는 <{0}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
       "이번에는 <{0}> 효과를 <2>단계 연성하겠네. 대신, 기회를 <2>회 소모할걸세.",
-      "<{0}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요. </br>",
+      "<{0}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1390,14 +1390,14 @@ const data: CouncilData[] = [
     pickupRatio: 63000,
     range: [0, 0],
     descriptions: [
-      "이번에는 <{1}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.</br>",
+      "이번에는 <{1}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
       "이번에는 <{1}> 효과를 <2>단계 연성하겠네. 대신, 기회를 <2>회 소모할걸세.",
-      "<{1}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요. </br>",
+      "<{1}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1424,14 +1424,14 @@ const data: CouncilData[] = [
     pickupRatio: 63000,
     range: [0, 0],
     descriptions: [
-      "이번에는 <{2}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.</br>",
+      "이번에는 <{2}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
       "이번에는 <{2}> 효과를 <2>단계 연성하겠네. 대신, 기회를 <2>회 소모할걸세.",
-      "<{2}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요. </br>",
+      "<{2}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1458,14 +1458,14 @@ const data: CouncilData[] = [
     pickupRatio: 63000,
     range: [0, 0],
     descriptions: [
-      "이번에는 <{3}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.</br>",
+      "이번에는 <{3}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
       "이번에는 <{3}> 효과를 <2>단계 연성하겠네. 대신, 기회를 <2>회 소모할걸세.",
-      "<{3}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요. </br>",
+      "<{3}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1492,14 +1492,14 @@ const data: CouncilData[] = [
     pickupRatio: 63000,
     range: [0, 0],
     descriptions: [
-      "이번에는 <{4}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.</br>",
+      "이번에는 <{4}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
       "이번에는 <{4}> 효과를 <2>단계 연성하겠네. 대신, 기회를 <2>회 소모할걸세.",
-      "<{4}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요. </br>",
+      "<{4}> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "proposed",
@@ -1526,14 +1526,14 @@ const data: CouncilData[] = [
     pickupRatio: 35000,
     range: [0, 0],
     descriptions: [
-      "이번에는 <네가 고르는> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.</br>",
+      "이번에는 <네가 고르는> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
       "이번에는 <자네가 선택한> 효과를 <2>단계 연성하겠네. 대신, 기회를 <2>회 소모할걸세.",
-      "<당신이 택한> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요. </br>",
+      "<당신이 택한> 효과를 <2>단계 연성해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "userSelect",
@@ -1567,7 +1567,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantIncreaseAmount",
         targetType: "none",
@@ -1587,12 +1587,12 @@ const data: CouncilData[] = [
     descriptions: [
       "이번에 연성되는 효과는 <3>단계 올라갈거야. 다만 기회를 <2>회 소모하게 되겠지.",
       "이번에 연성되는 효과는 <3>단계 올라갈 걸세. 대신, 기회를 <2>회 소모하겠네.",
-      "이번에 연성되는 효과는 <3>단계 올라갈 거에요. 기회를 <2>회 소모하겠지만요. </br>",
+      "이번에 연성되는 효과는 <3>단계 올라갈 거에요. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantIncreaseAmount",
         targetType: "none",
@@ -1626,7 +1626,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantEffectCount",
         targetType: "none",
@@ -1646,12 +1646,12 @@ const data: CouncilData[] = [
     descriptions: [
       "이번에는 <3>개의 효과를 동시에 연성하겠어. 다만 기회를 <2>회 소모하게 되겠지.",
       "이번에는 <3>개의 효과를 연성하겠네. 대신, 기회를 <2>회 소모하겠네.",
-      "이번에는 <3>개의 효과를 동시에 연성해드리죠. 기회를 <2>회 소모하겠지만요. </br>",
+      "이번에는 <3>개의 효과를 동시에 연성해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantEffectCount",
         targetType: "none",
@@ -1685,7 +1685,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1710,7 +1710,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1735,7 +1735,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1760,7 +1760,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1785,7 +1785,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1810,7 +1810,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "userSelect",
@@ -1835,7 +1835,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1860,7 +1860,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1885,7 +1885,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1910,7 +1910,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1935,7 +1935,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -1960,7 +1960,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "userSelect",
@@ -1985,7 +1985,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -2010,7 +2010,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -2035,7 +2035,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -2060,7 +2060,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -2085,7 +2085,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "proposed",
@@ -2110,7 +2110,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "userSelect",
@@ -2135,7 +2135,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "random",
@@ -2160,7 +2160,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "random",
@@ -2185,7 +2185,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "random",
@@ -2210,7 +2210,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "random",
@@ -2228,14 +2228,14 @@ const data: CouncilData[] = [
     pickupRatio: 0,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.</br>",
-      "<{0}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{0}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.</br>",
+      "<{0}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
+      "<{0}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
+      "<{0}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2253,14 +2253,14 @@ const data: CouncilData[] = [
     pickupRatio: 0,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.</br>",
-      "<{1}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{1}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.</br>",
+      "<{1}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
+      "<{1}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
+      "<{1}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2278,14 +2278,14 @@ const data: CouncilData[] = [
     pickupRatio: 0,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.</br>",
-      "<{2}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{2}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.</br>",
+      "<{2}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
+      "<{2}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
+      "<{2}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2303,14 +2303,14 @@ const data: CouncilData[] = [
     pickupRatio: 0,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.</br>",
-      "<{3}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{3}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.</br>",
+      "<{3}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
+      "<{3}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
+      "<{3}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2328,14 +2328,14 @@ const data: CouncilData[] = [
     pickupRatio: 0,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.</br>",
-      "<{4}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{4}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.</br>",
+      "<{4}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
+      "<{4}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
+      "<{4}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2353,14 +2353,14 @@ const data: CouncilData[] = [
     pickupRatio: 0,
     range: [0, 0],
     descriptions: [
-      "<네가 고르는> 효과의 단계를 [<0>~<+2>]만큼 올려주지.</br>",
-      "<자네가 선택한> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<당신이 택한> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.</br>",
+      "<네가 고르는> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
+      "<자네가 선택한> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
+      "<당신이 택한> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "userSelect",
@@ -2378,14 +2378,14 @@ const data: CouncilData[] = [
     pickupRatio: 25200,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.</br>",
-      "<{0}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{0}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.</br>",
+      "<{0}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
+      "<{0}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.",
+      "<{0}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2403,14 +2403,14 @@ const data: CouncilData[] = [
     pickupRatio: 25200,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.</br>",
-      "<{1}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{1}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.</br>",
+      "<{1}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
+      "<{1}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.",
+      "<{1}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2428,14 +2428,14 @@ const data: CouncilData[] = [
     pickupRatio: 25200,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.</br>",
-      "<{2}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{2}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.</br>",
+      "<{2}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
+      "<{2}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.",
+      "<{2}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2453,14 +2453,14 @@ const data: CouncilData[] = [
     pickupRatio: 25200,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.</br>",
-      "<{3}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{3}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.</br>",
+      "<{3}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
+      "<{3}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.",
+      "<{3}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2478,14 +2478,14 @@ const data: CouncilData[] = [
     pickupRatio: 25200,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.</br>",
-      "<{4}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{4}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.</br>",
+      "<{4}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
+      "<{4}> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.",
+      "<{4}> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2503,14 +2503,14 @@ const data: CouncilData[] = [
     pickupRatio: 14000,
     range: [0, 0],
     descriptions: [
-      "<네가 고르는> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.</br>",
-      "<자네가 선택한> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<당신이 택한> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.</br>",
+      "<네가 고르는> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
+      "<자네가 선택한> 효과의 단계를 [<-1>~<+2>] 중 하나만큼 올리겠네.",
+      "<당신이 택한> 효과의 단계를 [<-1>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "userSelect",
@@ -2528,14 +2528,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.</br>",
-      "<{0}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{0}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.</br>",
+      "<{0}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
+      "<{0}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.",
+      "<{0}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2553,14 +2553,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.</br>",
-      "<{1}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{1}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.</br>",
+      "<{1}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
+      "<{1}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.",
+      "<{1}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2578,14 +2578,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.</br>",
-      "<{2}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{2}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.</br>",
+      "<{2}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
+      "<{2}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.",
+      "<{2}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2603,14 +2603,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.</br>",
-      "<{3}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{3}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.</br>",
+      "<{3}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
+      "<{3}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.",
+      "<{3}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2628,14 +2628,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.</br>",
-      "<{4}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<{4}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.</br>",
+      "<{4}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
+      "<{4}> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.",
+      "<{4}> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "proposed",
@@ -2653,14 +2653,14 @@ const data: CouncilData[] = [
     pickupRatio: 56000,
     range: [0, 0],
     descriptions: [
-      "<네가 고르는> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.</br>",
-      "<자네가 선택한> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.</br>",
-      "<당신이 택한> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.</br>",
+      "<네가 고르는> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
+      "<자네가 선택한> 효과의 단계를 [<-2>~<+2>] 중 하나만큼 올리겠네.",
+      "<당신이 택한> 효과의 단계를 [<-2>~<+2>]만큼 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "userSelect",
@@ -2678,14 +2678,14 @@ const data: CouncilData[] = [
     pickupRatio: 134640,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.</br>",
-      "<{0}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세. ",
-      "<{0}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
+      "<{0}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세.",
+      "<{0}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2703,14 +2703,14 @@ const data: CouncilData[] = [
     pickupRatio: 134640,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.</br>",
-      "<{1}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세. ",
-      "<{1}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
+      "<{1}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세.",
+      "<{1}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2728,14 +2728,14 @@ const data: CouncilData[] = [
     pickupRatio: 134640,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.</br>",
-      "<{2}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세. ",
-      "<{2}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
+      "<{2}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세.",
+      "<{2}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2753,14 +2753,14 @@ const data: CouncilData[] = [
     pickupRatio: 134640,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.</br>",
-      "<{3}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세. ",
-      "<{3}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
+      "<{3}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세.",
+      "<{3}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2778,14 +2778,14 @@ const data: CouncilData[] = [
     pickupRatio: 134640,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.</br>",
-      "<{4}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세. ",
-      "<{4}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
+      "<{4}> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세.",
+      "<{4}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2803,14 +2803,14 @@ const data: CouncilData[] = [
     pickupRatio: 74800,
     range: [0, 0],
     descriptions: [
-      "<네가 고르는> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.</br>",
-      "<자네가 선택한> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세. ",
-      "<당신이 택한> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.</br>",
+      "<네가 고르는> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
+      "<자네가 선택한> 효과의 단계를 <1> 올려보겠네. 성공률은 <25>%일세.",
+      "<당신이 택한> 효과의 단계를 <1> 올려보죠. 성공 확률은 <25>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "userSelect",
@@ -2828,14 +2828,14 @@ const data: CouncilData[] = [
     pickupRatio: 33660,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.</br>",
-      "<{0}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세. ",
-      "<{0}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
+      "<{0}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세.",
+      "<{0}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2853,14 +2853,14 @@ const data: CouncilData[] = [
     pickupRatio: 33660,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.</br>",
-      "<{1}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세. ",
-      "<{1}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
+      "<{1}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세.",
+      "<{1}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2878,14 +2878,14 @@ const data: CouncilData[] = [
     pickupRatio: 33660,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.</br>",
-      "<{2}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세. ",
-      "<{2}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
+      "<{2}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세.",
+      "<{2}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2903,14 +2903,14 @@ const data: CouncilData[] = [
     pickupRatio: 33660,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.</br>",
-      "<{3}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세. ",
-      "<{3}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
+      "<{3}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세.",
+      "<{3}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2928,14 +2928,14 @@ const data: CouncilData[] = [
     pickupRatio: 33660,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.</br>",
-      "<{4}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세. ",
-      "<{4}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
+      "<{4}> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세.",
+      "<{4}> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -2953,14 +2953,14 @@ const data: CouncilData[] = [
     pickupRatio: 18700,
     range: [0, 0],
     descriptions: [
-      "<네가 고르는> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.</br>",
-      "<자네가 선택한> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세. ",
-      "<당신이 택한> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.</br>",
+      "<네가 고르는> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
+      "<자네가 선택한> 효과의 단계를 <1> 올려보겠네. 성공률은 <50>%일세.",
+      "<당신이 택한> 효과의 단계를 <1> 올려보죠. 성공 확률은 <50>%에요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "userSelect",
@@ -2985,7 +2985,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "random",
@@ -3003,14 +3003,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [1, 5],
     descriptions: [
-      "<{0}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.</br>",
-      "<{0}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.</br>",
-      "<{0}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.</br>",
+      "<{0}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
+      "<{0}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.",
+      "<{0}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3028,14 +3028,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [1, 5],
     descriptions: [
-      "<{1}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.</br>",
-      "<{1}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.</br>",
-      "<{1}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.</br>",
+      "<{1}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
+      "<{1}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.",
+      "<{1}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3053,14 +3053,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [1, 5],
     descriptions: [
-      "<{2}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.</br>",
-      "<{2}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.</br>",
-      "<{2}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.</br>",
+      "<{2}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
+      "<{2}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.",
+      "<{2}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3078,14 +3078,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [1, 5],
     descriptions: [
-      "<{3}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.</br>",
-      "<{3}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.</br>",
-      "<{3}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.</br>",
+      "<{3}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
+      "<{3}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.",
+      "<{3}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3103,14 +3103,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [1, 5],
     descriptions: [
-      "<{4}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.</br>",
-      "<{4}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.</br>",
-      "<{4}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.</br>",
+      "<{4}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
+      "<{4}> 효과의 단계를 [<1>~<2>] 중 하나로 변경하겠네.",
+      "<{4}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3128,14 +3128,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [5, 9],
     descriptions: [
-      "<{0}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.</br>",
-      "<{0}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.</br>",
-      "<{0}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.</br>",
+      "<{0}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
+      "<{0}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.",
+      "<{0}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3153,14 +3153,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [5, 9],
     descriptions: [
-      "<{1}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.</br>",
-      "<{1}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.</br>",
-      "<{1}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.</br>",
+      "<{1}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
+      "<{1}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.",
+      "<{1}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3178,14 +3178,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [5, 9],
     descriptions: [
-      "<{2}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.</br>",
-      "<{2}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.</br>",
-      "<{2}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.</br>",
+      "<{2}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
+      "<{2}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.",
+      "<{2}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3203,14 +3203,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [5, 9],
     descriptions: [
-      "<{3}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.</br>",
-      "<{3}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.</br>",
-      "<{3}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.</br>",
+      "<{3}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
+      "<{3}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.",
+      "<{3}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3228,14 +3228,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [5, 9],
     descriptions: [
-      "<{4}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.</br>",
-      "<{4}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.</br>",
-      "<{4}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.</br>",
+      "<{4}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
+      "<{4}> 효과의 단계를 [<2>~<3>] 중 하나로 변경하겠네.",
+      "<{4}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3253,14 +3253,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [9, 13],
     descriptions: [
-      "<{0}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.</br>",
-      "<{0}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.</br>",
-      "<{0}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.</br>",
+      "<{0}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
+      "<{0}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.",
+      "<{0}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3278,14 +3278,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [9, 13],
     descriptions: [
-      "<{1}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.</br>",
-      "<{1}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.</br>",
-      "<{1}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.</br>",
+      "<{1}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
+      "<{1}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.",
+      "<{1}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3303,14 +3303,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [9, 13],
     descriptions: [
-      "<{2}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.</br>",
-      "<{2}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.</br>",
-      "<{2}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.</br>",
+      "<{2}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
+      "<{2}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.",
+      "<{2}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3328,14 +3328,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [9, 13],
     descriptions: [
-      "<{3}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.</br>",
-      "<{3}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.</br>",
-      "<{3}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.</br>",
+      "<{3}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
+      "<{3}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.",
+      "<{3}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3353,14 +3353,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [9, 13],
     descriptions: [
-      "<{4}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.</br>",
-      "<{4}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.</br>",
-      "<{4}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.</br>",
+      "<{4}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
+      "<{4}> 효과의 단계를 [<3>~<4>] 중 하나로 변경하겠네.",
+      "<{4}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3378,14 +3378,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [13, 99],
     descriptions: [
-      "<{0}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.</br>",
-      "<{0}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.</br>",
-      "<{0}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.</br>",
+      "<{0}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
+      "<{0}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.",
+      "<{0}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3403,14 +3403,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [13, 99],
     descriptions: [
-      "<{1}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.</br>",
-      "<{1}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.</br>",
-      "<{1}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.</br>",
+      "<{1}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
+      "<{1}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.",
+      "<{1}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3428,14 +3428,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [13, 99],
     descriptions: [
-      "<{2}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.</br>",
-      "<{2}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.</br>",
-      "<{2}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.</br>",
+      "<{2}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
+      "<{2}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.",
+      "<{2}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3453,14 +3453,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [13, 99],
     descriptions: [
-      "<{3}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.</br>",
-      "<{3}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.</br>",
-      "<{3}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.</br>",
+      "<{3}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
+      "<{3}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.",
+      "<{3}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3478,14 +3478,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [13, 99],
     descriptions: [
-      "<{4}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.</br>",
-      "<{4}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.</br>",
-      "<{4}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.</br>",
+      "<{4}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
+      "<{4}> 효과의 단계를 [<5>~<6>] 중 하나로 변경하겠네.",
+      "<{4}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setValueRanged",
         targetType: "proposed",
@@ -3505,12 +3505,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3539,12 +3539,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3573,12 +3573,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3607,12 +3607,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3641,12 +3641,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3675,12 +3675,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3709,12 +3709,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3743,12 +3743,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3777,12 +3777,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3811,12 +3811,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3845,12 +3845,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3879,12 +3879,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3913,12 +3913,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3947,12 +3947,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -3981,12 +3981,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4015,12 +4015,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4049,12 +4049,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4083,12 +4083,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4117,12 +4117,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4151,12 +4151,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <1> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4185,12 +4185,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4219,12 +4219,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4253,12 +4253,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4287,12 +4287,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
       "<{0}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{0}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4321,12 +4321,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4355,12 +4355,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4389,12 +4389,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4423,12 +4423,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
       "<{1}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{1}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4457,12 +4457,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4491,12 +4491,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4525,12 +4525,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4559,12 +4559,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
       "<{2}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{2}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4593,12 +4593,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4627,12 +4627,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4661,12 +4661,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4695,12 +4695,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
       "<{3}> 효과의 단계를 <1> 올리겠네. 다만 <{4}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{3}> 효과의 단계를 <1> 올려드릴게요. <{4}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4729,12 +4729,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{0}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{0}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4763,12 +4763,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{1}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{1}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4797,12 +4797,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{2}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{2}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4831,12 +4831,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
       "<{4}> 효과의 단계를 <1> 올리겠네. 다만 <{3}> 효과의 단계는 <2> 줄어들 걸세.",
-      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.</br>",
+      "<{4}> 효과의 단계를 <1> 올려드릴게요. <{3}> 효과의 단계는 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "proposed",
@@ -4864,13 +4864,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개와  <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.",
-      "<최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 서로 바꿔주겠네.</br>",
-      "<최고 단계> 효과 <1>개, <최하 단계> 효과 <1>개의 단계를 뒤바꾸겠어요.</br>",
+      "<최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 서로 바꿔주겠네.",
+      "<최고 단계> 효과 <1>개, <최하 단계> 효과 <1>개의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapMinMax",
         targetType: "none",
@@ -4889,13 +4889,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 소모하겠다. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.",
-      "<최고 단계> 효과 <1>개의 단계를 <1> 소모하겠네. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 서로 바꿔주겠네.</br>",
-      "<최고 단계> 효과 <1>개의 단계를 <1> 소모하죠. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 뒤바꾸겠어요.</br>",
+      "<최고 단계> 효과 <1>개의 단계를 <1> 소모하겠네. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 서로 바꿔주겠네.",
+      "<최고 단계> 효과 <1>개의 단계를 <1> 소모하죠. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseMaxAndSwapMinMax",
         targetType: "none",
@@ -4920,7 +4920,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -4945,7 +4945,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -4970,7 +4970,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -4995,7 +4995,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -5020,7 +5020,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -5045,7 +5045,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -5070,7 +5070,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -5095,7 +5095,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -5120,7 +5120,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -5145,7 +5145,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "swapTargets",
         targetType: "none",
@@ -5163,14 +5163,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
+      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5188,14 +5188,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
+      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5213,14 +5213,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
+      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5238,14 +5238,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
+      "<{0}> 효과의 단계를 <1> 소모하겠네. 대신 <{0}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{0}> 효과의 단계를 <1> 소모하죠. 대신 <{0}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5263,14 +5263,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
+      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5288,14 +5288,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
+      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5313,14 +5313,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
+      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5338,14 +5338,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
+      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5363,14 +5363,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
+      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5388,14 +5388,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
+      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{4}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{4}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5413,14 +5413,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
+      "<{1}> 효과의 단계를 <1> 소모하겠네. 대신 <{1}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{1}> 효과의 단계를 <1> 소모하죠. 대신 <{1}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5438,14 +5438,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
+      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5463,14 +5463,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
+      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5488,14 +5488,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
+      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{0}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{0}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5513,14 +5513,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
+      "<{2}> 효과의 단계를 <1> 소모하겠네. 대신 <{2}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{2}> 효과의 단계를 <1> 소모하죠. 대신 <{2}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5538,14 +5538,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
+      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5563,14 +5563,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
+      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{1}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{1}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5588,14 +5588,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
+      "<{3}> 효과의 단계를 <1> 소모하겠네. 대신 <{3}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{3}> 효과의 단계를 <1> 소모하죠. 대신 <{3}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5613,14 +5613,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
+      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{2}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{2}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5638,14 +5638,14 @@ const data: CouncilData[] = [
     pickupRatio: 31500,
     range: [0, 0],
     descriptions: [
-      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.</br>",
-      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네. </br>",
-      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요. </br>",
+      "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
+      "<{4}> 효과의 단계를 <1> 소모하겠네. 대신 <{4}> 효과와 <{3}> 효과의 단계를 서로 바꿔주겠네.",
+      "<{4}> 효과의 단계를 <1> 소모하죠. 대신 <{4}> 효과와 <{3}> 효과의 단계를 뒤바꾸겠어요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseFirstTargetAndSwap",
         targetType: "none",
@@ -5670,7 +5670,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "none",
@@ -5690,12 +5690,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <1> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <최고 단계> 효과 <1>개의 단계는 <1> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <1> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "maxValue",
@@ -5715,12 +5715,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <2> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <최고 단계> 효과 <1>개의 단계는 <2> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <2> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "maxValue",
@@ -5740,12 +5740,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <1> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <다른> 효과 <1>개의 단계는 <1> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <다른> 효과 <1>개의 단계가 <1> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <다른> 효과 <1>개의 단계가 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "random",
@@ -5765,12 +5765,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <2> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <다른> 효과 <1>개의 단계는 <2> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <다른> 효과 <1>개의 단계가 <2> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <다른> 효과 <1>개의 단계가 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "random",
@@ -5795,7 +5795,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMaxAndDecreaseTarget",
         targetType: "none",
@@ -5815,12 +5815,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최하 단계> 효과 <1>개의 단계는 <1> 내려갈 거야.",
       "<최고 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <최하 단계> 효과 <1>개의 단계는 <1> 줄어들 걸세.",
-      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최하 단계> 효과 <1>개의 단계가 <1> 줄어들겠지만요.</br>",
+      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최하 단계> 효과 <1>개의 단계가 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMaxAndDecreaseTarget",
         targetType: "minValue",
@@ -5840,12 +5840,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최하 단계> 효과 <1>개의 단계는 <2> 내려갈 거야.",
       "<최고 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <최하 단계> 효과 <1>개의 단계는 <2> 줄어들 걸세.",
-      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최하 단계> 효과 <1>개의 단계가 <2> 줄어들겠지만요.</br>",
+      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <최하 단계> 효과 <1>개의 단계가 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMaxAndDecreaseTarget",
         targetType: "minValue",
@@ -5865,12 +5865,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <임의의> 효과 <1>개의 단계는 <1> 내려갈 거야.",
       "<최고 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <임의의> 효과 <1>개의 단계는 <1> 줄어들 걸세.",
-      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <임의의> 효과 <1>개의 단계가 <1> 줄어들겠지만요.</br>",
+      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <임의의> 효과 <1>개의 단계가 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMaxAndDecreaseTarget",
         targetType: "random",
@@ -5890,12 +5890,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <임의의> 효과 <1>개의 단계는 <2> 내려갈 거야.",
       "<최고 단계> 효과 <1>개의 단계를 <1> 올리겠네. 다만 <임의의> 효과 <1>개의 단계는 <2> 줄어들 걸세.",
-      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <임의의> 효과 <1>개의 단계가 <2> 줄어들겠지만요.</br>",
+      "<최고 단계> 효과 <1>개의 단계를 <1> 올려드리죠. <임의의> 효과 <1>개의 단계가 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMaxAndDecreaseTarget",
         targetType: "random",
@@ -5915,12 +5915,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <2> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <2> 올리겠네. 다만 <최고 단계> 효과 <1>개의 단계는 <2> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <2> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "maxValue",
@@ -5940,12 +5940,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <1> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <2> 올리겠네. 다만 <최고 단계> 효과 <1>개의 단계는 <1> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <1> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <최고 단계> 효과 <1>개의 단계가 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "maxValue",
@@ -5965,12 +5965,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <2> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <2> 올리겠네. 다만 <다른> 효과 <1>개의 단계는 <2> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <다른> 효과 <1>개의 단계가 <2> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <다른> 효과 <1>개의 단계가 <2> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "random",
@@ -5990,12 +5990,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <1> 내려갈 거야.",
       "<최하 단계> 효과 <1>개의 단계를 <2> 올리겠네. 다만 <다른> 효과 <1>개의 단계는 <1> 줄어들 걸세.",
-      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <다른> 효과 <1>개의 단계가 <1> 줄어들겠지만요.</br>",
+      "<최하 단계> 효과 <1>개의 단계를 <2> 올려드리죠. <다른> 효과 <1>개의 단계가 <1> 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "random",
@@ -6020,7 +6020,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMinAndDecreaseTarget",
         targetType: "none",
@@ -6038,14 +6038,14 @@ const data: CouncilData[] = [
     pickupRatio: 10000,
     range: [3, 99],
     descriptions: [
-      "<연성되지 않은> 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.</br>",
+      "<연성되지 않은> 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
       "<연성되지 않은> 효과들의 단계를 전부 <1>씩 올려주겠네.",
-      "<연성되지 않은> 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.</br>",
+      "<연성되지 않은> 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "lteValue",
@@ -6063,14 +6063,14 @@ const data: CouncilData[] = [
     pickupRatio: 20000,
     range: [5, 99],
     descriptions: [
-      "단계가 <2> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.</br>",
+      "단계가 <2> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
       "단계가 <2> 이하인 효과들의 단계를 전부 <1>씩 올려주겠네.",
-      "단계가 <2> 이하인 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.</br>",
+      "단계가 <2> 이하인 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "lteValue",
@@ -6088,14 +6088,14 @@ const data: CouncilData[] = [
     pickupRatio: 30000,
     range: [9, 99],
     descriptions: [
-      "단계가 <4> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.</br>",
+      "단계가 <4> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
       "단계가 <4> 이하인 효과들의 단계를 전부 <1>씩 올려주겠네.",
-      "단계가 <4> 이하인 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.</br>",
+      "단계가 <4> 이하인 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "lteValue",
@@ -6113,14 +6113,14 @@ const data: CouncilData[] = [
     pickupRatio: 40000,
     range: [13, 99],
     descriptions: [
-      "단계가 <6> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.</br>",
+      "단계가 <6> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
       "단계가 <6> 이하인 효과들의 단계를 전부 <1>씩 올려주겠네.",
-      "단계가 <6> 이하인 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.</br>",
+      "단계가 <6> 이하인 효과들이 있네요. 저 효과 모두, 단계를 <1>씩 올려드리죠.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "lteValue",
@@ -6139,13 +6139,13 @@ const data: CouncilData[] = [
     range: [5, 99],
     descriptions: [
       "<1, 3, 5번> 슬롯의 단계를 <1>씩 올려주지. 하지만 <2, 4번> 슬롯의 단계가 <2>씩 내려갈 거야.",
-      "<1, 3, 5번> 슬롯의 단계를 <1>씩 올리겠네. 다만 <2, 4번> 슬롯의 단계가 <2>씩 줄어들 걸세.</br>",
-      "<1, 3, 5번> 슬롯의 단계를 <1>씩 올려드리죠. <2, 4번> 슬롯의 단계가 <2>씩 줄어들겠지만요.</br>",
+      "<1, 3, 5번> 슬롯의 단계를 <1>씩 올리겠네. 다만 <2, 4번> 슬롯의 단계가 <2>씩 줄어들 걸세.",
+      "<1, 3, 5번> 슬롯의 단계를 <1>씩 올려드리죠. <2, 4번> 슬롯의 단계가 <2>씩 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "oneThreeFive",
@@ -6173,13 +6173,13 @@ const data: CouncilData[] = [
     range: [5, 99],
     descriptions: [
       "<2, 4번> 슬롯의 단계를 <1>씩 올려주지. 하지만 <1, 3, 5번> 슬롯의 단계가 <2>씩 내려갈 거야.",
-      "<2, 4번> 슬롯의 단계를 <1>씩 올리겠네. 다만 <1, 3, 5번> 슬롯의 단계가 <2>씩 줄어들 걸세.</br>",
-      "<2, 4번> 슬롯의 단계를 <1>씩 올려드리죠. <1, 3, 5번> 슬롯의 단계가 <2>씩 줄어들겠지만요.</br>",
+      "<2, 4번> 슬롯의 단계를 <1>씩 올리겠네. 다만 <1, 3, 5번> 슬롯의 단계가 <2>씩 줄어들 걸세.",
+      "<2, 4번> 슬롯의 단계를 <1>씩 올려드리죠. <1, 3, 5번> 슬롯의 단계가 <2>씩 줄어들겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "twoFour",
@@ -6213,7 +6213,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "random",
@@ -6231,14 +6231,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [5, 99],
     descriptions: [
-      "<{0}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.</br>",
-      "<{0}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.</br>",
-      "<{0}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.</br>",
+      "<{0}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
+      "<{0}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.",
+      "<{0}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6265,14 +6265,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [5, 99],
     descriptions: [
-      "<{1}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.</br>",
-      "<{1}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.</br>",
-      "<{1}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.</br>",
+      "<{1}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
+      "<{1}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.",
+      "<{1}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6299,14 +6299,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [5, 99],
     descriptions: [
-      "<{2}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.</br>",
-      "<{2}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.</br>",
-      "<{2}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.</br>",
+      "<{2}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
+      "<{2}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.",
+      "<{2}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6333,14 +6333,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [5, 99],
     descriptions: [
-      "<{3}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.</br>",
-      "<{3}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.</br>",
-      "<{3}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.</br>",
+      "<{3}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
+      "<{3}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.",
+      "<{3}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6367,14 +6367,14 @@ const data: CouncilData[] = [
     pickupRatio: 100800,
     range: [5, 99],
     descriptions: [
-      "<{4}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.</br>",
-      "<{4}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.</br>",
-      "<{4}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.</br>",
+      "<{4}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
+      "<{4}> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.",
+      "<{4}> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6401,14 +6401,14 @@ const data: CouncilData[] = [
     pickupRatio: 56000,
     range: [5, 99],
     descriptions: [
-      "<네가 고르는> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.</br>",
-      "<자네가 선택한> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.</br>",
-      "<당신이 택한> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.</br>",
+      "<네가 고르는> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
+      "<자네가 선택한> 효과를 봉인하겠네. 다만 이번 연성에서는 기회를 <2>회 소모할 걸세.",
+      "<당신이 택한> 효과를 봉인해드리죠. 기회를 <2>회 소모하겠지만요.",
     ],
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -6442,7 +6442,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreasePrice",
         targetType: "none",
@@ -6467,7 +6467,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 2,
-    logic: [
+    logics: [
       {
         type: "decreasePrice",
         targetType: "none",
@@ -6492,7 +6492,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "common",
     applyLimit: 2,
-    logic: [
+    logics: [
       {
         type: "decreasePrice",
         targetType: "none",
@@ -6517,7 +6517,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6542,7 +6542,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6567,7 +6567,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6592,7 +6592,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6617,7 +6617,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "proposed",
@@ -6642,7 +6642,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -6667,7 +6667,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6682,7 +6682,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6697,7 +6697,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6712,7 +6712,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6727,7 +6727,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6742,7 +6742,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6757,7 +6757,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6772,7 +6772,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "exhausted",
     applyLimit: 99,
-    logic: [],
+    logics: [],
     applyImmediately: false,
   },
   {
@@ -6787,7 +6787,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -6812,7 +6812,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateProb",
         targetType: "userSelect",
@@ -6837,7 +6837,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "userSelect",
@@ -6862,7 +6862,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "random",
@@ -6887,7 +6887,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "oneThreeFive",
@@ -6912,7 +6912,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "mutateLuckyRatio",
         targetType: "twoFour",
@@ -6937,7 +6937,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantTargetAndAmount",
         targetType: "userSelect",
@@ -6962,7 +6962,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "decreaseTurnLeft",
         targetType: "none",
@@ -6987,7 +6987,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "userSelect",
@@ -7012,7 +7012,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "userSelect",
@@ -7037,7 +7037,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseMaxAndDecreaseTarget",
         targetType: "none",
@@ -7062,7 +7062,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantIncreaseAmount",
         targetType: "none",
@@ -7087,7 +7087,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "setEnchantEffectCount",
         targetType: "none",
@@ -7112,7 +7112,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 1,
-    logic: [
+    logics: [
       {
         type: "decreasePrice",
         targetType: "none",
@@ -7137,7 +7137,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7155,14 +7155,14 @@ const data: CouncilData[] = [
     pickupRatio: 600000,
     range: [0, 0],
     descriptions: [
-      "조언이 더 필요한가? 다른 조언 보기 횟수를 <2>회 늘려주지.</br>",
+      "조언이 더 필요한가? 다른 조언 보기 횟수를 <2>회 늘려주지.",
       "자네의 다른 조언 보기 횟수를 <2>회 늘려주겠네.",
-      "항상 조언에 귀 기울여야 해요. 당신의 다른 조언 보기 횟수를 <2>회 늘려드리죠.</br>",
+      "항상 조언에 귀 기울여야 해요. 당신의 다른 조언 보기 횟수를 <2>회 늘려드리죠.",
     ],
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseReroll",
         targetType: "none",
@@ -7180,14 +7180,14 @@ const data: CouncilData[] = [
     pickupRatio: 1400000,
     range: [0, 0],
     descriptions: [
-      "조언이 더 필요한가? 다른 조언 보기 횟수를 <1>회 늘려주지.</br>",
+      "조언이 더 필요한가? 다른 조언 보기 횟수를 <1>회 늘려주지.",
       "자네의 다른 조언 보기 횟수를 <1>회 늘려주겠네.",
-      "항상 조언에 귀 기울여야 해요. 당신의 다른 조언 보기 횟수를 <1>회 늘려드리죠.</br>",
+      "항상 조언에 귀 기울여야 해요. 당신의 다른 조언 보기 횟수를 <1>회 늘려드리죠.",
     ],
     slotType: 3,
     type: "lawful",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseReroll",
         targetType: "none",
@@ -7212,7 +7212,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawfulLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7246,7 +7246,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawfulLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7280,7 +7280,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawfulLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7314,7 +7314,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "lawfulLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7334,14 +7334,14 @@ const data: CouncilData[] = [
     descriptions: [
       "<임의의 효과> <1>개의 봉인을 해제하고, 다른 효과 <1>개를 봉인해주지.",
       "<임의의 효과> <1>개의 봉인을 해제하겠네. 대신 다른 효과 <1>개를 봉인하도록 하지.",
-      "<임의의 효과> <1>개의 봉인을 해제하겠어요. 대신 다른 효과 <1>개를 봉인하죠.</br>",
+      "<임의의 효과> <1>개의 봉인을 해제하겠어요. 대신 다른 효과 <1>개를 봉인하죠.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
-        type: "unlockTargetAndLockOther",
+        type: "unlockAndLockOther",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -7358,13 +7358,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "<모든 효과>의 단계를 뒤섞도록 하지. 어떻게 뒤섞일지 보자고.",
-      "<모든 효과>의 단계를 뒤섞겠네. 좋은 결과가 나오길 바라네.</br>",
-      "<모든 효과>의 단계를 뒤섞어드리죠. 원하는 결과가 나오길 바라요.</br>",
+      "<모든 효과>의 단계를 뒤섞겠네. 좋은 결과가 나오길 바라네.",
+      "<모든 효과>의 단계를 뒤섞어드리죠. 원하는 결과가 나오길 바라요.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "shuffleAll",
         targetType: "none",
@@ -7383,13 +7383,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "<모든 효과>의 단계를 재분배하지. 어떻게 나뉠지 보자고.",
-      "<모든 효과>의 단계를 재분배하겠네. 좋은 결과가 나오길 바라네.</br>",
-      "<모든 효과>의 단계를 재분배하죠. 원하는 결과가 나오길 바라요.</br>",
+      "<모든 효과>의 단계를 재분배하겠네. 좋은 결과가 나오길 바라네.",
+      "<모든 효과>의 단계를 재분배하죠. 원하는 결과가 나오길 바라요.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "redistributeAll",
         targetType: "none",
@@ -7409,12 +7409,12 @@ const data: CouncilData[] = [
     descriptions: [
       "<임의의 효과> <1>개의 단계를 <2> 올려주지. 어떤 효과일 지 보자고.",
       "<임의의 효과> <1>개의 단계를 <2> 올리겠네.",
-      "<임의의 효과> <1>개의 단계를 <2> 올려드리죠. 어떤 효과일지는 알 수 없어요.</br>",
+      "<임의의 효과> <1>개의 단계를 <2> 올려드리죠. 어떤 효과일지는 알 수 없어요.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "increaseTargetWithRatio",
         targetType: "random",
@@ -7433,13 +7433,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "이대론 안되겠어. 엘릭서의 효과와 단계를 <초기화>하겠다.",
-      "흐름이 좋지 않군.  엘릭서의 효과와 단계를 <초기화>하겠네.</br>",
-      "곤란한 상황이에요. 엘릭서의 효과와 단계를 <초기화>하도록 하죠.</br>",
+      "흐름이 좋지 않군.  엘릭서의 효과와 단계를 <초기화>하겠네.",
+      "곤란한 상황이에요. 엘릭서의 효과와 단계를 <초기화>하도록 하죠.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "restart",
         targetType: "none",
@@ -7457,14 +7457,14 @@ const data: CouncilData[] = [
     pickupRatio: 1000000,
     range: [0, 0],
     descriptions: [
-      "<네가 고르는> 슬롯의 효과를 바꿔주지. 어떤 효과일지 보자고.</br>",
-      "<자네가 선택한> 슬롯의 효과를 변경하겠네. 좋은 결과가 나오길 바라네.</br>",
-      "<당신이 택한> 슬롯의 효과를 바꿔보죠. 원하는 결과가 나오길 바라요.</br>",
+      "<네가 고르는> 슬롯의 효과를 바꿔주지. 어떤 효과일지 보자고.",
+      "<자네가 선택한> 슬롯의 효과를 변경하겠네. 좋은 결과가 나오길 바라네.",
+      "<당신이 택한> 슬롯의 효과를 바꿔보죠. 원하는 결과가 나오길 바라요.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "changeEffect",
         targetType: "userSelect",
@@ -7482,14 +7482,14 @@ const data: CouncilData[] = [
     pickupRatio: 1500000,
     range: [0, 0],
     descriptions: [
-      "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<0>~<+4>] 중 하나만큼 올려주지.</br>",
-      "내 힘을 모두 <소진>하겠네. 대신, <자네가 선택한> 효과의 단계를 [<0>~<+4>] 중 하나만큼 올릴걸세. </br>",
+      "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<0>~<+4>] 중 하나만큼 올려주지.",
+      "내 힘을 모두 <소진>하겠네. 대신, <자네가 선택한> 효과의 단계를 [<0>~<+4>] 중 하나만큼 올릴걸세.",
       "제 힘을 모두 <소진>하겠어요. 대신, <당신이 택한> 효과의 단계를 [<0>~<+4>] 중 하나만큼 올려드리죠.",
     ],
     slotType: 0,
     type: "chaos",
     applyLimit: 1,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "userSelect",
@@ -7516,14 +7516,14 @@ const data: CouncilData[] = [
     pickupRatio: 1500000,
     range: [0, 0],
     descriptions: [
-      "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<+2>~<+3>] 중 하나만큼 올려주지.</br>",
-      "내 힘을 모두 <소진>하겠네. 대신, <자네가 선택한> 효과의 단계를 [<+2>~<+3>] 중 하나만큼 올릴걸세. </br>",
+      "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<+2>~<+3>] 중 하나만큼 올려주지.",
+      "내 힘을 모두 <소진>하겠네. 대신, <자네가 선택한> 효과의 단계를 [<+2>~<+3>] 중 하나만큼 올릴걸세.",
       "제 힘을 모두 <소진>하겠어요. 대신, <당신이 택한> 효과의 단계를 [<+2>~<+3>] 중 하나만큼 올려드리죠.",
     ],
     slotType: 1,
     type: "chaos",
     applyLimit: 1,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "userSelect",
@@ -7550,14 +7550,14 @@ const data: CouncilData[] = [
     pickupRatio: 1500000,
     range: [0, 0],
     descriptions: [
-      "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<-4>~<+5>] 중 하나만큼 올려주지.</br>",
-      "내 힘을 모두 <소진>하겠네. 대신, <자네가 선택한> 효과의 단계를 [<-4>~<+5>] 중 하나만큼 올릴걸세. </br>",
+      "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<-4>~<+5>] 중 하나만큼 올려주지.",
+      "내 힘을 모두 <소진>하겠네. 대신, <자네가 선택한> 효과의 단계를 [<-4>~<+5>] 중 하나만큼 올릴걸세.",
       "제 힘을 모두 <소진>하겠어요. 대신, <당신이 택한> 효과의 단계를 [<-4>~<+5>] 중 하나만큼 올려드리죠.",
     ],
     slotType: 2,
     type: "chaos",
     applyLimit: 1,
-    logic: [
+    logics: [
       {
         type: "increaseTargetRanged",
         targetType: "userSelect",
@@ -7584,14 +7584,14 @@ const data: CouncilData[] = [
     pickupRatio: 625000,
     range: [0, 0],
     descriptions: [
-      "<모든 효과>의 단계를  위로 <1> 슬롯 씩 옮겨주겠어.</br>",
-      "<모든 효과>의 단계를 위로 <1> 슬롯 이동시키겠네.</br>",
-      "<모든 효과>의 단계를 위로 <1> 슬롯 씩 옮겨드리죠.</br>",
+      "<모든 효과>의 단계를  위로 <1> 슬롯 씩 옮겨주겠어.",
+      "<모든 효과>의 단계를 위로 <1> 슬롯 이동시키겠네.",
+      "<모든 효과>의 단계를 위로 <1> 슬롯 씩 옮겨드리죠.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "shiftAll",
         targetType: "none",
@@ -7609,14 +7609,14 @@ const data: CouncilData[] = [
     pickupRatio: 625000,
     range: [0, 0],
     descriptions: [
-      "<모든 효과>의 단계를  아래로 <1> 슬롯 씩 옮겨주겠어.</br>",
-      "<모든 효과>의 단계를 아래로 <1> 슬롯 이동시키겠네.</BR>",
-      "<모든 효과>의 단계를 아래로 <1> 슬롯 씩 옮겨드리죠.</br>",
+      "<모든 효과>의 단계를  아래로 <1> 슬롯 씩 옮겨주겠어.",
+      "<모든 효과>의 단계를 아래로 <1> 슬롯 이동시키겠네.",
+      "<모든 효과>의 단계를 아래로 <1> 슬롯 씩 옮겨드리죠.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "shiftAll",
         targetType: "none",
@@ -7635,13 +7635,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.",
-      "<자네가 선택한> 효과의 모든 단계를 다른 효과에 임의로 분배하겠네. 좋은 결과가 나오길 바라네.</br>",
-      "<당신이 택한> 효과의 단계를 전부 다른 효과에 나누도록 하죠. 당신이 원하는 대로 이뤄지길.</br>",
+      "<자네가 선택한> 효과의 모든 단계를 다른 효과에 임의로 분배하겠네. 좋은 결과가 나오길 바라네.",
+      "<당신이 택한> 효과의 단계를 전부 다른 효과에 나누도록 하죠. 당신이 원하는 대로 이뤄지길.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "redistributeSelectedToOthers",
         targetType: "userSelect",
@@ -7660,13 +7660,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.",
-      "<최하 단계> 효과 <1>개의 모든 단계를 다른 효과에 임의로 분배하겠네. 좋은 결과가 나오길 바라네.</br>",
-      "<최하 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누도록 하죠. 당신이 원하는 대로 이뤄지길.</br>",
+      "<최하 단계> 효과 <1>개의 모든 단계를 다른 효과에 임의로 분배하겠네. 좋은 결과가 나오길 바라네.",
+      "<최하 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누도록 하죠. 당신이 원하는 대로 이뤄지길.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "redistributeMinToOthers",
         targetType: "none",
@@ -7685,13 +7685,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.",
-      "<최고 단계> 효과 <1>개의 모든 단계를 다른 효과에 임의로 분배하겠네. 좋은 결과가 나오길 바라네.</br>",
-      "<최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누도록 하죠. 당신이 원하는 대로 이뤄지길.</br>",
+      "<최고 단계> 효과 <1>개의 모든 단계를 다른 효과에 임의로 분배하겠네. 좋은 결과가 나오길 바라네.",
+      "<최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누도록 하죠. 당신이 원하는 대로 이뤄지길.",
     ],
     slotType: 3,
     type: "chaos",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "redistributeMaxToOthers",
         targetType: "none",
@@ -7716,7 +7716,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "chaosLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7750,7 +7750,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "chaosLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7778,13 +7778,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, <모든 효과>의 단계를 임의로 재분배 하겠다. 행운을 빌지.",
-      "연금술이 마무리되고 있군. <자네가 선택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 재분배하겠네.</br> 좋은 결과가 나오길 바라네.</br>",
-      "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 재분배하죠.</br> 당신이 원하는 대로 이뤄지길.</br>",
+      "연금술이 마무리되고 있군. <자네가 선택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 재분배하겠네. 좋은 결과가 나오길 바라네.",
+      "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 재분배하죠. 당신이 원하는 대로 이뤄지길.",
     ],
     slotType: 3,
     type: "chaosLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7812,13 +7812,13 @@ const data: CouncilData[] = [
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, <모든 효과>의 단계를 임의로 뒤섞도록 하겠다. 행운을 빌지.",
-      "연금술이 마무리되고 있군. <자네가 선택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 뒤섞겠네.</br> 좋은 결과가 나오길 바라네.</br>",
-      "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 뒤섞어드리죠.</br> 당신이 원하는 대로 이뤄지길.</br>",
+      "연금술이 마무리되고 있군. <자네가 선택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 뒤섞겠네. 좋은 결과가 나오길 바라네.",
+      "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 뒤섞어드리죠. 당신이 원하는 대로 이뤄지길.",
     ],
     slotType: 3,
     type: "chaosLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",
@@ -7852,7 +7852,7 @@ const data: CouncilData[] = [
     slotType: 3,
     type: "chaosLock",
     applyLimit: 99,
-    logic: [
+    logics: [
       {
         type: "lockTarget",
         targetType: "userSelect",

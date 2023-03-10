@@ -1,6 +1,7 @@
-import { getCouncilById } from "./council";
-import { queryEffectsProb } from "./effect";
-import { GameConfiguration, GameState } from "./interface";
+import { getCouncilDescription, getCouncilLogics, runLogic } from "./council";
+import { getTargets } from "./council/target";
+import { GameConfiguration, GameState, UiState } from "./interface";
+import { queryMutationResults } from "./mutation";
 import chance from "./rng";
 import * as sageService from "./sage";
 
@@ -34,93 +35,100 @@ export function getInitialGameState(config: GameConfiguration): GameState {
       {
         name: "자원의 축복",
         value: 0,
-        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "무기 공격력",
         value: 0,
-        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "민첩",
         value: 0,
-        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "보스 피해",
         value: 0,
-        luckyRatio: 0.1,
         isLocked: false,
       },
       {
         name: "무력화",
         value: 0,
-        luckyRatio: 0.1,
         isLocked: false,
       },
     ],
     mutations: [],
-    selectedSageIndex: -1,
   };
 
   return sageService.updateCouncils(state);
 }
 
-export function getSageDescription(state: GameState, index: number): string {
-  return sageService.getCouncilDescription(state, index);
+export function getInitialUiState(): UiState {
+  return {
+    selectedSageIndex: null,
+    selectedEffectIndex: null,
+  };
 }
 
-export function applyCouncil(
-  state: GameState,
-  sageIndex: number,
-  effectIndex?: number
-): GameState {
-  const sage = state.sages[sageIndex];
-  const council = getCouncilById(sage.councilId);
+export function getSageDescription(state: GameState, index: number): string {
+  return getCouncilDescription(state, index);
+}
 
-  const counciledState = council.onCouncil
-    ? council.onCouncil(state, sageIndex, effectIndex)
-    : state;
+export function requireEffectSelection(state: GameState, ui: UiState): boolean {
+  if (ui.selectedSageIndex === null) {
+    return false;
+  }
+
+  const sage = state.sages[ui.selectedSageIndex];
+  const councilLogics = getCouncilLogics(sage.councilId);
+
+  return councilLogics.some((logic) => logic.targetType === "userSelect");
+}
+
+export function applyCouncil(state: GameState, ui: UiState): GameState {
+  if (ui.selectedSageIndex === null) {
+    throw new Error("Sage is not selected");
+  }
+  if (requireEffectSelection(state, ui) && ui.selectedEffectIndex == null) {
+    throw new Error("Effect is not selected");
+  }
+
+  const sage = state.sages[ui.selectedSageIndex];
+  const logics = getCouncilLogics(sage.councilId);
+
+  const counciledState = logics.reduce(
+    (acc, logic) => runLogic(acc, logic, getTargets(acc, ui, logic)),
+    state
+  );
 
   return {
     ...counciledState,
-    selectedSageIndex: sageIndex,
     phase: "enchant",
   };
 }
 
-export function patchEnchantCouncil(state: GameState): GameState {
-  const { sages } = state;
-  const selectedSage = sages[state.selectedSageIndex];
-  const council = getCouncilById(selectedSage.councilId);
-
-  if (council.onEnchant) {
-    return council.onEnchant(state, state.selectedSageIndex);
+export function enchant(state: GameState, ui: UiState): GameState {
+  if (ui.selectedSageIndex === null) {
+    throw new Error("Sage is not selected");
   }
 
-  return state;
-}
-
-export function enchant(state: GameState): GameState {
-  const patchedState = patchEnchantCouncil(state);
-  const weightProb = queryEffectsProb(patchedState);
+  const { pickRatios, luckyRatios, enchantEffectCount, enchantIncreaseAmount } =
+    queryMutationResults(state);
 
   let effects = [...state.effects];
-  for (let i = 0; i < patchedState.enchantEffectCount; i += 1) {
-    const selectedEffectIndex = chance.weighted([0, 1, 2, 3, 4], weightProb);
-    const { luckyRatio } = patchedState.effects[selectedEffectIndex];
-    weightProb[selectedEffectIndex] = 0;
+  for (let i = 0; i < enchantEffectCount; i += 1) {
+    const selectedEffectIndex = chance.weighted([0, 1, 2, 3, 4], pickRatios);
+    pickRatios[selectedEffectIndex] = 0;
 
+    const luckyRatio = luckyRatios[selectedEffectIndex];
     const isLucky = chance.bool({ likelihood: luckyRatio * 100 });
 
     effects = effects.map((effect, index) => {
       if (index === selectedEffectIndex) {
         return {
           ...effect,
-          value: effect.value + state.enchantIncreaseAmount + (isLucky ? 1 : 0),
+          value: effect.value + enchantIncreaseAmount + (isLucky ? 1 : 0),
         };
       }
 
@@ -128,15 +136,23 @@ export function enchant(state: GameState): GameState {
     });
   }
 
+  const mutations = state.mutations
+    .map((mutation) => ({
+      ...mutation,
+      remainTurn: mutation.remainTurn - 1,
+    }))
+    .filter((mutation) => mutation.remainTurn > 0);
+
   const turnLeft = state.turnLeft - 1;
   const nextPhase = turnLeft === 0 ? "done" : "council";
 
   return sageService.updateCouncils({
     ...state,
     effects,
+    mutations,
     turnLeft,
     phase: nextPhase,
-    sages: sageService.updatePowers(state.sages, state.selectedSageIndex),
+    sages: sageService.updatePowers(state.sages, ui.selectedSageIndex),
   });
 }
 
@@ -148,17 +164,5 @@ export function reroll(state: GameState): GameState {
   return {
     ...sageService.updateCouncils(state),
     rerollLeft: state.rerollLeft - 1,
-  };
-}
-
-// TODO: Sage Service를 public으로 제공하고, 여기는 제거할것
-export function updateSagePower(
-  state: GameState,
-  sageIndex: number
-): GameState {
-  return {
-    ...state,
-    turnLeft: state.turnLeft - 1,
-    sages: sageService.updatePowers(state.sages, sageIndex),
   };
 }

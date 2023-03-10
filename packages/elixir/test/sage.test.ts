@@ -9,8 +9,6 @@ function sage(type: SageType, power: number): SageState {
     power,
     isRemoved: false,
     councilId: "",
-    effectIndex: 0,
-    effectIndex2: 0,
   };
 }
 

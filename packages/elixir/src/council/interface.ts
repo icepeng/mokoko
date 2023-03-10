@@ -67,5 +67,5 @@ export interface CouncilData {
   slotType: 0 | 1 | 2 | 3;
   applyLimit: number;
   applyImmediately: boolean;
-  logic: CouncilLogicData[];
+  logics: CouncilLogicData[];
 }

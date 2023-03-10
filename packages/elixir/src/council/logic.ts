@@ -1,19 +1,17 @@
 import { getInitialGameState } from "../game";
-import { GameState, Mutation, UiState } from "../interface";
+import { GameState, Mutation } from "../interface";
 import chance from "../rng";
+import { clamp } from "../util";
 import { CouncilLogicData, CouncilLogicType } from "./interface";
-import getTargets from "./target";
 import { cycle, partition } from "./util";
 
 // 이번 연성에서 {0} 효과가 연성될 확률을 x% 올려주지.
 // 남은 모든 연성에서 {0} 효과가 연성될 확률을 x% 올려주지.
 function mutateProb(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const targets = getTargets(state, ui, logic);
-
   const mutations: Mutation[] = targets.map((index) => {
     return {
       target: "prob",
@@ -33,11 +31,9 @@ function mutateProb(
 // 남은 모든 연성에서 {0} 효과의 대성공 확률을 x% 올려주지.
 function mutateLuckyRatio(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const targets = getTargets(state, ui, logic);
-
   const mutations: Mutation[] = targets.map((index) => {
     return {
       target: "luckyRatio",
@@ -56,11 +52,9 @@ function mutateLuckyRatio(
 // <{0}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.
 function increaseTargetWithRatio(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const targets = getTargets(state, ui, logic);
-
   const effects = state.effects.map((eff, index) => {
     if (targets.includes(index)) {
       const isSuccess =
@@ -71,7 +65,7 @@ function increaseTargetWithRatio(
       if (isSuccess) {
         return {
           ...eff,
-          value: eff.value + logic.value[0],
+          value: clamp(eff.value + logic.value[0], state.config.maxEnchant),
         };
       }
       return eff;
@@ -89,11 +83,9 @@ function increaseTargetWithRatio(
 // <{0}> 효과의 단계를 [<+1>~<+2>]만큼 올려주지.
 function increaseTargetRanged(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const targets = getTargets(state, ui, logic);
-
   const effects = state.effects.map((eff, index) => {
     if (targets.includes(index)) {
       const diff = chance.integer({
@@ -103,7 +95,7 @@ function increaseTargetRanged(
 
       return {
         ...eff,
-        value: eff.value + diff,
+        value: clamp(eff.value + diff, state.config.maxEnchant),
       };
     }
 
@@ -119,8 +111,8 @@ function increaseTargetRanged(
 // 대신 기회를 2회 소모하겠군.
 function decreaseTurnLeft(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   return {
     ...state,
@@ -131,8 +123,8 @@ function decreaseTurnLeft(
 // <모든 효과>의 단계를 뒤섞도록 하지. 어떻게 뒤섞일지 보자고.
 function shuffleAll(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const effects = chance.shuffle(state.effects);
 
@@ -145,23 +137,21 @@ function shuffleAll(
 // 이번에는 <{0}> 효과를 <2>단계 연성해주지.
 function setEnchantTargetAndAmount(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const targets = getTargets(state, ui, logic);
-
   const mutations = targets.flatMap<Mutation>((index) => {
     return [
       {
         target: "prob",
         index,
-        value: logic.value[0] / 10000,
+        value: 1,
         remainTurn: logic.remainTurn,
       },
       {
         target: "enchantIncreaseAmount",
         index: -1,
-        value: logic.value[1],
+        value: logic.value[0],
         remainTurn: logic.remainTurn,
       },
     ];
@@ -174,10 +164,10 @@ function setEnchantTargetAndAmount(
 }
 
 // <임의의 효과> <1>개의 봉인을 해제하고, 다른 효과 <1>개를 봉인해주지.
-function unlockTargetAndLockOther(
+function unlockAndLockOther(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const lockedIndexes = [0, 1, 2, 3, 4].filter(
     (index) => state.effects[index].isLocked
@@ -217,8 +207,8 @@ function unlockTargetAndLockOther(
 // <네가 고르는> 슬롯의 효과를 바꿔주지. 어떤 효과일지 보자고.
 function changeEffect(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   return state;
 }
@@ -226,11 +216,9 @@ function changeEffect(
 // <{0}> 효과를 봉인하겠다.
 function lockTarget(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const targets = getTargets(state, ui, logic);
-
   const effects = state.effects.map((eff, index) => {
     if (targets.includes(index)) {
       return {
@@ -251,8 +239,8 @@ function lockTarget(
 // 조언이 더 필요한가? 다른 조언 보기 횟수를 <2>회 늘려주지.
 function increaseReroll(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   return {
     ...state,
@@ -263,8 +251,8 @@ function increaseReroll(
 // 남은 모든 연성에서 비용이 <20%> 덜 들겠어.
 function decreasePrice(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   return state;
 }
@@ -272,8 +260,8 @@ function decreasePrice(
 // 이대론 안되겠어. 엘릭서의 효과와 단계를 <초기화>하겠다.
 function restart(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   return getInitialGameState(state.config);
 }
@@ -281,8 +269,8 @@ function restart(
 // 이번에 연성되는 효과는 <2>단계 올라갈거야.
 function setEnchantIncreaseAmount(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const mutation: Mutation = {
     target: "enchantIncreaseAmount",
@@ -300,8 +288,8 @@ function setEnchantIncreaseAmount(
 // 이번에는 <2>개의 효과를 동시에 연성하겠어.
 function setEnchantEffectCount(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const mutation: Mutation = {
     target: "enchantEffectCount",
@@ -319,11 +307,9 @@ function setEnchantEffectCount(
 // <{0}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.
 function setValueRanged(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const targets = getTargets(state, ui, logic);
-
   const effects = state.effects.map((eff, index) => {
     if (targets.includes(index)) {
       const value = chance.integer({
@@ -349,19 +335,16 @@ function setValueRanged(
 // <모든 효과>의 단계를 재분배하지. 어떻게 나뉠지 보자고.
 function redistributeAll(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const totalValue = state.effects
-    .filter((eff) => !eff.isLocked)
-    .reduce((acc, eff) => acc + eff.value, 0);
+  const totalValue = state.effects.reduce((acc, eff) => acc + eff.value, 0);
 
-  const partitionsArr = partition(totalValue, 5).filter((arr, i) => {
-    if (state.effects[i].isLocked) {
-      return arr[i] === state.effects[i].value;
-    }
-    return true;
-  });
+  const partitionsArr = partition(
+    totalValue,
+    5,
+    state.effects.map((eff) => (eff.isLocked ? eff.value : null))
+  );
 
   const picked = chance.pickone(partitionsArr);
 
@@ -385,20 +368,19 @@ function redistributeAll(
 // <네가 고르는> 효과의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
 function redistributeSelectedToOthers(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  const selectedValue = state.effects[ui.selectedEffectIndex].value;
+  const target = targets[0];
+  const selectedValue = state.effects[target].value;
 
-  const partitionsArr = partition(selectedValue, 5).filter((arr, i) => {
-    if (i === ui.selectedEffectIndex) {
-      return arr[i] === state.effects[i].value;
-    }
-    if (state.effects[i].isLocked) {
-      return arr[i] === state.effects[i].value;
-    }
-    return true;
-  });
+  const partitionsArr = partition(
+    selectedValue,
+    5,
+    state.effects.map((eff, i) =>
+      eff.isLocked ? 0 : i === target ? eff.value : null
+    )
+  );
 
   const picked = chance.pickone(partitionsArr);
 
@@ -409,7 +391,7 @@ function redistributeSelectedToOthers(
 
     return {
       ...eff,
-      value: picked[index],
+      value: clamp(eff.value + picked[index], state.config.maxEnchant),
     };
   });
 
@@ -422,8 +404,8 @@ function redistributeSelectedToOthers(
 // <모든 효과>의 단계를 위로 <1> 슬롯 씩 옮겨주겠어.
 function shiftAll(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const values = state.effects.map((eff) => eff.value);
   const direction = logic.value[0] as 0 | 1; // 0=up, 1=down
@@ -455,8 +437,8 @@ function shiftAll(
 // <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔줄게.
 function swapTargets(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const [target1, target2] = logic.value;
 
@@ -479,8 +461,8 @@ function swapTargets(
 // <최고 단계> 효과 <1>개와  <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.
 function swapMinMax(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const values = state.effects
     .filter((eff) => !eff.isLocked)
@@ -523,8 +505,8 @@ function swapMinMax(
 // 소진
 function exhaust(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const sageIndex = logic.value[0];
 
@@ -548,8 +530,8 @@ function exhaust(
 // <최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최하 단계> 효과 <1>개의 단계는 <1> 내려갈 거야.
 function increaseMaxAndDecreaseTarget(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const values = state.effects
     .filter((eff) => !eff.isLocked)
@@ -562,19 +544,17 @@ function increaseMaxAndDecreaseTarget(
 
   const pickedMax = chance.pickone(maxIndexes);
 
-  const targets = getTargets(state, ui, logic);
-
   const effects = state.effects.map((eff, index) => {
     if (index === pickedMax) {
       return {
         ...eff,
-        value: eff.value + logic.value[0],
+        value: clamp(eff.value + logic.value[0], state.config.maxEnchant),
       };
     }
     if (targets.includes(index)) {
       return {
         ...eff,
-        value: eff.value + logic.value[1],
+        value: clamp(eff.value + logic.value[1], state.config.maxEnchant),
       };
     }
 
@@ -590,8 +570,8 @@ function increaseMaxAndDecreaseTarget(
 // <최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <2> 내려갈 거야.
 function increaseMinAndDecreaseTarget(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const values = state.effects
     .filter((eff) => !eff.isLocked)
@@ -604,19 +584,17 @@ function increaseMinAndDecreaseTarget(
 
   const pickedMin = chance.pickone(minIndexes);
 
-  const targets = getTargets(state, ui, logic);
-
   const effects = state.effects.map((eff, index) => {
     if (index === pickedMin) {
       return {
         ...eff,
-        value: eff.value + logic.value[0],
+        value: clamp(eff.value + logic.value[0], state.config.maxEnchant),
       };
     }
     if (targets.includes(index)) {
       return {
         ...eff,
-        value: eff.value + logic.value[1],
+        value: clamp(eff.value + logic.value[1], state.config.maxEnchant),
       };
     }
 
@@ -632,8 +610,8 @@ function increaseMinAndDecreaseTarget(
 // <최하 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
 function redistributeMinToOthers(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const values = state.effects
     .filter((eff) => !eff.isLocked)
@@ -648,15 +626,13 @@ function redistributeMinToOthers(
 
   const selectedValue = state.effects[pickedMin].value;
 
-  const partitionsArr = partition(selectedValue, 5).filter((arr, i) => {
-    if (i === ui.selectedEffectIndex) {
-      return arr[i] === state.effects[i].value;
-    }
-    if (state.effects[i].isLocked) {
-      return arr[i] === state.effects[i].value;
-    }
-    return true;
-  });
+  const partitionsArr = partition(
+    selectedValue,
+    5,
+    state.effects.map((eff, i) =>
+      eff.isLocked ? 0 : i === pickedMin ? eff.value : null
+    )
+  );
 
   const picked = chance.pickone(partitionsArr);
 
@@ -667,7 +643,7 @@ function redistributeMinToOthers(
 
     return {
       ...eff,
-      value: picked[index],
+      value: clamp(eff.value + picked[index], state.config.maxEnchant),
     };
   });
 
@@ -680,8 +656,8 @@ function redistributeMinToOthers(
 // <최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
 function redistributeMaxToOthers(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const values = state.effects
     .filter((eff) => !eff.isLocked)
@@ -696,15 +672,13 @@ function redistributeMaxToOthers(
 
   const selectedValue = state.effects[pickedMax].value;
 
-  const partitionsArr = partition(selectedValue, 5).filter((arr, i) => {
-    if (i === ui.selectedEffectIndex) {
-      return arr[i] === state.effects[i].value;
-    }
-    if (state.effects[i].isLocked) {
-      return arr[i] === state.effects[i].value;
-    }
-    return true;
-  });
+  const partitionsArr = partition(
+    selectedValue,
+    5,
+    state.effects.map((eff, i) =>
+      eff.isLocked ? 0 : i === pickedMax ? eff.value : null
+    )
+  );
 
   const picked = chance.pickone(partitionsArr);
 
@@ -715,7 +689,7 @@ function redistributeMaxToOthers(
 
     return {
       ...eff,
-      value: picked[index],
+      value: clamp(eff.value + picked[index], state.config.maxEnchant),
     };
   });
 
@@ -728,8 +702,8 @@ function redistributeMaxToOthers(
 // <최고 단계> 효과 <1>개의 단계를 <1> 소모하겠다. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.
 function decreaseMaxAndSwapMinMax(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const values = state.effects
     .filter((eff) => !eff.isLocked)
@@ -756,7 +730,7 @@ function decreaseMaxAndSwapMinMax(
     } else if (index === pickedMin) {
       return {
         ...eff,
-        value: max - 1,
+        value: clamp(max - 1, state.config.maxEnchant),
       };
     }
 
@@ -772,8 +746,8 @@ function decreaseMaxAndSwapMinMax(
 // <{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.
 function decreaseFirstTargetAndSwap(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
   const [target1, target2] = logic.value;
 
@@ -789,7 +763,7 @@ function decreaseFirstTargetAndSwap(
     } else if (index === target2) {
       return {
         ...eff,
-        value: value1 - 1,
+        value: clamp(value1 - 1, state.config.maxEnchant),
       };
     }
 
@@ -804,7 +778,7 @@ function decreaseFirstTargetAndSwap(
 
 const logicFns: Record<
   CouncilLogicType,
-  (state: GameState, ui: UiState, logic: CouncilLogicData) => GameState
+  (state: GameState, logic: CouncilLogicData, targets: number[]) => GameState
 > = {
   mutateProb,
   mutateLuckyRatio,
@@ -813,7 +787,7 @@ const logicFns: Record<
   decreaseTurnLeft,
   shuffleAll,
   setEnchantTargetAndAmount,
-  unlockTargetAndLockOther,
+  unlockAndLockOther,
   changeEffect,
   lockTarget,
   increaseReroll,
@@ -836,12 +810,10 @@ const logicFns: Record<
   decreaseFirstTargetAndSwap,
 };
 
-function runLogic(
+export function runLogic(
   state: GameState,
-  ui: UiState,
-  logic: CouncilLogicData
+  logic: CouncilLogicData,
+  targets: number[]
 ): GameState {
-  return logicFns[logic.type](state, ui, logic);
+  return logicFns[logic.type](state, logic, targets);
 }
-
-export default runLogic;
