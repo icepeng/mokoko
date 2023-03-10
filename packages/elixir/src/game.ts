@@ -1,7 +1,12 @@
 import { getCouncilDescription, getCouncilLogics, runLogic } from "./council";
 import { getTargets } from "./council/target";
 import { GameConfiguration, GameState, UiState } from "./interface";
-import { queryMutationResults } from "./mutation";
+import {
+  queryEnchantEffectCount,
+  queryEnchantIncreaseAmount,
+  queryLuckyRatios,
+  queryPickRatios,
+} from "./mutation";
 import chance from "./rng";
 import * as sageService from "./sage";
 
@@ -113,11 +118,14 @@ export function enchant(state: GameState, ui: UiState): GameState {
     throw new Error("Sage is not selected");
   }
 
-  const { pickRatios, luckyRatios, enchantEffectCount, enchantIncreaseAmount } =
-    queryMutationResults(state);
+  const enchantEffectCount = queryEnchantEffectCount(state);
+  const enchantIncreaseAmount = queryEnchantIncreaseAmount(state);
+  const luckyRatios = queryLuckyRatios(state);
 
   let effects = [...state.effects];
   for (let i = 0; i < enchantEffectCount; i += 1) {
+    const pickRatios = queryPickRatios(state);
+
     const selectedEffectIndex = chance.weighted([0, 1, 2, 3, 4], pickRatios);
     pickRatios[selectedEffectIndex] = 0;
 
@@ -146,14 +154,20 @@ export function enchant(state: GameState, ui: UiState): GameState {
   const turnLeft = state.turnLeft - 1;
   const nextPhase = turnLeft === 0 ? "done" : "council";
 
-  return sageService.updateCouncils({
+  const nextState: GameState = {
     ...state,
     effects,
     mutations,
     turnLeft,
     phase: nextPhase,
     sages: sageService.updatePowers(state.sages, ui.selectedSageIndex),
-  });
+  };
+
+  if (nextPhase === "done") {
+    return nextState;
+  }
+
+  return sageService.updateCouncils(nextState);
 }
 
 export function reroll(state: GameState): GameState {

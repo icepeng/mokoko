@@ -4,7 +4,6 @@ import chance from "../rng";
 import councilData from "./data";
 import { CouncilData, CouncilType } from "./interface";
 import { runLogicGuard } from "./logic-guard";
-import { checkLockNeeded } from "./util";
 
 const councilRecord = Object.fromEntries(
   councilData.map((item) => [item.id, item])
@@ -16,6 +15,15 @@ function isLawfulFull(sage: SageState) {
 
 function isChaosFull(sage: SageState) {
   return sage.type === "chaos" && sage.power === MAX_CHAOS;
+}
+
+function checkLockNeeded(state: GameState) {
+  const lockedEffectCount = state.effects.filter(
+    (effect) => effect.isLocked
+  ).length;
+  const toLock = 3 - lockedEffectCount;
+
+  return state.turnLeft <= toLock;
 }
 
 function getCouncilType(state: GameState, sageIndex: number): CouncilType {

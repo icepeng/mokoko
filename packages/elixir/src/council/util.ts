@@ -43,12 +43,3 @@ export function cycle(n: number, mod: number, direction: 0 | 1) {
     return (n + 1) % mod;
   }
 }
-
-export function checkLockNeeded(state: GameState) {
-  const lockedEffectCount = state.effects.filter(
-    (effect) => effect.isLocked
-  ).length;
-  const toLock = 3 - lockedEffectCount;
-
-  return state.turnLeft <= toLock;
-}

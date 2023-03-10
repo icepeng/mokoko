@@ -1,8 +1,6 @@
 import { isEffectMutable } from "../effect";
-import { GameState, UiState } from "../interface";
+import { GameState } from "../interface";
 import { CouncilLogicData, CouncilLogicType } from "./interface";
-import { getTargets } from "./target";
-import { checkLockNeeded } from "./util";
 
 // 이번 연성에서 {0} 효과가 연성될 확률을 x% 올려주지.
 // 남은 모든 연성에서 {0} 효과가 연성될 확률을 x% 올려주지.
@@ -135,7 +133,10 @@ function setEnchantEffectCount(
   state: GameState,
   logic: CouncilLogicData
 ): boolean {
-  return true;
+  return (
+    state.effects.filter((eff) => isEffectMutable(eff, state.config.maxEnchant))
+      .length >= logic.value[0]
+  );
 }
 
 // <{0}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.

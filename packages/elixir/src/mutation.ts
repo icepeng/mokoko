@@ -1,7 +1,7 @@
 import { isEffectMutable } from "./effect";
 import { GameState } from "./interface";
 
-export function queryMutationResults(state: GameState) {
+export function queryPickRatios(state: GameState) {
   const mutableCount = state.effects.filter((eff) =>
     isEffectMutable(eff, state.config.maxEnchant)
   ).length;
@@ -11,16 +11,16 @@ export function queryMutationResults(state: GameState) {
       ? 1 / mutableCount
       : 0
   );
-  const luckyRatios = Array.from({ length: 5 }, () => 0.1);
-  let enchantEffectCount = 1;
-  let enchantIncreaseAmount = 1;
 
-  for (const mutation of state.mutations) {
+  if (mutableCount === 1) {
+    return pickRatios;
+  }
+
+  const probMutations = state.mutations.filter(
+    (mutation) => mutation.target === "prob"
+  );
+  for (const mutation of probMutations) {
     if (mutation.target === "prob") {
-      if (mutableCount === 1) {
-        continue;
-      }
-
       const targetProb = pickRatios[mutation.index];
       const updatedProb = Math.max(Math.min(targetProb + mutation.value, 1), 0);
       const actualDiff = updatedProb - targetProb;
@@ -29,27 +29,42 @@ export function queryMutationResults(state: GameState) {
         if (i === mutation.index) {
           pickRatios[i] = updatedProb;
         } else {
-          if (targetProb === 1) {
-            pickRatios[i] = actualDiff;
-          } else {
-            pickRatios[i] = pickRatios[i] * (1 - actualDiff / (1 - targetProb));
-          }
+          pickRatios[i] = pickRatios[i] * (1 - actualDiff / (1 - targetProb));
         }
       }
     }
-    if (mutation.target === "luckyRatio") {
-      luckyRatios[mutation.index] = Math.max(
-        Math.min(luckyRatios[mutation.index] + mutation.value, 1),
-        0
-      );
-    }
-    if (mutation.target === "enchantEffectCount") {
-      enchantEffectCount = mutation.value;
-    }
-    if (mutation.target === "enchantIncreaseAmount") {
-      enchantIncreaseAmount = mutation.value;
-    }
   }
 
-  return { pickRatios, luckyRatios, enchantEffectCount, enchantIncreaseAmount };
+  return pickRatios;
+}
+
+export function queryLuckyRatios(state: GameState) {
+  const luckyRatios = Array.from({ length: 5 }, () => 0.1);
+
+  const luckyRatioMutations = state.mutations.filter(
+    (mutation) => mutation.target === "luckyRatio"
+  );
+  for (const mutation of luckyRatioMutations) {
+    luckyRatios[mutation.index] = Math.max(
+      Math.min(luckyRatios[mutation.index] + mutation.value, 1),
+      0
+    );
+  }
+
+  return luckyRatios;
+}
+
+export function queryEnchantEffectCount(state: GameState) {
+  return (
+    state.mutations.find((mutation) => mutation.target === "enchantEffectCount")
+      ?.value ?? 1
+  );
+}
+
+export function queryEnchantIncreaseAmount(state: GameState) {
+  return (
+    state.mutations.find(
+      (mutation) => mutation.target === "enchantIncreaseAmount"
+    )?.value ?? 1
+  );
 }
