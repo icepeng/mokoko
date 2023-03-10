@@ -18,7 +18,7 @@ export type CouncilLogicType =
   | "redistributeAll" // 17
   | "redistributeSelectedToOthers" // 18
   | "shiftAll" // 19
-  | "swapTargets" // 20
+  | "swapValues" // 20
   | "swapMinMax" // 23
   | "exhaust" // 24
   | "increaseMaxAndDecreaseTarget" // 25

@@ -4922,7 +4922,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -4947,7 +4947,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -4972,7 +4972,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -4997,7 +4997,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -5022,7 +5022,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -5047,7 +5047,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -5072,7 +5072,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -5097,7 +5097,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -5122,7 +5122,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -5147,7 +5147,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "swapTargets",
+        type: "swapValues",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,

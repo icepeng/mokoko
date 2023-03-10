@@ -443,7 +443,7 @@ function shiftAll(
 }
 
 // <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔줄게.
-function swapTargets(
+function swapValues(
   state: GameState,
   logic: CouncilLogicData,
   targets: number[]
@@ -452,9 +452,9 @@ function swapTargets(
 
   const effects = state.effects.map((eff, index) => {
     if (index === target1) {
-      return { ...state.effects[target2] };
+      return { ...eff, value: state.effects[target2].value };
     } else if (index === target2) {
-      return { ...state.effects[target1] };
+      return { ...eff, value: state.effects[target1].value };
     }
 
     return eff;
@@ -807,7 +807,7 @@ const logicFns: Record<
   redistributeAll,
   redistributeSelectedToOthers,
   shiftAll,
-  swapTargets,
+  swapValues,
   swapMinMax,
   exhaust,
   increaseMaxAndDecreaseTarget,

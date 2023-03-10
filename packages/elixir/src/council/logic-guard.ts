@@ -159,7 +159,7 @@ function shiftAll(state: GameState, logic: CouncilLogicData): boolean {
 }
 
 // <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔줄게.
-function swapTargets(state: GameState, logic: CouncilLogicData): boolean {
+function swapValues(state: GameState, logic: CouncilLogicData): boolean {
   return (
     isEffectMutable(state.effects[logic.value[0]], state.config.maxEnchant) &&
     isEffectMutable(state.effects[logic.value[1]], state.config.maxEnchant)
@@ -262,7 +262,7 @@ const logicGuards: Record<
   redistributeAll,
   redistributeSelectedToOthers,
   shiftAll,
-  swapTargets,
+  swapValues,
   swapMinMax,
   exhaust,
   increaseMaxAndDecreaseTarget,
