@@ -39,6 +39,8 @@ export interface GameState {
   sages: SageState[];
 }
 
+export type Action = "sage1" | "sage2" | "sage3" | "reroll";
+
 export interface UiState {
   selectedSageIndex: number | null;
   selectedEffectIndex: number | null;

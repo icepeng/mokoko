@@ -121,11 +121,13 @@ export function enchant(state: GameState, ui: UiState): GameState {
   const enchantEffectCount = queryEnchantEffectCount(state);
   const enchantIncreaseAmount = queryEnchantIncreaseAmount(state);
   const luckyRatios = queryLuckyRatios(state);
+  const pickRatios = queryPickRatios(state);
 
   let effects = [...state.effects];
   for (let i = 0; i < enchantEffectCount; i += 1) {
-    const pickRatios = queryPickRatios(state);
-
+    if (pickRatios.every((ratio) => ratio === 0)) {
+      break;
+    }
     const selectedEffectIndex = chance.weighted([0, 1, 2, 3, 4], pickRatios);
     pickRatios[selectedEffectIndex] = 0;
 

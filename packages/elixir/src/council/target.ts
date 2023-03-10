@@ -1,4 +1,3 @@
-import { isEffectMutable } from "../effect";
 import { GameState, UiState } from "../interface";
 import chance from "../rng";
 import { CouncilLogicData, CouncilTargetType } from "./interface";
@@ -8,9 +7,7 @@ function none(state: GameState, ui: UiState, logic: CouncilLogicData) {
 }
 
 function random(state: GameState, ui: UiState, logic: CouncilLogicData) {
-  const available = [0, 1, 2, 3, 4].filter((index) =>
-    isEffectMutable(state.effects[index], state.config.maxEnchant)
-  );
+  const available = [0, 1, 2, 3, 4];
 
   return chance.pickset(available, logic.targetCount);
 }
@@ -20,9 +17,7 @@ function proposed(state: GameState, ui: UiState, logic: CouncilLogicData) {
 }
 
 function minValue(state: GameState, ui: UiState, logic: CouncilLogicData) {
-  const available = [0, 1, 2, 3, 4].filter((index) =>
-    isEffectMutable(state.effects[index], state.config.maxEnchant)
-  );
+  const available = [0, 1, 2, 3, 4];
 
   const minValue = Math.min(
     ...available.map((index) => state.effects[index].value)
@@ -36,9 +31,7 @@ function minValue(state: GameState, ui: UiState, logic: CouncilLogicData) {
 }
 
 function maxValue(state: GameState, ui: UiState, logic: CouncilLogicData) {
-  const available = [0, 1, 2, 3, 4].filter((index) =>
-    isEffectMutable(state.effects[index], state.config.maxEnchant)
-  );
+  const available = [0, 1, 2, 3, 4];
 
   const maxValue = Math.max(
     ...available.map((index) => state.effects[index].value)
@@ -60,9 +53,7 @@ function userSelect(state: GameState, ui: UiState, logic: CouncilLogicData) {
 }
 
 function lteValue(state: GameState, ui: UiState, logic: CouncilLogicData) {
-  const available = [0, 1, 2, 3, 4].filter((index) =>
-    isEffectMutable(state.effects[index], state.config.maxEnchant)
-  );
+  const available = [0, 1, 2, 3, 4];
 
   return available.filter(
     (index) => state.effects[index].value <= logic.targetCondition

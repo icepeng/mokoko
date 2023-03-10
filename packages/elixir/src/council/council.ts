@@ -82,8 +82,8 @@ function isCouncilAvailable(
   sageIndex: number,
   pickedCouncils: string[]
 ) {
-  if (isTurnInRange(state, council)) {
-    return true;
+  if (!isTurnInRange(state, council)) {
+    return false;
   }
 
   if (pickedCouncils.includes(council.id)) {
@@ -113,7 +113,13 @@ export function pickCouncil(
   const weightTable = availableCouncils.map((council) => council.pickupRatio);
 
   let selected: CouncilData;
+  let cnt = 0;
   while (true) {
+    cnt++;
+    if (cnt > 1000) {
+      console.log(state, sageIndex, pickedCouncils);
+      throw new Error("Failed to pick council");
+    }
     selected = chance.weighted(availableCouncils, weightTable);
     if (selected.logics.every((logic) => runLogicGuard(state, logic))) {
       break;
