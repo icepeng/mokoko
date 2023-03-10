@@ -54,14 +54,24 @@ export function updatePowers(
 }
 
 export function updateCouncils(state: GameState): GameState {
+  const council1 = pickCouncil(state, 0, []);
+  const council2 = pickCouncil(state, 1, [council1]);
+  const council3 = pickCouncil(state, 2, [council1, council2]);
   return {
     ...state,
-    sages: state.sages.map((sage, index) => {
-      const councilId = pickCouncil(state, index);
-      return {
-        ...sage,
-        councilId,
-      };
-    }),
+    sages: [
+      {
+        ...state.sages[0],
+        councilId: council1,
+      },
+      {
+        ...state.sages[1],
+        councilId: council2,
+      },
+      {
+        ...state.sages[2],
+        councilId: council3,
+      },
+    ],
   };
 }

@@ -393,8 +393,8 @@ function redistributeSelectedToOthers(
   const picked = chance.pickone(partitionsArr);
 
   const effects = state.effects.map((eff, index) => {
-    if (eff.isLocked) {
-      return eff;
+    if (index === target) {
+      return { ...eff, value: 0 };
     }
 
     return {
@@ -637,16 +637,14 @@ function redistributeMinToOthers(
   const partitionsArr = partition(
     selectedValue,
     5,
-    state.effects.map((eff, i) =>
-      eff.isLocked ? 0 : i === pickedMin ? eff.value : null
-    )
+    state.effects.map((eff, i) => (eff.isLocked || i === pickedMin ? 0 : null))
   );
 
   const picked = chance.pickone(partitionsArr);
 
   const effects = state.effects.map((eff, index) => {
-    if (eff.isLocked) {
-      return eff;
+    if (index === pickedMin) {
+      return { ...eff, value: 0 };
     }
 
     return {
@@ -683,16 +681,17 @@ function redistributeMaxToOthers(
   const partitionsArr = partition(
     selectedValue,
     5,
-    state.effects.map((eff, i) =>
-      eff.isLocked ? 0 : i === pickedMax ? eff.value : null
-    )
+    state.effects.map((eff, i) => (eff.isLocked || i === pickedMax ? 0 : null))
   );
 
   const picked = chance.pickone(partitionsArr);
 
   const effects = state.effects.map((eff, index) => {
-    if (eff.isLocked) {
-      return eff;
+    if (index === pickedMax) {
+      return {
+        ...eff,
+        value: 0,
+      };
     }
 
     return {

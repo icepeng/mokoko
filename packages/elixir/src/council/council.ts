@@ -22,6 +22,10 @@ function getCouncilType(state: GameState, sageIndex: number): CouncilType {
   const sage = state.sages[sageIndex];
   const isLockNeeded = checkLockNeeded(state);
 
+  if (sage.isExhausted) {
+    return "exhausted";
+  }
+
   if (isLawfulFull(sage)) {
     if (isLockNeeded) {
       return "lawfulLock";
@@ -54,14 +58,20 @@ function isTurnInRange(state: GameState, council: CouncilData) {
   return turn >= council.range[0] && turn < council.range[1];
 }
 
-export function pickCouncil(state: GameState, sageIndex: number): string {
+export function pickCouncil(
+  state: GameState,
+  sageIndex: number,
+  pickedCouncils: string[]
+): string {
   const councilType = getCouncilType(state, sageIndex);
   const availableCouncils = councilData
     .filter((data) => data.type === councilType)
     .filter((data) => isTurnInRange(state, data))
     .filter((data) =>
-      data.logics.every((logic) => runLogicGuard(state, logic))
-    );
+      data.slotType === 3 ? true : data.slotType === sageIndex
+    )
+    .filter((data) => data.logics.every((logic) => runLogicGuard(state, logic)))
+    .filter((data) => !pickedCouncils.includes(data.id));
   if (availableCouncils.length === 0) {
     throw new Error("No council available");
   }

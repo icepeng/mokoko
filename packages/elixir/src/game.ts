@@ -15,19 +15,19 @@ export function getInitialGameState(config: GameConfiguration): GameState {
       {
         type: "none",
         power: 0,
-        isRemoved: false,
+        isExhausted: false,
         councilId: "",
       },
       {
         type: "none",
         power: 0,
-        isRemoved: false,
+        isExhausted: false,
         councilId: "",
       },
       {
         type: "none",
         power: 0,
-        isRemoved: false,
+        isExhausted: false,
         councilId: "",
       },
     ],

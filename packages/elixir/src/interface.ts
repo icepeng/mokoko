@@ -20,7 +20,7 @@ export type SageType = "none" | "lawful" | "chaos";
 export interface SageState {
   type: SageType;
   power: number;
-  isRemoved: boolean;
+  isExhausted: boolean;
   councilId: string;
 }
 

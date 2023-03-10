@@ -95,7 +95,16 @@ function changeEffect(state: GameState, logic: CouncilLogicData): boolean {
 
 // <{0}> 효과를 봉인하겠다.
 function lockTarget(state: GameState, logic: CouncilLogicData): boolean {
-  return checkLockNeeded(state);
+  const lockedCount = state.effects.filter((eff) => eff.isLocked).length;
+  if (lockedCount >= 3) {
+    return false;
+  }
+
+  if (logic.targetType === "proposed") {
+    return !state.effects[logic.targetCondition - 1].isLocked;
+  }
+
+  return true;
 }
 
 // 조언이 더 필요한가? 다른 조언 보기 횟수를 <2>회 늘려주지.

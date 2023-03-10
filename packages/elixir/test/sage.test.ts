@@ -7,7 +7,7 @@ function sage(type: SageType, power: number): SageState {
   return {
     type,
     power,
-    isRemoved: false,
+    isExhausted: false,
     councilId: "",
   };
 }
