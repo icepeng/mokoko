@@ -126,7 +126,15 @@ function shuffleAll(
   logic: CouncilLogicData,
   targets: number[]
 ): GameState {
-  const effects = chance.shuffle(state.effects);
+  const values = state.effects.map((eff) => eff.value);
+  const shuffledValues = chance.shuffle(values);
+
+  const effects = state.effects.map((eff, index) => {
+    return {
+      ...eff,
+      value: shuffledValues[index],
+    };
+  });
 
   return {
     ...state,
