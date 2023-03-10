@@ -1,32 +1,32 @@
 export type CouncilLogicType =
-  | "mutateProb"
-  | "mutateLuckyRatio"
-  | "increaseTargetWithRatio"
-  | "increaseTargetRanged"
-  | "decreaseTurnLeft"
-  | "shuffleAll"
-  | "setEnchantTargetAndAmount"
-  | "unlockTargetAndLockOther"
-  | "changeEffect"
-  | "lockTarget"
-  | "increaseReroll"
-  | "decreasePrice"
-  | "restart"
-  | "setEnchantIncreaseAmount"
-  | "setEnchantEffectCount"
-  | "setValueRanged"
-  | "redistributeAll"
-  | "redistributeSelectedToOthers"
-  | "shiftAll"
-  | "swapTargets"
-  | "swapMinMax"
-  | "exhaust"
-  | "increaseMaxAndDecreaseTarget"
-  | "increaseMinAndDecreaseTarget"
-  | "redistributeMinToOthers"
-  | "redistributeMaxToOthers"
-  | "decreaseMaxAndSwapMinMax"
-  | "decreaseFirstTargetAndSwap";
+  | "mutateProb" // 1
+  | "mutateLuckyRatio" // 2
+  | "increaseTargetWithRatio" // 3
+  | "increaseTargetRanged" // 4
+  | "decreaseTurnLeft" // 5
+  | "shuffleAll" // 6
+  | "setEnchantTargetAndAmount" // 7
+  | "unlockAndLockOther" // 8
+  | "changeEffect" // 9
+  | "lockTarget" // 10
+  | "increaseReroll" // 11
+  | "decreasePrice" // 12
+  | "restart" // 13
+  | "setEnchantIncreaseAmount" // 14
+  | "setEnchantEffectCount" // 15
+  | "setValueRanged" // 16
+  | "redistributeAll" // 17
+  | "redistributeSelectedToOthers" // 18
+  | "shiftAll" // 19
+  | "swapTargets" // 20
+  | "swapMinMax" // 23
+  | "exhaust" // 24
+  | "increaseMaxAndDecreaseTarget" // 25
+  | "increaseMinAndDecreaseTarget" // 26
+  | "redistributeMinToOthers" // 27
+  | "redistributeMaxToOthers" // 28
+  | "decreaseMaxAndSwapMinMax" // 29
+  | "decreaseFirstTargetAndSwap"; // 30
 
 export type CouncilTargetType =
   | "none"

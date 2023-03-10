@@ -113,33 +113,7 @@ test("queryMutationResults - complex", () => {
 test("queryMutationResults - complex 2", () => {
   // given
   const gameState: GameState = {
-    config: {
-      maxEnchant: 10,
-      totalTurn: 14,
-    },
-    phase: "council",
-    turnLeft: 1,
-    rerollLeft: 2,
-    sages: [
-      {
-        type: "chaos",
-        power: 5,
-        isRemoved: false,
-        councilId: "50004",
-      },
-      {
-        type: "lawful",
-        power: 2,
-        isRemoved: false,
-        councilId: "50000",
-      },
-      {
-        type: "chaos",
-        power: 2,
-        isRemoved: false,
-        councilId: "50002",
-      },
-    ],
+    ...getInitialGameState({ maxEnchant: 10, totalTurn: 14 }),
     effects: [
       {
         name: "민첩",
@@ -181,10 +155,7 @@ test("queryMutationResults - complex 2", () => {
   const { pickRatios } = queryMutationResults(gameState);
 
   // then
-  assert.equal(
-    postProcessPickRatios(pickRatios),
-    [0.00020925, 0.00032679, 0.00047304, 0.99851787, 0.00047304]
-  );
+  assert.equal(postProcessPickRatios(pickRatios), [0, 0, 1, 0, 0]);
 });
 
 test.run();

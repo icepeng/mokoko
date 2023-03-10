@@ -17,6 +17,10 @@ export function queryMutationResults(state: GameState) {
 
   for (const mutation of state.mutations) {
     if (mutation.target === "prob") {
+      if (mutableCount === 1) {
+        continue;
+      }
+
       const targetProb = pickRatios[mutation.index];
       const updatedProb = Math.max(Math.min(targetProb + mutation.value, 1), 0);
       const actualDiff = updatedProb - targetProb;
