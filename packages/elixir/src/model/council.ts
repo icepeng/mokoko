@@ -39,11 +39,18 @@ export type CouncilTargetType =
   | "oneThreeFive"
   | "twoFour";
 
-export interface CouncilLogic {
+export interface CouncilLogicData {
   type: CouncilLogicType;
   targetType: CouncilTargetType;
   targetCondition: number;
   targetCount: number;
+  ratio: number;
+  value: [number, number];
+  remainTurn: number;
+}
+
+export interface CouncilLogic {
+  type: CouncilLogicType;
   ratio: number;
   value: [number, number];
   remainTurn: number;
@@ -67,5 +74,5 @@ export interface Council {
   slotType: 0 | 1 | 2 | 3;
   applyLimit: number;
   applyImmediately: boolean;
-  logics: CouncilLogic[];
+  logics: CouncilLogicData[];
 }
