@@ -1,9 +1,9 @@
 import { Council, CouncilType } from "../model/council";
 
-export const councils: Council[] = [
+export const councils: readonly Council[] = [
   {
-    id: "31000",
-    pickupRatio: 72000,
+    id: "R4fhmY6g",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{0}> 효과가 연성될 확률을 <35>% 올려주지.",
@@ -24,11 +24,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31001",
-    pickupRatio: 72000,
+    id: "y+L7srcs",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{1}> 효과가 연성될 확률을 <35>% 올려주지.",
@@ -49,11 +48,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31002",
-    pickupRatio: 72000,
+    id: "nOvVPr9C",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{2}> 효과가 연성될 확률을 <35>% 올려주지.",
@@ -74,11 +72,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31003",
-    pickupRatio: 72000,
+    id: "fz4dYPTI",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{3}> 효과가 연성될 확률을 <35>% 올려주지.",
@@ -99,11 +96,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31004",
-    pickupRatio: 72000,
+    id: "4SzCiO3/",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{4}> 효과가 연성될 확률을 <35>% 올려주지.",
@@ -124,11 +120,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31005",
-    pickupRatio: 40000,
+    id: "a5gxIgIR",
+    pickRatio: 40000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <네가 고르는> 효과가 연성될 확률을 <35>% 올려주지.",
@@ -149,11 +144,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31010",
-    pickupRatio: 18000,
+    id: "bHcd6ti8",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{0}> 효과가 연성될 확률을 <70>% 올려주지.",
@@ -174,11 +168,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31011",
-    pickupRatio: 18000,
+    id: "mhKCAtQm",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{1}> 효과가 연성될 확률을 <70>% 올려주지.",
@@ -199,11 +192,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31012",
-    pickupRatio: 18000,
+    id: "Vq7MHlLo",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{2}> 효과가 연성될 확률을 <70>% 올려주지.",
@@ -224,11 +216,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31013",
-    pickupRatio: 18000,
+    id: "95shRB1l",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{3}> 효과가 연성될 확률을 <70>% 올려주지.",
@@ -249,11 +240,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31014",
-    pickupRatio: 18000,
+    id: "5EkUTXxa",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{4}> 효과가 연성될 확률을 <70>% 올려주지.",
@@ -274,11 +264,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31015",
-    pickupRatio: 10000,
+    id: "gWvAL7v4",
+    pickRatio: 10000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <네가 고르는> 효과가 연성될 확률을 <70>% 올려주지.",
@@ -299,11 +288,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31020",
-    pickupRatio: 72000,
+    id: "ijXdy8lT",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{0}> 효과가 연성될 확률을 <5>% 올려주지.",
@@ -324,11 +312,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31021",
-    pickupRatio: 72000,
+    id: "mEgQwgCI",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{1}> 효과가 연성될 확률을 <5>% 올려주지.",
@@ -349,11 +336,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31022",
-    pickupRatio: 72000,
+    id: "rdpIbeOC",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{2}> 효과가 연성될 확률을 <5>% 올려주지.",
@@ -374,11 +360,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31023",
-    pickupRatio: 72000,
+    id: "+MZRW50J",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{3}> 효과가 연성될 확률을 <5>% 올려주지.",
@@ -399,11 +384,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31024",
-    pickupRatio: 72000,
+    id: "RhysJqOW",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{4}> 효과가 연성될 확률을 <5>% 올려주지.",
@@ -424,11 +408,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31025",
-    pickupRatio: 40000,
+    id: "6VmV1uPy",
+    pickRatio: 40000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과가 연성될 확률을 <5>% 올려주지.",
@@ -449,11 +432,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31030",
-    pickupRatio: 18000,
+    id: "oBuqiS5a",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{0}> 효과가 연성될 확률을 <10>% 올려주지.",
@@ -474,11 +456,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31031",
-    pickupRatio: 18000,
+    id: "7IoNpMxz",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{1}> 효과가 연성될 확률을 <10>% 올려주지.",
@@ -499,11 +480,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31032",
-    pickupRatio: 18000,
+    id: "rSXM6CZj",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{2}> 효과가 연성될 확률을 <10>% 올려주지.",
@@ -524,11 +504,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31033",
-    pickupRatio: 18000,
+    id: "XD+A7Frs",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{3}> 효과가 연성될 확률을 <10>% 올려주지.",
@@ -549,11 +528,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31034",
-    pickupRatio: 18000,
+    id: "YnZSXf6A",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{4}> 효과가 연성될 확률을 <10>% 올려주지.",
@@ -574,11 +552,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31035",
-    pickupRatio: 10000,
+    id: "0f1OGjTw",
+    pickRatio: 10000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과가 연성될 확률을 <10>% 올려주지.",
@@ -599,11 +576,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31100",
-    pickupRatio: 72000,
+    id: "3JIsEQAL",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{0}> 효과가 연성될 확률을 <20>% 내려주지.",
@@ -624,11 +600,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31101",
-    pickupRatio: 72000,
+    id: "pGrUp9Q2",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{1}> 효과가 연성될 확률을 <20>% 내려주지.",
@@ -649,11 +624,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31102",
-    pickupRatio: 72000,
+    id: "VORJa66k",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{2}> 효과가 연성될 확률을 <20>% 내려주지.",
@@ -674,11 +648,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31103",
-    pickupRatio: 72000,
+    id: "DCgLqVPV",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{3}> 효과가 연성될 확률을 <20>% 내려주지.",
@@ -699,11 +672,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31104",
-    pickupRatio: 72000,
+    id: "wxjn4v11",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{4}> 효과가 연성될 확률을 <20>% 내려주지.",
@@ -724,11 +696,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31105",
-    pickupRatio: 40000,
+    id: "7wgizvUn",
+    pickRatio: 40000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <네가 고르는> 효과가 연성될 확률을 <20>% 내려주지.",
@@ -749,11 +720,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31110",
-    pickupRatio: 18000,
+    id: "ukVMmA4r",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{0}> 효과가 연성될 확률을 <40>% 내려주지.",
@@ -774,11 +744,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31111",
-    pickupRatio: 18000,
+    id: "hAHtj7hy",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{1}> 효과가 연성될 확률을 <40>% 내려주지.",
@@ -799,11 +768,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31112",
-    pickupRatio: 18000,
+    id: "lB3xLGoX",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{2}> 효과가 연성될 확률을 <40>% 내려주지.",
@@ -824,11 +792,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31113",
-    pickupRatio: 18000,
+    id: "MbBlHWJi",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{3}> 효과가 연성될 확률을 <40>% 내려주지.",
@@ -849,11 +816,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31114",
-    pickupRatio: 18000,
+    id: "K+jvDm0G",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{4}> 효과가 연성될 확률을 <40>% 내려주지.",
@@ -874,11 +840,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31115",
-    pickupRatio: 10000,
+    id: "1Z2+BfwB",
+    pickRatio: 10000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <네가 고르는> 효과가 연성될 확률을 <40>% 내려주지.",
@@ -899,11 +864,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31120",
-    pickupRatio: 72000,
+    id: "x0InBN1Q",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{0}> 효과가 연성될 확률을 <5>% 내려주지.",
@@ -924,11 +888,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31121",
-    pickupRatio: 72000,
+    id: "edZNTMQF",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{1}> 효과가 연성될 확률을 <5>% 내려주지.",
@@ -949,11 +912,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31122",
-    pickupRatio: 72000,
+    id: "BynwLkza",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{2}> 효과가 연성될 확률을 <5>% 내려주지.",
@@ -974,11 +936,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31123",
-    pickupRatio: 72000,
+    id: "j6tS2JWw",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{3}> 효과가 연성될 확률을 <5>% 내려주지.",
@@ -999,11 +960,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31124",
-    pickupRatio: 72000,
+    id: "hr4eAi80",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{4}> 효과가 연성될 확률을 <5>% 내려주지.",
@@ -1024,11 +984,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31125",
-    pickupRatio: 40000,
+    id: "q+a6jS9L",
+    pickRatio: 40000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과가 연성될 확률을 <5>% 내려주지.",
@@ -1049,11 +1008,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31130",
-    pickupRatio: 18000,
+    id: "lk493u0f",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{0}> 효과가 연성될 확률을 <10>% 내려주지.",
@@ -1074,11 +1032,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31131",
-    pickupRatio: 18000,
+    id: "3Z3Yk/vI",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{1}> 효과가 연성될 확률을 <10>% 내려주지.",
@@ -1099,11 +1056,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31132",
-    pickupRatio: 18000,
+    id: "tzLD/hSf",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{2}> 효과가 연성될 확률을 <10>% 내려주지.",
@@ -1124,11 +1080,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31133",
-    pickupRatio: 18000,
+    id: "lIRt7F3t",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{3}> 효과가 연성될 확률을 <10>% 내려주지.",
@@ -1149,11 +1104,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31134",
-    pickupRatio: 18000,
+    id: "rZvPL8BK",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{4}> 효과가 연성될 확률을 <10>% 내려주지.",
@@ -1174,11 +1128,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "31135",
-    pickupRatio: 10000,
+    id: "l+rAEPKP",
+    pickRatio: 10000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과가 연성될 확률을 <10>% 내려주지.",
@@ -1199,11 +1152,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33000",
-    pickupRatio: 63000,
+    id: "fSLS3rof",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{0}> 효과를 연성해주지.",
@@ -1224,11 +1176,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33001",
-    pickupRatio: 63000,
+    id: "vKd6ITdI",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{1}> 효과를 연성해주지.",
@@ -1249,11 +1200,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33002",
-    pickupRatio: 63000,
+    id: "wDSmKG9f",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{2}> 효과를 연성해주지.",
@@ -1274,11 +1224,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33003",
-    pickupRatio: 63000,
+    id: "2nmDq61K",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{3}> 효과를 연성해주지.",
@@ -1299,11 +1248,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33004",
-    pickupRatio: 63000,
+    id: "hwyOMWSr",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{4}> 효과를 연성해주지.",
@@ -1324,11 +1272,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33005",
-    pickupRatio: 35000,
+    id: "s+iwb0Rw",
+    pickRatio: 35000,
     range: [0, 0],
     descriptions: [
       "이번에는 <네가 고르는> 효과를 연성해주지.",
@@ -1349,11 +1296,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33100",
-    pickupRatio: 63000,
+    id: "NhvwhMBa",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{0}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
@@ -1383,11 +1329,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33101",
-    pickupRatio: 63000,
+    id: "LXZ6vfnw",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{1}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
@@ -1417,11 +1362,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33102",
-    pickupRatio: 63000,
+    id: "1K2B/VuY",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{2}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
@@ -1451,11 +1395,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33103",
-    pickupRatio: 63000,
+    id: "yHnMY93c",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{3}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
@@ -1485,11 +1428,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33104",
-    pickupRatio: 63000,
+    id: "azHB9NEx",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번에는 <{4}> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
@@ -1519,11 +1461,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "33105",
-    pickupRatio: 35000,
+    id: "CO+S24gs",
+    pickRatio: 35000,
     range: [0, 0],
     descriptions: [
       "이번에는 <네가 고르는> 효과를 <2>단계 연성해주지. 다만 기회를 <2>회 소모하게 될 거야.",
@@ -1553,11 +1494,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "44000",
-    pickupRatio: 50000,
+    id: "t2L3Jkgf",
+    pickRatio: 50000,
     range: [0, 0],
     descriptions: [
       "이번에 연성되는 효과는 <2>단계 올라갈거야.",
@@ -1578,11 +1518,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "44011",
-    pickupRatio: 50000,
+    id: "85QUcGkJ",
+    pickRatio: 50000,
     range: [0, 0],
     descriptions: [
       "이번에 연성되는 효과는 <3>단계 올라갈거야. 다만 기회를 <2>회 소모하게 되겠지.",
@@ -1612,11 +1551,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "45000",
-    pickupRatio: 50000,
+    id: "WHIji6kk",
+    pickRatio: 50000,
     range: [0, 0],
     descriptions: [
       "이번에는 <2>개의 효과를 동시에 연성하겠어.",
@@ -1637,11 +1575,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "45011",
-    pickupRatio: 50000,
+    id: "1K1N7q8U",
+    pickRatio: 50000,
     range: [0, 0],
     descriptions: [
       "이번에는 <3>개의 효과를 동시에 연성하겠어. 다만 기회를 <2>회 소모하게 되겠지.",
@@ -1671,11 +1608,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32010",
-    pickupRatio: 63000,
+    id: "+l/Vq72z",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{0}> 효과의 대성공 확률을 <100>% 올려주지.",
@@ -1696,11 +1632,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32011",
-    pickupRatio: 63000,
+    id: "kNwOBIrh",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{1}> 효과의 대성공 확률을 <100>% 올려주지.",
@@ -1721,11 +1656,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32012",
-    pickupRatio: 63000,
+    id: "5yDNv7tt",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{2}> 효과의 대성공 확률을 <100>% 올려주지.",
@@ -1746,11 +1680,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32013",
-    pickupRatio: 63000,
+    id: "cWKctr4Y",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{3}> 효과의 대성공 확률을 <100>% 올려주지.",
@@ -1771,11 +1704,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32014",
-    pickupRatio: 63000,
+    id: "ti89QM08",
+    pickRatio: 63000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <{4}> 효과의 대성공 확률을 <100>% 올려주지.",
@@ -1796,11 +1728,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32015",
-    pickupRatio: 35000,
+    id: "hVCN9GMr",
+    pickRatio: 35000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <네가 고르는> 효과의 대성공 확률을 <100>% 올려주지.",
@@ -1821,11 +1752,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32020",
-    pickupRatio: 100800,
+    id: "R3VkRa5o",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{0}> 효과의 대성공 확률을 <7>% 올려주지.",
@@ -1846,11 +1776,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32021",
-    pickupRatio: 100800,
+    id: "6CvFcBRK",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{1}> 효과의 대성공 확률을 <7>% 올려주지.",
@@ -1871,11 +1800,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32022",
-    pickupRatio: 100800,
+    id: "Mlj/o8hr",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{2}> 효과의 대성공 확률을 <7>% 올려주지.",
@@ -1896,11 +1824,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32023",
-    pickupRatio: 100800,
+    id: "kZBjTO4d",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{3}> 효과의 대성공 확률을 <7>% 올려주지.",
@@ -1921,11 +1848,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32024",
-    pickupRatio: 100800,
+    id: "GHmzTYc4",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{4}> 효과의 대성공 확률을 <7>% 올려주지.",
@@ -1946,11 +1872,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32025",
-    pickupRatio: 56000,
+    id: "wCFQOzcX",
+    pickRatio: 56000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과의 대성공 확률을 <7>% 올려주지.",
@@ -1971,11 +1896,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32030",
-    pickupRatio: 25200,
+    id: "ce23HTSj",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{0}> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -1996,11 +1920,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32031",
-    pickupRatio: 25200,
+    id: "kzAzSxCP",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{1}> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -2021,11 +1944,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32032",
-    pickupRatio: 25200,
+    id: "z6p8cFTO",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{2}> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -2046,11 +1968,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32033",
-    pickupRatio: 25200,
+    id: "aGCYXU7Q",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{3}> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -2071,11 +1992,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32034",
-    pickupRatio: 25200,
+    id: "x9KzuUpf",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <{4}> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -2096,11 +2016,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32035",
-    pickupRatio: 14000,
+    id: "PkuGa1XV",
+    pickRatio: 14000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -2121,11 +2040,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32100",
-    pickupRatio: 140000,
+    id: "TAVpe+mD",
+    pickRatio: 140000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <모든> 효과의 대성공 확률을 <30>% 올려주지.",
@@ -2146,11 +2064,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32110",
-    pickupRatio: 35000,
+    id: "NTMBgMo+",
+    pickRatio: 35000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 <모든> 효과의 대성공 확률을 <60>% 올려주지.",
@@ -2171,11 +2088,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32120",
-    pickupRatio: 140000,
+    id: "SYHl4YT5",
+    pickRatio: 140000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <모든> 효과의 대성공 확률을 <5>% 올려주지.",
@@ -2196,11 +2112,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "32130",
-    pickupRatio: 35000,
+    id: "aX3p4cvY",
+    pickRatio: 35000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <모든> 효과의 대성공 확률을 <10>% 올려주지.",
@@ -2221,161 +2136,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "36000",
-    pickupRatio: 0,
-    range: [0, 0],
-    descriptions: [
-      "<{0}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
-      "<{0}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
-      "<{0}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
-    ],
-    slotType: 3,
-    type: "common",
-    applyLimit: 99,
-    logics: [
-      {
-        type: "increaseTargetRanged",
-        targetType: "proposed",
-        targetCondition: 1,
-        targetCount: 1,
-        ratio: 0,
-        value: [0, 2],
-        remainTurn: 1,
-      },
-    ],
-    applyImmediately: true,
-  },
-  {
-    id: "36001",
-    pickupRatio: 0,
-    range: [0, 0],
-    descriptions: [
-      "<{1}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
-      "<{1}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
-      "<{1}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
-    ],
-    slotType: 3,
-    type: "common",
-    applyLimit: 99,
-    logics: [
-      {
-        type: "increaseTargetRanged",
-        targetType: "proposed",
-        targetCondition: 2,
-        targetCount: 1,
-        ratio: 0,
-        value: [0, 2],
-        remainTurn: 1,
-      },
-    ],
-    applyImmediately: true,
-  },
-  {
-    id: "36002",
-    pickupRatio: 0,
-    range: [0, 0],
-    descriptions: [
-      "<{2}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
-      "<{2}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
-      "<{2}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
-    ],
-    slotType: 3,
-    type: "common",
-    applyLimit: 99,
-    logics: [
-      {
-        type: "increaseTargetRanged",
-        targetType: "proposed",
-        targetCondition: 3,
-        targetCount: 1,
-        ratio: 0,
-        value: [0, 2],
-        remainTurn: 1,
-      },
-    ],
-    applyImmediately: true,
-  },
-  {
-    id: "36003",
-    pickupRatio: 0,
-    range: [0, 0],
-    descriptions: [
-      "<{3}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
-      "<{3}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
-      "<{3}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
-    ],
-    slotType: 3,
-    type: "common",
-    applyLimit: 99,
-    logics: [
-      {
-        type: "increaseTargetRanged",
-        targetType: "proposed",
-        targetCondition: 4,
-        targetCount: 1,
-        ratio: 0,
-        value: [0, 2],
-        remainTurn: 1,
-      },
-    ],
-    applyImmediately: true,
-  },
-  {
-    id: "36004",
-    pickupRatio: 0,
-    range: [0, 0],
-    descriptions: [
-      "<{4}> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
-      "<{4}> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
-      "<{4}> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
-    ],
-    slotType: 3,
-    type: "common",
-    applyLimit: 99,
-    logics: [
-      {
-        type: "increaseTargetRanged",
-        targetType: "proposed",
-        targetCondition: 5,
-        targetCount: 1,
-        ratio: 0,
-        value: [0, 2],
-        remainTurn: 1,
-      },
-    ],
-    applyImmediately: true,
-  },
-  {
-    id: "36005",
-    pickupRatio: 0,
-    range: [0, 0],
-    descriptions: [
-      "<네가 고르는> 효과의 단계를 [<0>~<+2>]만큼 올려주지.",
-      "<자네가 선택한> 효과의 단계를 [<0>~<+2>] 중 하나만큼 올리겠네.",
-      "<당신이 택한> 효과의 단계를 [<0>~<+2>]만큼 올려드리죠.",
-    ],
-    slotType: 3,
-    type: "common",
-    applyLimit: 99,
-    logics: [
-      {
-        type: "increaseTargetRanged",
-        targetType: "userSelect",
-        targetCondition: 0,
-        targetCount: 1,
-        ratio: 0,
-        value: [0, 2],
-        remainTurn: 1,
-      },
-    ],
-    applyImmediately: true,
-  },
-  {
-    id: "36010",
-    pickupRatio: 25200,
+    id: "i77mOeM9",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
@@ -2396,11 +2160,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36011",
-    pickupRatio: 25200,
+    id: "/DTt9Jyz",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
@@ -2421,11 +2184,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36012",
-    pickupRatio: 25200,
+    id: "jIyKQ1yu",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
@@ -2446,11 +2208,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36013",
-    pickupRatio: 25200,
+    id: "thfMDeCV",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
@@ -2471,11 +2232,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36014",
-    pickupRatio: 25200,
+    id: "b+n5sZX3",
+    pickRatio: 25200,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
@@ -2496,11 +2256,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36015",
-    pickupRatio: 14000,
+    id: "8Syfgx/g",
+    pickRatio: 14000,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 [<-1>~<+2>]만큼 올려주지.",
@@ -2521,11 +2280,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36020",
-    pickupRatio: 100800,
+    id: "7Q1vxaVt",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
@@ -2546,11 +2304,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36021",
-    pickupRatio: 100800,
+    id: "1rkJc2I8",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
@@ -2571,11 +2328,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36022",
-    pickupRatio: 100800,
+    id: "hQ55Zl2K",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
@@ -2596,11 +2352,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36023",
-    pickupRatio: 100800,
+    id: "Z7YnoWEJ",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
@@ -2621,11 +2376,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36024",
-    pickupRatio: 100800,
+    id: "Xan/BMLi",
+    pickRatio: 100800,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
@@ -2646,11 +2400,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "36025",
-    pickupRatio: 56000,
+    id: "79o+kxjm",
+    pickRatio: 56000,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 [<-2>~<+2>]만큼 올려주지.",
@@ -2671,11 +2424,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37000",
-    pickupRatio: 134640,
+    id: "JGBDGHjm",
+    pickRatio: 134640,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
@@ -2696,11 +2448,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37001",
-    pickupRatio: 134640,
+    id: "5wrsX6h6",
+    pickRatio: 134640,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
@@ -2721,11 +2472,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37002",
-    pickupRatio: 134640,
+    id: "5byV02q9",
+    pickRatio: 134640,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
@@ -2746,11 +2496,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37003",
-    pickupRatio: 134640,
+    id: "a1icfFTU",
+    pickRatio: 134640,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
@@ -2771,11 +2520,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37004",
-    pickupRatio: 134640,
+    id: "71gjGPn/",
+    pickRatio: 134640,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
@@ -2796,11 +2544,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37005",
-    pickupRatio: 74800,
+    id: "X0RAe7B2",
+    pickRatio: 74800,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 <1> 올려보겠어. <25>% 확률로 성공하겠군.",
@@ -2821,11 +2568,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37010",
-    pickupRatio: 33660,
+    id: "y4Malxk+",
+    pickRatio: 33660,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
@@ -2846,11 +2592,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37011",
-    pickupRatio: 33660,
+    id: "BkPQwoCV",
+    pickRatio: 33660,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
@@ -2871,11 +2616,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37012",
-    pickupRatio: 33660,
+    id: "/SexNoGC",
+    pickRatio: 33660,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
@@ -2896,11 +2640,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37013",
-    pickupRatio: 33660,
+    id: "Ls8paxJO",
+    pickRatio: 33660,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
@@ -2921,11 +2664,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37014",
-    pickupRatio: 33660,
+    id: "6ccueETl",
+    pickRatio: 33660,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
@@ -2946,11 +2688,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37015",
-    pickupRatio: 18700,
+    id: "KEO802/y",
+    pickRatio: 18700,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 <1> 올려보겠어. <50>% 확률로 성공하겠군.",
@@ -2971,11 +2712,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37100",
-    pickupRatio: 165000,
+    id: "bg2DjkX7",
+    pickRatio: 165000,
     range: [0, 0],
     descriptions: [
       "<임의의 효과> 하나의 단계를 <1> 올려주지. 어떤 효과일 지 보자고.",
@@ -2996,11 +2736,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38000",
-    pickupRatio: 30000,
+    id: "vobAMurl",
+    pickRatio: 30000,
     range: [1, 5],
     descriptions: [
       "<{0}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
@@ -3021,11 +2760,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38001",
-    pickupRatio: 30000,
+    id: "we9uip6Z",
+    pickRatio: 30000,
     range: [1, 5],
     descriptions: [
       "<{1}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
@@ -3046,11 +2784,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38002",
-    pickupRatio: 30000,
+    id: "QhCcZr3A",
+    pickRatio: 30000,
     range: [1, 5],
     descriptions: [
       "<{2}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
@@ -3071,11 +2808,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38003",
-    pickupRatio: 30000,
+    id: "oGqnMU5h",
+    pickRatio: 30000,
     range: [1, 5],
     descriptions: [
       "<{3}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
@@ -3096,11 +2832,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38004",
-    pickupRatio: 30000,
+    id: "Vh5lCVWD",
+    pickRatio: 30000,
     range: [1, 5],
     descriptions: [
       "<{4}> 효과의 단계를 [<1>~<2>] 중 하나로 바꿔주지.",
@@ -3121,11 +2856,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38010",
-    pickupRatio: 30000,
+    id: "byT3AP1L",
+    pickRatio: 30000,
     range: [5, 9],
     descriptions: [
       "<{0}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
@@ -3146,11 +2880,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38011",
-    pickupRatio: 30000,
+    id: "J8w8OZSR",
+    pickRatio: 30000,
     range: [5, 9],
     descriptions: [
       "<{1}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
@@ -3171,11 +2904,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38012",
-    pickupRatio: 30000,
+    id: "A8NeKsMb",
+    pickRatio: 30000,
     range: [5, 9],
     descriptions: [
       "<{2}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
@@ -3196,11 +2928,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38013",
-    pickupRatio: 30000,
+    id: "9suFjJG6",
+    pickRatio: 30000,
     range: [5, 9],
     descriptions: [
       "<{3}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
@@ -3221,11 +2952,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38014",
-    pickupRatio: 30000,
+    id: "50L3W9SX",
+    pickRatio: 30000,
     range: [5, 9],
     descriptions: [
       "<{4}> 효과의 단계를 [<2>~<3>] 중 하나로 바꿔주지.",
@@ -3246,11 +2976,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38020",
-    pickupRatio: 30000,
+    id: "047momkZ",
+    pickRatio: 30000,
     range: [9, 13],
     descriptions: [
       "<{0}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
@@ -3271,11 +3000,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38021",
-    pickupRatio: 30000,
+    id: "KZoUmp2O",
+    pickRatio: 30000,
     range: [9, 13],
     descriptions: [
       "<{1}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
@@ -3296,11 +3024,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38022",
-    pickupRatio: 30000,
+    id: "mLkomdnr",
+    pickRatio: 30000,
     range: [9, 13],
     descriptions: [
       "<{2}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
@@ -3321,11 +3048,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38023",
-    pickupRatio: 30000,
+    id: "i194sjct",
+    pickRatio: 30000,
     range: [9, 13],
     descriptions: [
       "<{3}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
@@ -3346,11 +3072,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38024",
-    pickupRatio: 30000,
+    id: "2A+gt/cN",
+    pickRatio: 30000,
     range: [9, 13],
     descriptions: [
       "<{4}> 효과의 단계를 [<3>~<4>] 중 하나로 바꿔주지.",
@@ -3371,11 +3096,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38030",
-    pickupRatio: 30000,
+    id: "JYral2nj",
+    pickRatio: 30000,
     range: [13, 99],
     descriptions: [
       "<{0}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
@@ -3396,11 +3120,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38031",
-    pickupRatio: 30000,
+    id: "kN9lY3qv",
+    pickRatio: 30000,
     range: [13, 99],
     descriptions: [
       "<{1}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
@@ -3421,11 +3144,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38032",
-    pickupRatio: 30000,
+    id: "JFixwpK0",
+    pickRatio: 30000,
     range: [13, 99],
     descriptions: [
       "<{2}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
@@ -3446,11 +3168,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38033",
-    pickupRatio: 30000,
+    id: "TmqN4vVw",
+    pickRatio: 30000,
     range: [13, 99],
     descriptions: [
       "<{3}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
@@ -3471,11 +3192,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "38034",
-    pickupRatio: 30000,
+    id: "oTBcM6oi",
+    pickRatio: 30000,
     range: [13, 99],
     descriptions: [
       "<{4}> 효과의 단계를 [<5>~<6>] 중 하나로 바꿔주지.",
@@ -3496,11 +3216,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37600",
-    pickupRatio: 6000,
+    id: "SWqTv7r4",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3530,11 +3249,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37601",
-    pickupRatio: 6000,
+    id: "EjhjzT/R",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3564,11 +3282,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37602",
-    pickupRatio: 6000,
+    id: "+iVcsDZw",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3598,11 +3315,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37603",
-    pickupRatio: 6000,
+    id: "AdyeXApQ",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3632,11 +3348,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37610",
-    pickupRatio: 6000,
+    id: "B3RZYuEw",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3666,11 +3381,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37611",
-    pickupRatio: 6000,
+    id: "K/tErtHA",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3700,11 +3414,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37612",
-    pickupRatio: 6000,
+    id: "vWruBgyn",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3734,11 +3447,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37613",
-    pickupRatio: 6000,
+    id: "gUpUns5p",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3768,11 +3480,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37620",
-    pickupRatio: 6000,
+    id: "rSbiyCFy",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3802,11 +3513,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37621",
-    pickupRatio: 6000,
+    id: "FCQnXKMQ",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3836,11 +3546,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37622",
-    pickupRatio: 6000,
+    id: "/uXHQ7CZ",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3870,11 +3579,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37623",
-    pickupRatio: 6000,
+    id: "zUk2JDxz",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3904,11 +3612,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37630",
-    pickupRatio: 6000,
+    id: "ghQ9VjHG",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3938,11 +3645,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37631",
-    pickupRatio: 6000,
+    id: "JvY8DuIr",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
@@ -3972,11 +3678,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37632",
-    pickupRatio: 6000,
+    id: "gWeuX02U",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
@@ -4006,11 +3711,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37633",
-    pickupRatio: 6000,
+    id: "VK+hUWmP",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <1> 내려갈 거야.",
@@ -4040,11 +3744,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37640",
-    pickupRatio: 6000,
+    id: "2/6UeeTT",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <1> 내려갈 거야.",
@@ -4074,11 +3777,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37641",
-    pickupRatio: 6000,
+    id: "qPVfMKLF",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <1> 내려갈 거야.",
@@ -4108,11 +3810,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37642",
-    pickupRatio: 6000,
+    id: "ajWpy2vD",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <1> 내려갈 거야.",
@@ -4142,11 +3843,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37643",
-    pickupRatio: 6000,
+    id: "2/hpD+Ht",
+    pickRatio: 6000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <1> 내려갈 거야.",
@@ -4176,11 +3876,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37700",
-    pickupRatio: 24000,
+    id: "a+2FNqIn",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4210,11 +3909,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37701",
-    pickupRatio: 24000,
+    id: "SF3Qb/e0",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4244,11 +3942,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37702",
-    pickupRatio: 24000,
+    id: "DXW+hvxI",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4278,11 +3975,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37703",
-    pickupRatio: 24000,
+    id: "ISgAfJ/U",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4312,11 +4008,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37710",
-    pickupRatio: 24000,
+    id: "jwKH/tJQ",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4346,11 +4041,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37711",
-    pickupRatio: 24000,
+    id: "ha0RNM2S",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4380,11 +4074,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37712",
-    pickupRatio: 24000,
+    id: "UBH1OOAB",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4414,11 +4107,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37713",
-    pickupRatio: 24000,
+    id: "9lgXNOiC",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4448,11 +4140,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37720",
-    pickupRatio: 24000,
+    id: "rdyz4dIp",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4482,11 +4173,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37721",
-    pickupRatio: 24000,
+    id: "ort3ppx9",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4516,11 +4206,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37722",
-    pickupRatio: 24000,
+    id: "8/+7Jihl",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4550,11 +4239,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37723",
-    pickupRatio: 24000,
+    id: "grVgy2EL",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4584,11 +4272,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37730",
-    pickupRatio: 24000,
+    id: "tCtjuNbF",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4618,11 +4305,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37731",
-    pickupRatio: 24000,
+    id: "KvsOIpFI",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4652,11 +4338,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37732",
-    pickupRatio: 24000,
+    id: "MbJQIQxy",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4686,11 +4371,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37733",
-    pickupRatio: 24000,
+    id: "TF99NWdH",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 더 올려주지. 하지만 <{4}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4720,11 +4404,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37740",
-    pickupRatio: 24000,
+    id: "sIomcuqP",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{0}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4754,11 +4437,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37741",
-    pickupRatio: 24000,
+    id: "OPEOVax7",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{1}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4788,11 +4470,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37742",
-    pickupRatio: 24000,
+    id: "cKNn2QqI",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{2}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4822,11 +4503,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37743",
-    pickupRatio: 24000,
+    id: "G6VDDeZR",
+    pickRatio: 24000,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 더 올려주지. 하지만 <{3}> 효과의 단계가 <2> 내려갈 거야.",
@@ -4856,11 +4536,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43000",
-    pickupRatio: 18000,
+    id: "slVyBRf3",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개와  <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.",
@@ -4881,11 +4560,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43001",
-    pickupRatio: 72000,
+    id: "o2AEXCgS",
+    pickRatio: 72000,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 소모하겠다. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.",
@@ -4906,11 +4584,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43100",
-    pickupRatio: 18000,
+    id: "kv1WbTjP",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔줄게.",
@@ -4931,11 +4608,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43101",
-    pickupRatio: 18000,
+    id: "+D1JKGnY",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과와 <{2}> 효과의 단계를 뒤바꿔줄게.",
@@ -4956,11 +4632,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43102",
-    pickupRatio: 18000,
+    id: "vjqwUBQf",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과와 <{3}> 효과의 단계를 뒤바꿔줄게.",
@@ -4981,11 +4656,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43103",
-    pickupRatio: 18000,
+    id: "UM8FdJ47",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과와 <{4}> 효과의 단계를 뒤바꿔줄게.",
@@ -5006,11 +4680,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43104",
-    pickupRatio: 18000,
+    id: "Te+sg9qJ",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과와 <{2}> 효과의 단계를 뒤바꿔줄게.",
@@ -5031,11 +4704,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43105",
-    pickupRatio: 18000,
+    id: "YuNKedL4",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과와 <{3}> 효과의 단계를 뒤바꿔줄게.",
@@ -5056,11 +4728,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43106",
-    pickupRatio: 18000,
+    id: "Qe0MWSWN",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과와 <{4}> 효과의 단계를 뒤바꿔줄게.",
@@ -5081,11 +4752,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43107",
-    pickupRatio: 18000,
+    id: "HhcvwkZK",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과와 <{3}> 효과의 단계를 뒤바꿔줄게.",
@@ -5106,11 +4776,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43108",
-    pickupRatio: 18000,
+    id: "QmI5GlED",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과와 <{4}> 효과의 단계를 뒤바꿔줄게.",
@@ -5131,11 +4800,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43109",
-    pickupRatio: 18000,
+    id: "2D4TdKj7",
+    pickRatio: 18000,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과와 <{4}> 효과의 단계를 뒤바꿔줄게.",
@@ -5156,11 +4824,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43200",
-    pickupRatio: 31500,
+    id: "BUyf16QW",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
@@ -5181,11 +4848,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43201",
-    pickupRatio: 31500,
+    id: "ZV3sa3WY",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
@@ -5206,11 +4872,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43202",
-    pickupRatio: 31500,
+    id: "xejEn+yQ",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
@@ -5231,11 +4896,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43203",
-    pickupRatio: 31500,
+    id: "FZWy8SWk",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{0}> 효과의 단계를 <1> 소모하겠다. 대신 <{0}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
@@ -5256,11 +4920,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43204",
-    pickupRatio: 31500,
+    id: "w1wmShOG",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
@@ -5281,11 +4944,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43205",
-    pickupRatio: 31500,
+    id: "pBytMqjc",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
@@ -5306,11 +4968,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43206",
-    pickupRatio: 31500,
+    id: "PkOCMf3y",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
@@ -5331,11 +4992,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43207",
-    pickupRatio: 31500,
+    id: "9tZSH3Qf",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
@@ -5356,11 +5016,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43208",
-    pickupRatio: 31500,
+    id: "uf7hyKcO",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
@@ -5381,11 +5040,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43209",
-    pickupRatio: 31500,
+    id: "BG5GeAxp",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{4}> 효과의 단계를 뒤바꿔주지.",
@@ -5406,11 +5064,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43210",
-    pickupRatio: 31500,
+    id: "1OwEpxRp",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{1}> 효과의 단계를 <1> 소모하겠다. 대신 <{1}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
@@ -5431,11 +5088,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43211",
-    pickupRatio: 31500,
+    id: "Kme6BgN+",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
@@ -5456,11 +5112,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43212",
-    pickupRatio: 31500,
+    id: "uOAYp5/X",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
@@ -5481,11 +5136,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43213",
-    pickupRatio: 31500,
+    id: "Xn2xYHMU",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{0}> 효과의 단계를 뒤바꿔주지.",
@@ -5506,11 +5160,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43214",
-    pickupRatio: 31500,
+    id: "kHTjKuGd",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{2}> 효과의 단계를 <1> 소모하겠다. 대신 <{2}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
@@ -5531,11 +5184,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43215",
-    pickupRatio: 31500,
+    id: "V9jqUIcZ",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
@@ -5556,11 +5208,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43216",
-    pickupRatio: 31500,
+    id: "V/+gke/j",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{1}> 효과의 단계를 뒤바꿔주지.",
@@ -5581,11 +5232,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43217",
-    pickupRatio: 31500,
+    id: "JLQT/st1",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{3}> 효과의 단계를 <1> 소모하겠다. 대신 <{3}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
@@ -5606,11 +5256,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43218",
-    pickupRatio: 31500,
+    id: "YWmEriBs",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{2}> 효과의 단계를 뒤바꿔주지.",
@@ -5631,11 +5280,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "43219",
-    pickupRatio: 31500,
+    id: "XSbhd2UF",
+    pickRatio: 31500,
     range: [0, 0],
     descriptions: [
       "<{4}> 효과의 단계를 <1> 소모하겠다. 대신 <{4}> 효과와 <{3}> 효과의 단계를 뒤바꿔주지.",
@@ -5656,11 +5304,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37200",
-    pickupRatio: 22000,
+    id: "WguDgqRX",
+    pickRatio: 22000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지.",
@@ -5681,11 +5328,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37201",
-    pickupRatio: 33000,
+    id: "rwCzVWtL",
+    pickRatio: 33000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <1> 내려갈 거야.",
@@ -5706,11 +5352,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37202",
-    pickupRatio: 66000,
+    id: "y34ZDrYU",
+    pickRatio: 66000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <2> 내려갈 거야.",
@@ -5731,11 +5376,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37203",
-    pickupRatio: 33000,
+    id: "B0wBsFQZ",
+    pickRatio: 33000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <1> 내려갈 거야.",
@@ -5756,11 +5400,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37204",
-    pickupRatio: 66000,
+    id: "YjCTNhrR",
+    pickRatio: 66000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <2> 내려갈 거야.",
@@ -5781,11 +5424,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37210",
-    pickupRatio: 5500,
+    id: "+l4Nv2wX",
+    pickRatio: 5500,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지.",
@@ -5806,11 +5448,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37211",
-    pickupRatio: 8250,
+    id: "noTUfDIQ",
+    pickRatio: 8250,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최하 단계> 효과 <1>개의 단계는 <1> 내려갈 거야.",
@@ -5831,11 +5472,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37212",
-    pickupRatio: 16500,
+    id: "4eJwfnBT",
+    pickRatio: 16500,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <최하 단계> 효과 <1>개의 단계는 <2> 내려갈 거야.",
@@ -5856,11 +5496,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37213",
-    pickupRatio: 8250,
+    id: "YrGnYgEu",
+    pickRatio: 8250,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <임의의> 효과 <1>개의 단계는 <1> 내려갈 거야.",
@@ -5881,11 +5520,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37214",
-    pickupRatio: 16500,
+    id: "OtcWJjNT",
+    pickRatio: 16500,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 <1> 올려주지. 하지만 <임의의> 효과 <1>개의 단계는 <2> 내려갈 거야.",
@@ -5906,11 +5544,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37300",
-    pickupRatio: 30000,
+    id: "ZB9XG5ww",
+    pickRatio: 30000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <2> 내려갈 거야.",
@@ -5931,11 +5568,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37301",
-    pickupRatio: 15000,
+    id: "XN5hHxIA",
+    pickRatio: 15000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <최고 단계> 효과 <1>개의 단계는 <1> 내려갈 거야.",
@@ -5956,11 +5592,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37302",
-    pickupRatio: 30000,
+    id: "pyFVTyxz",
+    pickRatio: 30000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <2> 내려갈 거야.",
@@ -5981,11 +5616,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37303",
-    pickupRatio: 15000,
+    id: "WGvKm6dz",
+    pickRatio: 15000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지. 하지만 <다른> 효과 <1>개의 단계는 <1> 내려갈 거야.",
@@ -6006,11 +5640,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37304",
-    pickupRatio: 10000,
+    id: "ZctqR2nY",
+    pickRatio: 10000,
     range: [1, 6],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 <2> 올려주지.",
@@ -6031,11 +5664,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37400",
-    pickupRatio: 10000,
+    id: "q1tgjYMp",
+    pickRatio: 10000,
     range: [3, 99],
     descriptions: [
       "<연성되지 않은> 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
@@ -6056,11 +5688,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37410",
-    pickupRatio: 20000,
+    id: "Hp1Jly41",
+    pickRatio: 20000,
     range: [5, 99],
     descriptions: [
       "단계가 <2> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
@@ -6081,11 +5712,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37420",
-    pickupRatio: 30000,
+    id: "0aBSrAj3",
+    pickRatio: 30000,
     range: [9, 99],
     descriptions: [
       "단계가 <4> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
@@ -6106,11 +5736,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37430",
-    pickupRatio: 40000,
+    id: "qw+dYf8J",
+    pickRatio: 40000,
     range: [13, 99],
     descriptions: [
       "단계가 <6> 이하인 효과들이 있군. 저 효과들의 단계를 죄다 <1>씩 올려주지.",
@@ -6131,11 +5760,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37501",
-    pickupRatio: 5000,
+    id: "Betrhw/Y",
+    pickRatio: 5000,
     range: [5, 99],
     descriptions: [
       "<1, 3, 5번> 슬롯의 단계를 <1>씩 올려주지. 하지만 <2, 4번> 슬롯의 단계가 <2>씩 내려갈 거야.",
@@ -6165,11 +5793,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "37511",
-    pickupRatio: 20000,
+    id: "yb+he5Xt",
+    pickRatio: 20000,
     range: [5, 99],
     descriptions: [
       "<2, 4번> 슬롯의 단계를 <1>씩 올려주지. 하지만 <1, 3, 5번> 슬롯의 단계가 <2>씩 내려갈 거야.",
@@ -6199,11 +5826,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "35200",
-    pickupRatio: 240000,
+    id: "tw2b8sHF",
+    pickRatio: 240000,
     range: [5, 99],
     descriptions: [
       "<임의의 효과>를 <1>개 봉인할 거야.",
@@ -6224,11 +5850,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "35300",
-    pickupRatio: 100800,
+    id: "XwiC96kj",
+    pickRatio: 100800,
     range: [5, 99],
     descriptions: [
       "<{0}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
@@ -6258,11 +5883,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "35301",
-    pickupRatio: 100800,
+    id: "zu9Nj4vh",
+    pickRatio: 100800,
     range: [5, 99],
     descriptions: [
       "<{1}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
@@ -6292,11 +5916,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "35302",
-    pickupRatio: 100800,
+    id: "8/vq2Y/e",
+    pickRatio: 100800,
     range: [5, 99],
     descriptions: [
       "<{2}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
@@ -6326,11 +5949,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "35303",
-    pickupRatio: 100800,
+    id: "JfA+Wzj6",
+    pickRatio: 100800,
     range: [5, 99],
     descriptions: [
       "<{3}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
@@ -6360,11 +5982,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "35304",
-    pickupRatio: 100800,
+    id: "l9PDNEwk",
+    pickRatio: 100800,
     range: [5, 99],
     descriptions: [
       "<{4}> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
@@ -6394,11 +6015,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "35305",
-    pickupRatio: 56000,
+    id: "zxpmYMXP",
+    pickRatio: 56000,
     range: [5, 99],
     descriptions: [
       "<네가 고르는> 효과를 봉인하겠다. 다만 이번 연성에서 기회를 <2>회 소모하겠지.",
@@ -6428,11 +6048,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "48000",
-    pickupRatio: 350000,
+    id: "XR286C4T",
+    pickRatio: 350000,
     range: [0, 0],
     descriptions: [
       "이번 연성에서 비용이 들지 않겠어.",
@@ -6453,11 +6072,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "48010",
-    pickupRatio: 105000,
+    id: "fCMn1qX+",
+    pickRatio: 105000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 비용이 <20%> 덜 들겠어.",
@@ -6478,11 +6096,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "48011",
-    pickupRatio: 45000,
+    id: "AP6Jmn0t",
+    pickRatio: 45000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 비용이 <40%> 덜 들겠어.",
@@ -6503,11 +6120,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "50000",
-    pickupRatio: 100000000,
+    id: "YHNPF0sg",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <{0}> 효과를 봉인하겠다.",
@@ -6528,11 +6144,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "50001",
-    pickupRatio: 100000000,
+    id: "0GbCd4/9",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <{1}> 효과를 봉인하겠다.",
@@ -6553,11 +6168,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "50002",
-    pickupRatio: 100000000,
+    id: "MukueyQj",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <{2}> 효과를 봉인하겠다.",
@@ -6578,11 +6192,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "50003",
-    pickupRatio: 100000000,
+    id: "5l7Yfh2Z",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <{3}> 효과를 봉인하겠다.",
@@ -6603,11 +6216,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "50004",
-    pickupRatio: 100000000,
+    id: "S0tcT4gJ",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <{4}> 효과를 봉인하겠다.",
@@ -6628,11 +6240,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "50005",
-    pickupRatio: 1,
+    id: "vsB18riz",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하겠다.",
@@ -6653,11 +6264,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "50100",
-    pickupRatio: 1,
+    id: "jpmWCt6l",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자가 명상에 잠겨 있습니다.)",
@@ -6668,11 +6278,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "50101",
-    pickupRatio: 1,
+    id: "REEHEKll",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자가 회복 중입니다.)",
@@ -6683,11 +6292,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "50102",
-    pickupRatio: 1,
+    id: "mT9NbAEJ",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자가 휴식을 취하고 있습니다.)",
@@ -6698,11 +6306,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "50103",
-    pickupRatio: 1,
+    id: "LyR8If14",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자가 고뇌에 빠져 있습니다.)",
@@ -6713,11 +6320,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "50104",
-    pickupRatio: 1,
+    id: "lkx3BHk1",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자는 조언을 숙고중입니다.)",
@@ -6728,11 +6334,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "50105",
-    pickupRatio: 1,
+    id: "7xKQ0O4a",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자는 새로운 연구를 진행중입니다.)",
@@ -6743,11 +6348,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "50106",
-    pickupRatio: 1,
+    id: "Ls6v0E6S",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자는 묵상에 빠져 있습니다.)",
@@ -6758,11 +6362,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "50107",
-    pickupRatio: 1,
+    id: "UD8aRfvQ",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "(현자는 사색에 빠져 있습니다.)",
@@ -6773,11 +6376,10 @@ export const councils: Council[] = [
     type: "exhausted",
     applyLimit: 99,
     logics: [],
-    applyImmediately: false,
   },
   {
-    id: "51001",
-    pickupRatio: 850000,
+    id: "h/hk94ec",
+    pickRatio: 850000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과가 연성될 확률을 <15>% 올려주지.",
@@ -6798,11 +6400,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51011",
-    pickupRatio: 850000,
+    id: "Cztb50e7",
+    pickRatio: 850000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과가 연성될 확률을 <20>% 내려주지.",
@@ -6823,11 +6424,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51101",
-    pickupRatio: 600000,
+    id: "sbi7g0nQ",
+    pickRatio: 600000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <네가 고르는> 효과의 대성공 확률을 <25>% 올려주지.",
@@ -6848,11 +6448,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51111",
-    pickupRatio: 210000,
+    id: "loHKiru6",
+    pickRatio: 210000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <모든> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -6873,11 +6472,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51112",
-    pickupRatio: 420000,
+    id: "6WfZZIUE",
+    pickRatio: 420000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <1, 3, 5번> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -6898,11 +6496,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51113",
-    pickupRatio: 770000,
+    id: "TNjx4HLm",
+    pickRatio: 770000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 <2, 4번> 효과의 대성공 확률을 <15>% 올려주지.",
@@ -6923,11 +6520,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51201",
-    pickupRatio: 500000,
+    id: "xQkReT+j",
+    pickRatio: 500000,
     range: [0, 0],
     descriptions: [
       "이번에는 <네가 고르는> 효과를 <2>단계 연성해주겠어.",
@@ -6948,11 +6544,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51300",
-    pickupRatio: 500000,
+    id: "+Ip1EgL4",
+    pickRatio: 500000,
     range: [0, 0],
     descriptions: [
       "이번 연성은 연성 기회를 소모하지 않아.",
@@ -6973,11 +6568,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51400",
-    pickupRatio: 722500,
+    id: "D3OzU8G0",
+    pickRatio: 722500,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 <1> 올려주지.",
@@ -6998,11 +6592,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "51401",
-    pickupRatio: 127500,
+    id: "ofyisuN6",
+    pickRatio: 127500,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 <2> 올려주지.",
@@ -7023,11 +6616,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "51421",
-    pickupRatio: 150000,
+    id: "5kSp87eD",
+    pickRatio: 150000,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과의 단계를 <2> 올려주지.",
@@ -7048,11 +6640,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "51501",
-    pickupRatio: 100000,
+    id: "/zilvZLj",
+    pickRatio: 100000,
     range: [0, 0],
     descriptions: [
       "이번에 연성되는 효과는 <3>단계 올라갈거야.",
@@ -7073,11 +6664,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51601",
-    pickupRatio: 100000,
+    id: "+8utgKU6",
+    pickRatio: 100000,
     range: [0, 0],
     descriptions: [
       "이번에는 <3>개의 효과를 동시에 연성하겠어.",
@@ -7098,11 +6688,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: false,
   },
   {
-    id: "51801",
-    pickupRatio: 2000000,
+    id: "XIp5VDkc",
+    pickRatio: 2000000,
     range: [0, 0],
     descriptions: [
       "남은 모든 연성에서 비용이 들지 않겠어.",
@@ -7123,11 +6712,10 @@ export const councils: Council[] = [
         remainTurn: 99,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "51900",
-    pickupRatio: 100000,
+    id: "TaZ9BkBv",
+    pickRatio: 100000,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과를 봉인하겠다.",
@@ -7148,11 +6736,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "52100",
-    pickupRatio: 600000,
+    id: "ycA6pw+q",
+    pickRatio: 600000,
     range: [0, 0],
     descriptions: [
       "조언이 더 필요한가? 다른 조언 보기 횟수를 <2>회 늘려주지.",
@@ -7173,11 +6760,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "52101",
-    pickupRatio: 1400000,
+    id: "EzgocQZ1",
+    pickRatio: 1400000,
     range: [0, 0],
     descriptions: [
       "조언이 더 필요한가? 다른 조언 보기 횟수를 <1>회 늘려주지.",
@@ -7198,11 +6784,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "53005",
-    pickupRatio: 100000000,
+    id: "mYuyjIL/",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, 이번 연성은 기회를 소모하지 않을 거야.",
@@ -7232,11 +6817,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "53006",
-    pickupRatio: 100000000,
+    id: "tDM7WU8A",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, 이번에 연성되는 효과는 <2>단계 올라갈거야.",
@@ -7266,11 +6850,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "53007",
-    pickupRatio: 100000000,
+    id: "jDRIeRQj",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, 이번 연성은 <2>개의 효과를 동시에 연성하겠어.",
@@ -7300,11 +6883,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "53008",
-    pickupRatio: 1,
+    id: "WMJBJxRd",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하겠다.",
@@ -7325,11 +6907,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "55300",
-    pickupRatio: 1000000,
+    id: "duDeuWzL",
+    pickRatio: 1000000,
     range: [0, 0],
     descriptions: [
       "<임의의 효과> <1>개의 봉인을 해제하고, 다른 효과 <1>개를 봉인해주지.",
@@ -7350,11 +6931,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "55400",
-    pickupRatio: 1250000,
+    id: "Q1+1MRri",
+    pickRatio: 1250000,
     range: [0, 0],
     descriptions: [
       "<모든 효과>의 단계를 뒤섞도록 하지. 어떻게 뒤섞일지 보자고.",
@@ -7375,11 +6955,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "55500",
-    pickupRatio: 1250000,
+    id: "6qTJU2I2",
+    pickRatio: 1250000,
     range: [0, 0],
     descriptions: [
       "<모든 효과>의 단계를 재분배하지. 어떻게 나뉠지 보자고.",
@@ -7400,11 +6979,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "55601",
-    pickupRatio: 500000,
+    id: "SlBzYKh5",
+    pickRatio: 500000,
     range: [0, 0],
     descriptions: [
       "<임의의 효과> <1>개의 단계를 <2> 올려주지. 어떤 효과일 지 보자고.",
@@ -7425,11 +7003,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "55800",
-    pickupRatio: 1000000,
+    id: "tyuFeHnJ",
+    pickRatio: 1000000,
     range: [0, 0],
     descriptions: [
       "이대론 안되겠어. 엘릭서의 효과와 단계를 <초기화>하겠다.",
@@ -7450,11 +7027,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "55900",
-    pickupRatio: 1000000,
+    id: "WgHhNIkc",
+    pickRatio: 1000000,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 슬롯의 효과를 바꿔주지. 어떤 효과일지 보자고.",
@@ -7475,11 +7051,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56000",
-    pickupRatio: 1500000,
+    id: "dzmT6oDh",
+    pickRatio: 1500000,
     range: [0, 0],
     descriptions: [
       "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<0>~<+4>] 중 하나만큼 올려주지.",
@@ -7509,11 +7084,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56010",
-    pickupRatio: 1500000,
+    id: "iK1sybsd",
+    pickRatio: 1500000,
     range: [0, 0],
     descriptions: [
       "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<+2>~<+3>] 중 하나만큼 올려주지.",
@@ -7543,11 +7117,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56020",
-    pickupRatio: 1500000,
+    id: "catBzLT2",
+    pickRatio: 1500000,
     range: [0, 0],
     descriptions: [
       "내 힘을 모두 <소진>하겠다. 대신, <네가 고르는> 효과의 단계를 [<-4>~<+5>] 중 하나만큼 올려주지.",
@@ -7577,11 +7150,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56100",
-    pickupRatio: 625000,
+    id: "gskS6IVo",
+    pickRatio: 625000,
     range: [0, 0],
     descriptions: [
       "<모든 효과>의 단계를  위로 <1> 슬롯 씩 옮겨주겠어.",
@@ -7602,11 +7174,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56101",
-    pickupRatio: 625000,
+    id: "5Zh4+5A2",
+    pickRatio: 625000,
     range: [0, 0],
     descriptions: [
       "<모든 효과>의 단계를  아래로 <1> 슬롯 씩 옮겨주겠어.",
@@ -7627,11 +7198,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56200",
-    pickupRatio: 200000,
+    id: "Nvbbk1oK",
+    pickRatio: 200000,
     range: [0, 0],
     descriptions: [
       "<네가 고르는> 효과의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.",
@@ -7652,11 +7222,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56201",
-    pickupRatio: 400000,
+    id: "neWy7Q1Q",
+    pickRatio: 400000,
     range: [0, 0],
     descriptions: [
       "<최하 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.",
@@ -7677,11 +7246,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "56202",
-    pickupRatio: 400000,
+    id: "Wrr88BQQ",
+    pickRatio: 400000,
     range: [0, 0],
     descriptions: [
       "<최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.",
@@ -7702,11 +7270,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "57205",
-    pickupRatio: 100000000,
+    id: "NdpregIz",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, <임의의 효과> <1>개의 단계를 <1> 올려주지.",
@@ -7736,11 +7303,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "57206",
-    pickupRatio: 100000000,
+    id: "Z85t18hM",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, <최하 단계> 효과 <1>개의 단계를 <1> 올려주지.",
@@ -7770,11 +7336,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "57207",
-    pickupRatio: 100000000,
+    id: "d7DeSvZO",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, <모든 효과>의 단계를 임의로 재분배 하겠다. 행운을 빌지.",
@@ -7804,11 +7369,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "57209",
-    pickupRatio: 100000000,
+    id: "Gw3wxrgY",
+    pickRatio: 100000000,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하고, <모든 효과>의 단계를 임의로 뒤섞도록 하겠다. 행운을 빌지.",
@@ -7838,11 +7402,10 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
   {
-    id: "57210",
-    pickupRatio: 1,
+    id: "v31V/eFJ",
+    pickRatio: 1,
     range: [0, 0],
     descriptions: [
       "이제 슬슬 마무리하도록 하지. <네가 고르는> 효과를 봉인하겠다.",
@@ -7863,7 +7426,6 @@ export const councils: Council[] = [
         remainTurn: 1,
       },
     ],
-    applyImmediately: true,
   },
 ];
 

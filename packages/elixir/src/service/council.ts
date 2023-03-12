@@ -55,7 +55,7 @@ export function createCouncilService(
       throw new Error("No council available");
     }
 
-    const weightTable = availableCouncils.map((council) => council.pickupRatio);
+    const weightTable = availableCouncils.map((council) => council.pickRatio);
 
     let selected: Council;
     let cnt = 0;
