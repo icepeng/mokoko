@@ -95,8 +95,8 @@ export function createLogicService(
     logic: CouncilLogic,
     targets: number[]
   ): GameState {
-    const beforeShuffle = [0, 1, 2, 3, 4].filter((index) =>
-      game.isEffectSealed(state, index)
+    const beforeShuffle = [0, 1, 2, 3, 4].filter(
+      (index) => !game.isEffectSealed(state, index)
     );
     const afterShuffle = chance.shuffle(beforeShuffle);
 
