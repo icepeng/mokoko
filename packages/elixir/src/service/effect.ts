@@ -8,7 +8,7 @@ export function createEffectService(chance: RngService) {
       .map((eff) => eff.value);
     const min = Math.min(...values);
     const minIndexes = [0, 1, 2, 3, 4].filter(
-      (index) => effects[index].value === min
+      (index) => effects[index].value === min && !effects[index].isSealed
     );
 
     const pickedMin = chance.pickone(minIndexes);
@@ -22,7 +22,7 @@ export function createEffectService(chance: RngService) {
       .map((eff) => eff.value);
     const max = Math.max(...values);
     const maxIndexes = [0, 1, 2, 3, 4].filter(
-      (index) => effects[index].value === max
+      (index) => effects[index].value === max && !effects[index].isSealed
     );
 
     const pickedMax = chance.pickone(maxIndexes);
