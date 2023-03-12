@@ -19,20 +19,19 @@ export function createMutationService() {
     );
 
     for (const mutation of probMutations) {
-      if (mutation.target === "prob") {
-        const targetProb = pickRatios[mutation.index];
-        const updatedProb = Math.max(
-          Math.min(targetProb + mutation.value, 1),
-          0
-        );
-        const actualDiff = updatedProb - targetProb;
+      if (!game.isEffectMutable(state, mutation.index)) {
+        continue;
+      }
 
-        for (let i = 0; i < 5; i += 1) {
-          if (i === mutation.index) {
-            pickRatios[i] = updatedProb;
-          } else {
-            pickRatios[i] = pickRatios[i] * (1 - actualDiff / (1 - targetProb));
-          }
+      const targetProb = pickRatios[mutation.index];
+      const updatedProb = Math.max(Math.min(targetProb + mutation.value, 1), 0);
+      const actualDiff = updatedProb - targetProb;
+
+      for (let i = 0; i < 5; i += 1) {
+        if (i === mutation.index) {
+          pickRatios[i] = updatedProb;
+        } else {
+          pickRatios[i] = pickRatios[i] * (1 - actualDiff / (1 - targetProb));
         }
       }
     }

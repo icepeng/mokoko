@@ -158,3 +158,59 @@ test("queryPickRatios - complex 2", () => {
   // then
   assert.equal(postProcessPickRatios(pickRatios), [0, 0, 1, 0, 0]);
 });
+
+test("should not apply mutation to sealed effect", () => {
+  // given
+  const gameState: GameState = {
+    ...initialState,
+    effects: [
+      {
+        name: "자원의 축복",
+        value: 2,
+        isSealed: true,
+      },
+      {
+        name: "무기 공격력",
+        value: 0,
+        isSealed: false,
+      },
+      {
+        name: "민첩",
+        value: 5,
+        isSealed: false,
+      },
+      {
+        name: "보스 피해",
+        value: 0,
+        isSealed: false,
+      },
+      {
+        name: "무력화",
+        value: 3,
+        isSealed: false,
+      },
+    ],
+    mutations: [
+      {
+        target: "prob",
+        index: 0,
+        value: 0.1,
+        remainTurn: 92,
+      },
+      {
+        target: "prob",
+        index: 0,
+        value: 0.05,
+        remainTurn: 93,
+      },
+    ],
+  };
+
+  // when
+  const pickRatios = queryPickRatios(gameState);
+
+  // then
+  assert.equal(postProcessPickRatios(pickRatios), [0, 0.25, 0.25, 0.25, 0.25]);
+});
+
+test.run();
