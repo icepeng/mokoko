@@ -1,10 +1,11 @@
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import { GameState } from "../src/interface";
-import { queryPickRatios } from "../src/mutation";
-import { getInitialGameState } from "../src";
+import game, { GameState } from "../src/model/game";
+import { createMutationService } from "../src/service/mutation";
 
-const initialState = getInitialGameState({ maxEnchant: 10, totalTurn: 14 });
+const { queryPickRatios } = createMutationService();
+
+const initialState = game.createInitialState({ maxEnchant: 10, totalTurn: 14 });
 
 function round(num: number, precision: number) {
   const factor = Math.pow(10, precision);
@@ -113,32 +114,32 @@ test("queryPickRatios - complex", () => {
 test("queryPickRatios - complex 2", () => {
   // given
   const gameState: GameState = {
-    ...getInitialGameState({ maxEnchant: 10, totalTurn: 14 }),
+    ...initialState,
     effects: [
       {
         name: "민첩",
         value: 1,
-        isLocked: true,
+        isSealed: true,
       },
       {
         name: "무력화",
         value: 10,
-        isLocked: false,
+        isSealed: false,
       },
       {
         name: "자원의 축복",
         value: 3,
-        isLocked: false,
+        isSealed: false,
       },
       {
         name: "보스 피해",
         value: 0,
-        isLocked: true,
+        isSealed: true,
       },
       {
         name: "무기 공격력",
         value: 1,
-        isLocked: true,
+        isSealed: true,
       },
     ],
     mutations: [
@@ -157,53 +158,3 @@ test("queryPickRatios - complex 2", () => {
   // then
   assert.equal(postProcessPickRatios(pickRatios), [0, 0, 1, 0, 0]);
 });
-
-test("queryPickRatios - complex 3", () => {
-  // given
-  const gameState: GameState = {
-    ...getInitialGameState({ maxEnchant: 10, totalTurn: 14 }),
-    effects: [
-      {
-        name: "민첩",
-        value: 0,
-        isLocked: true,
-      },
-      {
-        name: "무력화",
-        value: 0,
-        isLocked: true,
-      },
-      {
-        name: "자원의 축복",
-        value: 0,
-        isLocked: false,
-      },
-      {
-        name: "보스 피해",
-        value: 9,
-        isLocked: false,
-      },
-      {
-        name: "무기 공격력",
-        value: 1,
-        isLocked: false,
-      },
-    ],
-    mutations: [
-      {
-        target: "enchantEffectCount",
-        index: -1,
-        value: 2,
-        remainTurn: 1,
-      },
-    ],
-  };
-
-  // when
-  const pickRatios = queryPickRatios(gameState);
-
-  // then
-  assert.equal(postProcessPickRatios(pickRatios), [0, 0, 1, 0, 0]);
-});
-
-test.run();

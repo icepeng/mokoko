@@ -6,9 +6,9 @@ export type CouncilLogicType =
   | "decreaseTurnLeft" // 5
   | "shuffleAll" // 6
   | "setEnchantTargetAndAmount" // 7
-  | "unlockAndLockOther" // 8
+  | "unsealAndSealOther" // 8
   | "changeEffect" // 9
-  | "lockTarget" // 10
+  | "sealTarget" // 10
   | "increaseReroll" // 11
   | "decreasePrice" // 12
   | "restart" // 13
@@ -39,7 +39,7 @@ export type CouncilTargetType =
   | "oneThreeFive"
   | "twoFour";
 
-export interface CouncilLogicData {
+export interface CouncilLogic {
   type: CouncilLogicType;
   targetType: CouncilTargetType;
   targetCondition: number;
@@ -52,13 +52,13 @@ export interface CouncilLogicData {
 export type CouncilType =
   | "common"
   | "lawful"
-  | "lawfulLock"
-  | "lock"
+  | "lawfulSeal"
+  | "seal"
   | "chaos"
-  | "chaosLock"
+  | "chaosSeal"
   | "exhausted";
 
-export interface CouncilData {
+export interface Council {
   id: string;
   pickupRatio: number;
   range: [number, number];
@@ -67,5 +67,5 @@ export interface CouncilData {
   slotType: 0 | 1 | 2 | 3;
   applyLimit: number;
   applyImmediately: boolean;
-  logics: CouncilLogicData[];
+  logics: CouncilLogic[];
 }

@@ -1,10 +1,10 @@
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import { SageState, SageType } from "../src/interface";
-import { updatePowers } from "../src/sage";
+import sageEntity, { SageState, SageType } from "../src/model/sage";
 
-function sage(type: SageType, power: number): SageState {
+function sage(index: 0 | 1 | 2, type: SageType, power: number): SageState {
   return {
+    index,
     type,
     power,
     isExhausted: false,
@@ -12,12 +12,16 @@ function sage(type: SageType, power: number): SageState {
   };
 }
 
+function updatePowers(sages: SageState[], selectedIndex: number): SageState[] {
+  return sages.map((sage) => sageEntity.updatePower(sage, selectedIndex));
+}
+
 test("updatePowers - 최초 상태", () => {
   // given
   const sageStates: SageState[] = [
-    sage("none", 0),
-    sage("none", 0),
-    sage("none", 0),
+    sage(0, "none", 0),
+    sage(1, "none", 0),
+    sage(2, "none", 0),
   ];
 
   // when
@@ -31,9 +35,9 @@ test("updatePowers - 최초 상태", () => {
 test("updatePowers - 혼돈 선택", () => {
   // given
   const sageStates: SageState[] = [
-    sage("chaos", 4),
-    sage("chaos", 5),
-    sage("lawful", 2),
+    sage(0, "chaos", 4),
+    sage(1, "chaos", 5),
+    sage(2, "lawful", 2),
   ];
 
   // when
@@ -53,9 +57,9 @@ test("updatePowers - 혼돈 선택", () => {
 test("updatePowers - 풀스택 미선택 초기화", () => {
   // given
   const sageStates: SageState[] = [
-    sage("chaos", 4),
-    sage("chaos", 6),
-    sage("lawful", 2),
+    sage(0, "chaos", 4),
+    sage(1, "chaos", 6),
+    sage(2, "lawful", 2),
   ];
 
   // when
@@ -75,9 +79,9 @@ test("updatePowers - 풀스택 미선택 초기화", () => {
 test("updatePowers - 혼돈 풀스택 선택 초기화", () => {
   // given
   const sageStates: SageState[] = [
-    sage("chaos", 4),
-    sage("chaos", 6),
-    sage("lawful", 2),
+    sage(0, "chaos", 4),
+    sage(1, "chaos", 6),
+    sage(2, "lawful", 2),
   ];
 
   // when
@@ -97,9 +101,9 @@ test("updatePowers - 혼돈 풀스택 선택 초기화", () => {
 test("updatePowers - 질서 풀스택 선택 초기화", () => {
   // given
   const sageStates: SageState[] = [
-    sage("chaos", 3),
-    sage("chaos", 3),
-    sage("lawful", 3),
+    sage(0, "chaos", 3),
+    sage(1, "chaos", 3),
+    sage(2, "lawful", 3),
   ];
 
   // when

@@ -1,6 +1,6 @@
-import { CouncilData } from "./interface";
+import { Council, CouncilType } from "../model/council";
 
-const data: CouncilData[] = [
+export const councils: Council[] = [
   {
     id: "31000",
     pickupRatio: 72000,
@@ -6215,7 +6215,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "random",
         targetCondition: 0,
         targetCount: 1,
@@ -6240,7 +6240,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 1,
         targetCount: 1,
@@ -6274,7 +6274,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 2,
         targetCount: 1,
@@ -6308,7 +6308,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 3,
         targetCount: 1,
@@ -6342,7 +6342,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 4,
         targetCount: 1,
@@ -6376,7 +6376,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 5,
         targetCount: 1,
@@ -6410,7 +6410,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -6515,11 +6515,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <{0}> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "lock",
+    type: "seal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 1,
         targetCount: 1,
@@ -6540,11 +6540,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <{1}> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "lock",
+    type: "seal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 2,
         targetCount: 1,
@@ -6565,11 +6565,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <{2}> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "lock",
+    type: "seal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 3,
         targetCount: 1,
@@ -6590,11 +6590,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <{3}> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "lock",
+    type: "seal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 4,
         targetCount: 1,
@@ -6615,11 +6615,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <{4}> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "lock",
+    type: "seal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "proposed",
         targetCondition: 5,
         targetCount: 1,
@@ -6640,11 +6640,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "lock",
+    type: "seal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7139,7 +7139,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7210,11 +7210,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, 이번 연성은 기회를 소모하지 않고 진행할게요.",
     ],
     slotType: 3,
-    type: "lawfulLock",
+    type: "lawfulSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7244,11 +7244,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, 이번에 연성되는 효과는 <2>단계 올라갈 거에요.",
     ],
     slotType: 3,
-    type: "lawfulLock",
+    type: "lawfulSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7278,11 +7278,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, 이번 연성은 <2>개의 효과를 동시에 연성해드리죠.",
     ],
     slotType: 3,
-    type: "lawfulLock",
+    type: "lawfulSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7312,11 +7312,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "lawfulLock",
+    type: "lawfulSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7341,7 +7341,7 @@ const data: CouncilData[] = [
     applyLimit: 99,
     logics: [
       {
-        type: "unlockAndLockOther",
+        type: "unsealAndSealOther",
         targetType: "none",
         targetCondition: 0,
         targetCount: 1,
@@ -7714,11 +7714,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <다른 효과> <1>개의 단계를 <1> 올려드리죠.",
     ],
     slotType: 3,
-    type: "chaosLock",
+    type: "chaosSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7748,11 +7748,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <최하 단계> 효과 <1>개의 단계를 <1> 올려드리죠.",
     ],
     slotType: 3,
-    type: "chaosLock",
+    type: "chaosSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7782,11 +7782,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 재분배하죠. 당신이 원하는 대로 이뤄지길.",
     ],
     slotType: 3,
-    type: "chaosLock",
+    type: "chaosSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7816,11 +7816,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인하고, <모든 효과>의 단계를 임의로 뒤섞어드리죠. 당신이 원하는 대로 이뤄지길.",
     ],
     slotType: 3,
-    type: "chaosLock",
+    type: "chaosSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7850,11 +7850,11 @@ const data: CouncilData[] = [
       "이제 마무리하죠. <당신이 택한> 효과를 봉인해드리죠.",
     ],
     slotType: 3,
-    type: "chaosLock",
+    type: "chaosSeal",
     applyLimit: 99,
     logics: [
       {
-        type: "lockTarget",
+        type: "sealTarget",
         targetType: "userSelect",
         targetCondition: 0,
         targetCount: 1,
@@ -7867,4 +7867,16 @@ const data: CouncilData[] = [
   },
 ];
 
-export default data;
+export const councilRecord = Object.fromEntries(
+  councils.map((item) => [item.id, item])
+);
+
+export const councilsPerType: Record<CouncilType, Council[]> = {
+  common: councils.filter((data) => data.type === "common"),
+  exhausted: councils.filter((data) => data.type === "exhausted"),
+  lawful: councils.filter((data) => data.type === "lawful"),
+  lawfulSeal: councils.filter((data) => data.type === "lawfulSeal"),
+  chaos: councils.filter((data) => data.type === "chaos"),
+  chaosSeal: councils.filter((data) => data.type === "chaosSeal"),
+  seal: councils.filter((data) => data.type === "seal"),
+};
