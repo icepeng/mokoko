@@ -160,7 +160,9 @@ function passTurn(state: GameState, selectedSageIndex: number): GameState {
     ...state,
     phase: nextPhase,
     turnLeft: state.turnLeft - 1,
-    mutations: state.mutations.map(mutationEntity.passTurn),
+    mutations: state.mutations
+      .map(mutationEntity.passTurn)
+      .filter((mutation) => mutation.remainTurn > 0),
     sages: state.sages.map((sage) =>
       sageEntity.updatePower(sage, selectedSageIndex)
     ),
@@ -289,6 +291,7 @@ export default {
   // getters
   isEffectMutable,
   isEffectSealed,
+  getEffectValue,
   checkSealNeeded,
   getCouncilType,
   isTurnInRange,

@@ -95,6 +95,10 @@ export function createGameService(
     }
 
     nextState = game.passTurn(state, ui.selectedSageIndex);
+
+    if (nextState.phase === "done") {
+      return nextState;
+    }
     return sageService.updateCouncils(nextState);
   }
 

@@ -52,11 +52,16 @@ export function createLogicService(
     targets: number[]
   ): GameState {
     return targets.reduce((acc, index) => {
+      if (game.isEffectSealed(acc, index)) {
+        return acc;
+      }
+
       const isSuccess = chance.bool({ likelihood: logic.ratio / 100 });
       if (isSuccess) {
         return game.increaseEffectValue(acc, index, logic.value[0]);
       }
-      return state;
+
+      return acc;
     }, state);
   }
 
@@ -85,15 +90,25 @@ export function createLogicService(
   }
 
   // <모든 효과>의 단계를 뒤섞도록 하지. 어떻게 뒤섞일지 보자고.
-  // TODO: 봉인된 효과 제외하고 셔플
   function shuffleAll(
     state: GameState,
     logic: CouncilLogic,
     targets: number[]
   ): GameState {
-    const values = state.effects.map((eff) => eff.value);
-    const shuffledValues = chance.shuffle(values);
-    return game.setEffectValueAll(state, shuffledValues);
+    const beforeShuffle = [0, 1, 2, 3, 4].filter((index) =>
+      game.isEffectSealed(state, index)
+    );
+    const afterShuffle = chance.shuffle(beforeShuffle);
+
+    return beforeShuffle.reduce(
+      (acc, index, i) =>
+        game.setEffectValue(
+          acc,
+          index,
+          game.getEffectValue(state, afterShuffle[i])
+        ),
+      state
+    );
   }
 
   // 이번에는 <{0}> 효과를 <2>단계 연성해주지.
@@ -239,7 +254,7 @@ export function createLogicService(
     targets: number[]
   ): GameState {
     const target = targets[0];
-    const selectedValue = state.effects[target].value;
+    const selectedValue = game.getEffectValue(state, target);
     const partitionsArr = partition(
       selectedValue,
       5,
@@ -262,11 +277,11 @@ export function createLogicService(
     const direction = logic.value[0] as 0 | 1; // 0=up, 1=down
 
     const shiftedIndexes = [0, 1, 2, 3, 4].map((i) => {
-      if (state.effects[i].isSealed) {
+      if (game.isEffectSealed(state, i)) {
         return i;
       }
       let j = i;
-      while (state.effects[j].isSealed) {
+      while (game.isEffectSealed(state, j)) {
         j = cycle(j, 5, direction);
       }
       return j;
@@ -283,8 +298,8 @@ export function createLogicService(
     targets: number[]
   ): GameState {
     const [target1, target2] = logic.value;
-    const value1 = state.effects[target1].value;
-    const value2 = state.effects[target2].value;
+    const value1 = game.getEffectValue(state, target1);
+    const value2 = game.getEffectValue(state, target2);
 
     return game.setEffectValue(
       game.setEffectValue(state, target1, value2),
@@ -417,8 +432,8 @@ export function createLogicService(
   ): GameState {
     const [target1, target2] = logic.value;
 
-    const value1 = state.effects[target1].value;
-    const value2 = state.effects[target2].value;
+    const value1 = game.getEffectValue(state, target1);
+    const value2 = game.getEffectValue(state, target2);
 
     return game.setEffectValue(
       game.setEffectValue(state, target1, value2),
