@@ -52,10 +52,6 @@ export function createLogicService(
     targets: number[]
   ): GameState {
     return targets.reduce((acc, index) => {
-      if (game.isEffectSealed(acc, index)) {
-        return acc;
-      }
-
       const isSuccess = chance.bool({ likelihood: logic.ratio / 100 });
       if (isSuccess) {
         return game.increaseEffectValue(acc, index, logic.value[0]);
@@ -142,8 +138,8 @@ export function createLogicService(
     const unsealedIndex = chance.pickone(unsealedIndexes);
 
     return game.sealEffect(
-      game.unsealEffect(state, unsealedIndex),
-      sealedIndex
+      game.unsealEffect(state, sealedIndex),
+      unsealedIndex
     );
   }
 
@@ -341,12 +337,15 @@ export function createLogicService(
     targets: number[]
   ): GameState {
     const [_, pickedMax] = effectService.pickMaxValueIndex(state.effects);
-    const target = targets[0];
 
-    return game.increaseEffectValue(
-      game.increaseEffectValue(state, pickedMax, logic.value[0]),
-      target,
-      logic.value[1]
+    const increasedState = game.increaseEffectValue(
+      state,
+      pickedMax,
+      logic.value[0]
+    );
+    return targets.reduce(
+      (acc, index) => game.increaseEffectValue(acc, index, logic.value[1]),
+      increasedState
     );
   }
 
@@ -359,10 +358,14 @@ export function createLogicService(
     const [_, pickedMin] = effectService.pickMinValueIndex(state.effects);
     const target = targets[0];
 
-    return game.increaseEffectValue(
-      game.increaseEffectValue(state, pickedMin, logic.value[0]),
-      target,
-      logic.value[1]
+    const increasedState = game.increaseEffectValue(
+      state,
+      pickedMin,
+      logic.value[0]
+    );
+    return targets.reduce(
+      (acc, index) => game.increaseEffectValue(acc, index, logic.value[1]),
+      increasedState
     );
   }
 
