@@ -232,15 +232,22 @@ export function createLogicService(
     logic: CouncilLogic,
     targets: number[]
   ): GameState {
-    const totalValue = state.effects.reduce((acc, eff) => acc + eff.value, 0);
-    const partitionsArr = partition(
-      totalValue,
-      5,
-      state.effects.map((eff) => (eff.isSealed ? eff.value : null))
+    const totalValue = state.effects
+      .filter((eff) => !eff.isSealed)
+      .reduce((acc, eff) => acc + eff.value, 0);
+    const availableIndexes = [0, 1, 2, 3, 4].filter(
+      (index) => !game.isEffectSealed(state, index)
     );
-    const picked = chance.pickone(partitionsArr);
+    const values = [0, 1, 2, 3, 4].map((index) =>
+      game.isEffectSealed(state, index) ? game.getEffectValue(state, index) : 0
+    );
 
-    return game.setEffectValueAll(state, picked);
+    for (let i = 0; i < totalValue; i++) {
+      const index = chance.pickone(availableIndexes);
+      values[index]++;
+    }
+
+    return game.setEffectValueAll(state, values);
   }
 
   // <네가 고르는> 효과의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
@@ -251,16 +258,19 @@ export function createLogicService(
   ): GameState {
     const target = targets[0];
     const selectedValue = game.getEffectValue(state, target);
-    const partitionsArr = partition(
-      selectedValue,
-      5,
-      state.effects.map((eff, i) =>
-        eff.isSealed ? 0 : i === target ? eff.value : null
-      )
+    const availableIndexes = [0, 1, 2, 3, 4].filter(
+      (index) => !game.isEffectSealed(state, index) && index !== target
     );
-    const picked = chance.pickone(partitionsArr);
+    const values = [0, 1, 2, 3, 4].map((index) =>
+      index !== target ? game.getEffectValue(state, index) : 0
+    );
 
-    return game.increaseEffectValueAll(state, picked);
+    for (let i = 0; i < selectedValue; i++) {
+      const index = chance.pickone(availableIndexes);
+      values[index]++;
+    }
+
+    return game.setEffectValueAll(state, values);
   }
 
   // <모든 효과>의 단계를 위로 <1> 슬롯 씩 옮겨주겠어.
@@ -378,16 +388,19 @@ export function createLogicService(
     const [minValue, pickedMin] = effectService.pickMinValueIndex(
       state.effects
     );
-    const partitionsArr = partition(
-      minValue,
-      5,
-      state.effects.map((eff, i) =>
-        eff.isSealed || i === pickedMin ? 0 : null
-      )
+    const availableIndexes = [0, 1, 2, 3, 4].filter(
+      (index) => !game.isEffectSealed(state, index) && index !== pickedMin
     );
-    const picked = chance.pickone(partitionsArr);
+    const values = [0, 1, 2, 3, 4].map((index) =>
+      index !== pickedMin ? game.getEffectValue(state, index) : 0
+    );
 
-    return game.increaseEffectValueAll(state, picked);
+    for (let i = 0; i < minValue; i++) {
+      const index = chance.pickone(availableIndexes);
+      values[index]++;
+    }
+
+    return game.setEffectValueAll(state, values);
   }
 
   // <최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
@@ -399,16 +412,19 @@ export function createLogicService(
     const [maxValue, pickedMax] = effectService.pickMaxValueIndex(
       state.effects
     );
-    const partitionsArr = partition(
-      maxValue,
-      5,
-      state.effects.map((eff, i) =>
-        eff.isSealed || i === pickedMax ? 0 : null
-      )
+    const availableIndexes = [0, 1, 2, 3, 4].filter(
+      (index) => !game.isEffectSealed(state, index) && index !== pickedMax
     );
-    const picked = chance.pickone(partitionsArr);
+    const values = [0, 1, 2, 3, 4].map((index) =>
+      index !== pickedMax ? game.getEffectValue(state, index) : 0
+    );
 
-    return game.increaseEffectValueAll(state, picked);
+    for (let i = 0; i < maxValue; i++) {
+      const index = chance.pickone(availableIndexes);
+      values[index]++;
+    }
+
+    return game.setEffectValueAll(state, values);
   }
 
   // <최고 단계> 효과 <1>개의 단계를 <1> 소모하겠다. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.
