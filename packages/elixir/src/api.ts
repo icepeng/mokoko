@@ -1,3 +1,4 @@
+import { councils } from "./data/council";
 import effect from "./model/effect";
 import { createCouncilService } from "./service/council";
 import { createEffectService } from "./service/effect";
@@ -29,6 +30,11 @@ const gameService = createGameService(
 export const api = {
   ...gameService,
   ...mutationService,
+  getCouncil: councilService.getOne,
   getEffectLevel: effect.getLevel,
   getSageDescription: sageService.getDescription,
+};
+
+export const data = {
+  councils: councils,
 };

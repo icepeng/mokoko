@@ -205,4 +205,62 @@ test("unsealAndSealOther", () => {
   ]);
 });
 
+test("exhaust", () => {
+  const logicService = createLogicService(chance, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 1, isSealed: true },
+      { value: 1, isSealed: false },
+      { value: 3, isSealed: false },
+      { value: 5, isSealed: false },
+      { value: 2, isSealed: false },
+    ],
+    sages: [
+      {
+        index: 0,
+        isExhausted: false,
+      },
+      {
+        index: 1,
+        isExhausted: false,
+      },
+      {
+        index: 2,
+        isExhausted: false,
+      },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "exhaust",
+      value: [1, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    []
+  );
+
+  // then
+  assert.equal(nextState.sages, [
+    {
+      index: 0,
+      isExhausted: true,
+    },
+    {
+      index: 1,
+      isExhausted: false,
+    },
+    {
+      index: 2,
+      isExhausted: false,
+    },
+  ]);
+});
+
 test.run();

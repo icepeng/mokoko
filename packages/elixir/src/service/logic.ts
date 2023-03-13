@@ -336,7 +336,7 @@ export function createLogicService(
     logic: CouncilLogic,
     targets: number[]
   ): GameState {
-    const sageIndex = logic.value[0];
+    const sageIndex = logic.value[0] - 1;
     return game.exhaustSage(state, sageIndex);
   }
 

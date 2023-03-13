@@ -11,4 +11,4 @@ export type { Mutation } from "./model/mutation";
 export type { SageState, SageType } from "./model/sage";
 export type { UiState } from "./model/ui";
 
-export { api } from "./api";
+export { api, data } from "./api";
