@@ -205,6 +205,80 @@ test("unsealAndSealOther", () => {
   ]);
 });
 
+test("shiftAll - up", () => {
+  const logicService = createLogicService(chance, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 1, isSealed: true },
+      { value: 1, isSealed: false },
+      { value: 3, isSealed: false },
+      { value: 5, isSealed: false },
+      { value: 2, isSealed: false },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "shiftAll",
+      value: [0, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    []
+  );
+
+  // then
+  assert.equal(nextState.effects, [
+    { value: 1, isSealed: true },
+    { value: 3, isSealed: false },
+    { value: 5, isSealed: false },
+    { value: 2, isSealed: false },
+    { value: 1, isSealed: false },
+  ]);
+});
+
+test("shiftAll - down", () => {
+  const logicService = createLogicService(chance, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 1, isSealed: true },
+      { value: 1, isSealed: false },
+      { value: 3, isSealed: false },
+      { value: 5, isSealed: false },
+      { value: 2, isSealed: false },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "shiftAll",
+      value: [1, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    []
+  );
+
+  // then
+  assert.equal(nextState.effects, [
+    { value: 1, isSealed: true },
+    { value: 2, isSealed: false },
+    { value: 1, isSealed: false },
+    { value: 3, isSealed: false },
+    { value: 5, isSealed: false },
+  ]);
+});
+
 test("exhaust", () => {
   const logicService = createLogicService(chance, effectService);
 
