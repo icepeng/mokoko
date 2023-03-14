@@ -1,9 +1,9 @@
-import { createLogicService } from "../src/service/logic";
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import { createRngService, RngService } from "../src/service/rng";
-import { createEffectService, EffectService } from "../src/service/effect";
 import { GameState } from "../src/model/game";
+import { createEffectService } from "../src/service/effect";
+import { createLogicService } from "../src/service/logic";
+import { createRngService } from "../src/service/rng";
 
 const chance = createRngService();
 const effectService = createEffectService(chance);
