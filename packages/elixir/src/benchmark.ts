@@ -1,12 +1,22 @@
-import { api } from "./api";
-import { GameConfiguration, GameState } from "./model/game";
-import { UiState } from "./model/ui";
+import { GameState, SageGroup } from "./api";
+import { Config } from "./model/config";
+import { createGame } from "./model/game";
+import { createRng, Rng } from "./model/rng";
+
+interface UiState {
+  sageIndex: number;
+  effectIndex: number | null;
+}
 
 interface BenchmarkOptions {
-  selectionFn: (state: GameState, uiStateHistory: UiState[]) => UiState;
-  scoreFn: (state: GameState) => number;
+  selectionFn: (
+    state: GameState.T,
+    rng: Rng,
+    uiStateHistory: UiState[]
+  ) => UiState;
+  scoreFn: (state: GameState.T) => number;
   iteration: number;
-  config: GameConfiguration;
+  config: Config;
   seed: number;
 }
 
@@ -17,32 +27,40 @@ export function benchmark({
   config,
   seed,
 }: BenchmarkOptions) {
-  api.rng.setSeed(seed);
-
   let totalScore: number = 0;
   for (let i = 0; i < iteration; i++) {
     if (i % 1000 === 0) {
       console.log(`Iteration: ${i} Score: ${totalScore}`);
     }
 
-    let state = api.game.getInitialGameState(config);
+    const rng = createRng(seed + i);
+    let { game, api } = createGame({
+      config,
+      effectNames: ["A", "B", "C", "D", "E"],
+      seed: seed + i,
+    });
     let uiStateHistory: UiState[] = [];
 
-    while (state.phase !== "done") {
-      const uiState = selectionFn(state, uiStateHistory);
-      state = api.game.applyCouncil(state, uiState);
-      uiStateHistory.push(uiState);
-
-      if (state.phase === "restart") {
-        state = api.game.getInitialGameState(config);
+    while (game.phase !== "done") {
+      const uiState = selectionFn(game.state, rng, uiStateHistory);
+      if (
+        SageGroup.query.isCouncilRestart(
+          game.state.sageGroup,
+          uiState.sageIndex
+        )
+      ) {
         uiStateHistory = [];
-        continue;
+      } else {
+        uiStateHistory.push(uiState);
       }
 
-      state = api.game.enchant(state, uiState);
+      game = api.step(game, {
+        sageIndex: uiState.sageIndex,
+        effectIndex: uiState.effectIndex,
+      });
     }
 
-    totalScore += scoreFn(state);
+    totalScore += scoreFn(game.state);
   }
 
   return {

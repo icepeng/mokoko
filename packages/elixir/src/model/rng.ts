@@ -1,7 +1,7 @@
 import { Chance } from "chance";
 
-export function createRngService() {
-  let chance = new Chance();
+export function createRng(seed?: number) {
+  let chance = seed ? new Chance(seed) : new Chance();
 
   function setSeed(seed: number) {
     chance = new Chance(seed);
@@ -48,4 +48,4 @@ export function createRngService() {
   };
 }
 
-export type RngService = ReturnType<typeof createRngService>;
+export type Rng = ReturnType<typeof createRng>;

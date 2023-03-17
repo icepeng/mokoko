@@ -1,6 +1,8 @@
-import { Council, CouncilType } from "../model/council";
+import type * as Council from "../model/council";
 
-export const councils: readonly Council[] = [
+export type CouncilData = Council.T;
+
+export const councils: readonly CouncilData[] = [
   {
     id: "R4fhmY6g",
     pickRatio: 72000,
@@ -7433,7 +7435,7 @@ export const councilRecord = Object.fromEntries(
   councils.map((item) => [item.id, item])
 );
 
-export const councilsPerType: Record<CouncilType, Council[]> = {
+export const councilsPerType: Record<Council.CouncilType, Council.T[]> = {
   common: councils.filter((data) => data.type === "common"),
   exhausted: councils.filter((data) => data.type === "exhausted"),
   lawful: councils.filter((data) => data.type === "lawful"),

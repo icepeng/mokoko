@@ -1,60 +1,8 @@
-export type CouncilLogicType =
-  | "mutateProb"
-  | "mutateLuckyRatio"
-  | "increaseTargetWithRatio"
-  | "increaseTargetRanged"
-  | "decreaseTurnLeft"
-  | "shuffleAll"
-  | "setEnchantTargetAndAmount"
-  | "unsealAndSealOther"
-  | "changeEffect"
-  | "sealTarget"
-  | "increaseReroll"
-  | "decreasePrice"
-  | "restart"
-  | "setEnchantIncreaseAmount"
-  | "setEnchantEffectCount"
-  | "setValueRanged"
-  | "redistributeAll"
-  | "redistributeSelectedToOthers"
-  | "shiftAll"
-  | "swapValues"
-  | "swapMinMax"
-  | "exhaust"
-  | "increaseMaxAndDecreaseTarget"
-  | "increaseMinAndDecreaseTarget"
-  | "redistributeMinToOthers"
-  | "redistributeMaxToOthers"
-  | "decreaseMaxAndSwapMinMax"
-  | "decreaseFirstTargetAndSwap";
-
-export type CouncilTargetType =
-  | "none"
-  | "random"
-  | "proposed"
-  | "maxValue"
-  | "minValue"
-  | "userSelect"
-  | "lteValue"
-  | "oneThreeFive"
-  | "twoFour";
-
-export interface CouncilLogicData {
-  type: CouncilLogicType;
-  targetType: CouncilTargetType;
-  targetCondition: number;
-  targetCount: number;
-  ratio: number;
-  value: [number, number];
-  remainTurn: number;
-}
-
-export interface CouncilLogic {
-  type: CouncilLogicType;
-  ratio: number;
-  value: [number, number];
-  remainTurn: number;
-}
+import { councilRecord, councilsPerType } from "../data/council";
+import * as CouncilLogic from "./council-logic";
+import * as GameState from "./game-state";
+import type * as Game from "./game";
+import { Rng } from "./rng";
 
 export type CouncilType =
   | "common"
@@ -65,7 +13,7 @@ export type CouncilType =
   | "chaosSeal"
   | "exhausted";
 
-export interface Council {
+export interface T {
   id: string;
   pickRatio: number;
   range: [number, number];
@@ -73,5 +21,55 @@ export interface Council {
   type: CouncilType;
   slotType: 0 | 1 | 2 | 3;
   applyLimit: number;
-  logics: CouncilLogicData[];
+  logics: CouncilLogic.T[];
+}
+
+function isCouncilAvailable(
+  council: T,
+  state: GameState.T,
+  sageIndex: number,
+  pickedCouncils: string[]
+) {
+  if (!GameState.query.isTurnInRange(state, council.range)) {
+    return false;
+  }
+
+  if (pickedCouncils.includes(council.id)) {
+    return false;
+  }
+
+  if (council.slotType === 3) {
+    return true;
+  }
+
+  return council.slotType === sageIndex;
+}
+
+export function getAvailableCouncils(
+  state: GameState.T,
+  sageIndex: number,
+  pickedCouncils: string[]
+) {
+  const councilType = GameState.query.getCouncilType(state, sageIndex);
+  const availableCouncils = councilsPerType[councilType].filter((councilData) =>
+    isCouncilAvailable(councilData, state, sageIndex, pickedCouncils)
+  );
+  if (availableCouncils.length === 0) {
+    throw new Error("No council available");
+  }
+
+  return availableCouncils;
+}
+
+export function getOne(id: string) {
+  const council = councilRecord[id];
+  if (!council) {
+    throw new Error("Invalid council id");
+  }
+
+  return council;
+}
+
+export function getLogicsFromId(id: string) {
+  return getOne(id).logics;
 }

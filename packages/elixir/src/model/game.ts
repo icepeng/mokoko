@@ -1,316 +1,391 @@
-import mutationEntity, { Mutation } from "./mutation";
-import sageEntity, { SageState } from "./sage";
-import effectEntity, { EffectState } from "./effect";
-import { clamp } from "../util";
-import { CouncilType } from "./council";
+import * as Board from "./board";
+import { Config } from "./config";
+import { Context } from "./context";
+import * as Council from "./council";
+import { runLogicGuard } from "./council-guard";
+import * as GameState from "./game-state";
+import * as Logic from "./council-logic";
+import { createRng } from "./rng";
+import * as SageGroup from "./sage-group";
+import { getTargets } from "./target";
 
-export interface GameConfiguration {
-  totalTurn: number;
-  maxEnchant: number;
+export interface T {
+  state: GameState.T;
+  config: Config;
+  phase: "council" | "enchant" | "done";
 }
 
-export interface GameState {
-  config: GameConfiguration;
-  phase: "restart" | "council" | "enchant" | "done";
-  turnLeft: number;
-  turnPassed: number;
-  rerollLeft: number;
-  effects: EffectState[];
-  mutations: Mutation[];
-  sages: SageState[];
+export type Action =
+  | {
+      type: "applyCouncil";
+      sageIndex: number;
+      effectIndex: number | null;
+    }
+  | {
+      type: "enchant";
+      sageIndex: number;
+      effectIndex: number | null;
+    }
+  | {
+      type: "reroll";
+    }
+  | {
+      type: "pickCouncils";
+    };
+
+export function reducer(game: T, action: Action, ctx: Context): T {
+  const { rng } = ctx;
+  const logicReducer = Logic.createReducer(ctx);
+  const boardReducer = (state: GameState.T, action: Board.Action) =>
+    GameState.boardReducer(state, action, ctx);
+
+  function pickCouncil(sageIndex: number, pickedCouncils: string[]): string {
+    const availableCouncils = Council.getAvailableCouncils(
+      game.state,
+      sageIndex,
+      pickedCouncils
+    );
+    const weightTable = availableCouncils.map((council) => council.pickRatio);
+
+    let selected: Council.T;
+    let cnt = 0;
+    while (true) {
+      cnt++;
+      if (cnt > 1000) {
+        console.log(game.state, sageIndex, pickedCouncils);
+        throw new Error("Failed to pick council");
+      }
+
+      selected = rng.weighted(availableCouncils, weightTable);
+      if (selected.logics.every((logic) => runLogicGuard(game, logic))) {
+        break;
+      }
+    }
+    return selected.id;
+  }
+
+  function pickCouncils() {
+    const council1 = pickCouncil(0, []);
+    const council2 = pickCouncil(1, [council1]);
+    const council3 = pickCouncil(2, [council1, council2]);
+    return [council1, council2, council3];
+  }
+
+  switch (action.type) {
+    case "pickCouncils":
+      return {
+        ...game,
+        state: GameState.sageGroupReducer(game.state, {
+          type: "setCouncils",
+          councils: pickCouncils(),
+        }),
+      };
+
+    case "applyCouncil":
+      if (action.sageIndex == null) {
+        throw new Error("Sage is not selected");
+      }
+      if (
+        SageGroup.query.isEffectSelectionRequired(
+          game.state.sageGroup,
+          action.sageIndex
+        ) &&
+        action.effectIndex == null
+      ) {
+        throw new Error("Effect is not selected");
+      }
+
+      const council = SageGroup.query.getCouncil(
+        game.state.sageGroup,
+        action.sageIndex
+      );
+      const logics = council.logics;
+
+      const counciledState = logics.reduce(
+        (acc, logic) =>
+          logicReducer(acc, {
+            logic,
+            targets: getTargets({
+              state: acc,
+              effectIndex: action.effectIndex,
+              logic,
+              rng: rng,
+            }),
+          }),
+        game.state
+      );
+
+      if (counciledState.shouldRestart) {
+        return reducer(
+          {
+            state: GameState.createInitialState(
+              game.config.totalTurn,
+              Board.query.getNames(game.state.board)
+            ),
+            config: game.config,
+            phase: "council",
+          },
+          { type: "pickCouncils" },
+          ctx
+        );
+      }
+
+      return {
+        ...game,
+        state: counciledState,
+        phase: "enchant",
+      };
+
+    case "enchant":
+      if (action.sageIndex === null) {
+        throw new Error("Sage is not selected");
+      }
+      if (game.phase !== "enchant") {
+        throw new Error("Invalid phase: " + game.phase);
+      }
+
+      const { effectCount, increaseAmount, luckyRatios, pickRatios } =
+        getEnchantInfos(game);
+
+      let nextState = game.state;
+      for (let i = 0; i < effectCount; i += 1) {
+        if (pickRatios.every((ratio) => ratio === 0)) {
+          break;
+        }
+        const selectedEffectIndex = rng.weighted([0, 1, 2, 3, 4], pickRatios);
+        pickRatios[selectedEffectIndex] = 0;
+
+        const luckyRatio = luckyRatios[selectedEffectIndex];
+        const isLucky = rng.bool({ likelihood: luckyRatio * 100 });
+
+        nextState = boardReducer(game.state, {
+          type: "increaseValue",
+          index: selectedEffectIndex,
+          diff: increaseAmount + (isLucky ? 1 : 0),
+        });
+      }
+
+      nextState = GameState.reducer(game.state, {
+        type: "passTurn",
+        selectedSageIndex: action.sageIndex,
+      });
+      const nextPhase = game.state.turnLeft === 1 ? "done" : "council";
+
+      if (nextPhase === "done") {
+        return {
+          ...game,
+          state: nextState,
+          phase: nextPhase,
+        };
+      }
+      return reducer(
+        {
+          ...game,
+          state: nextState,
+          phase: nextPhase,
+        },
+        { type: "pickCouncils" },
+        ctx
+      );
+
+    case "reroll":
+      if (game.state.rerollLeft <= 0) {
+        throw new Error("No reroll left");
+      }
+      return reducer(
+        {
+          ...game,
+          state: GameState.reducer(game.state, {
+            type: "decreaseRerollLeft",
+          }),
+        },
+        { type: "pickCouncils" },
+        ctx
+      );
+    default:
+      throw new Error("Unknown action");
+  }
 }
 
-// getters
-function isEffectMutable(state: GameState, effectIndex: number): boolean {
-  return effectEntity.isMutable(
-    state.effects[effectIndex],
-    state.config.maxEnchant
+// queries
+function isEffectMutable(game: T, effectIndex: number): boolean {
+  return Board.query.isIndexMutable(
+    game.state.board,
+    effectIndex,
+    game.config.maxEnchant
   );
 }
 
-function isEffectSealed(state: GameState, effectIndex: number): boolean {
-  return state.effects[effectIndex].isSealed;
-}
-
-function getEffectValue(state: GameState, effectIndex: number): number {
-  return state.effects[effectIndex].value;
-}
-
-function checkSealNeeded(state: GameState) {
-  const sealedEffectCount = state.effects.filter(
-    (effect) => effect.isSealed
+function getPickRatios(game: T) {
+  const state = game.state;
+  const maxEnchant = game.config.maxEnchant;
+  const mutableCount = [0, 1, 2, 3, 4].filter((index) =>
+    Board.query.isIndexMutable(state.board, index, maxEnchant)
   ).length;
-  const toSeal = 3 - sealedEffectCount;
 
-  return state.turnLeft <= toSeal;
-}
+  const pickRatios = Array.from({ length: 5 }, (_, i) =>
+    Board.query.isIndexMutable(state.board, i, maxEnchant)
+      ? 1 / mutableCount
+      : 0
+  );
 
-function getCouncilType(state: GameState, sageIndex: number): CouncilType {
-  const sage = state.sages[sageIndex];
-  const isSealNeeded = checkSealNeeded(state);
-
-  if (sage.isExhausted) {
-    return "exhausted";
+  if (mutableCount === 1) {
+    return pickRatios;
   }
 
-  if (sageEntity.isLawfulFull(sage)) {
-    if (isSealNeeded) {
-      return "lawfulSeal";
+  const probMutations = state.mutations.filter(
+    (mutation) => mutation.target === "prob"
+  );
+
+  for (const mutation of probMutations) {
+    if (!Board.query.isIndexMutable(state.board, mutation.index, maxEnchant)) {
+      continue;
     }
 
-    return "lawful";
-  }
-
-  if (sageEntity.isChaosFull(sage)) {
-    if (isSealNeeded) {
-      return "chaosSeal";
+    const targetProb = pickRatios[mutation.index];
+    const updatedProb = Math.max(Math.min(targetProb + mutation.value, 1), 0);
+    const actualDiff = updatedProb - targetProb;
+    if (actualDiff === 0) {
+      continue;
     }
 
-    return "chaos";
+    for (let i = 0; i < 5; i += 1) {
+      if (i === mutation.index) {
+        pickRatios[i] = updatedProb;
+      } else {
+        pickRatios[i] = pickRatios[i] * (1 - actualDiff / (1 - targetProb));
+      }
+    }
   }
 
-  if (isSealNeeded) {
-    return "seal";
-  }
-
-  return "common";
+  return pickRatios;
 }
 
-function isTurnInRange(state: GameState, [min, max]: [number, number]) {
-  if (min === 0) {
-    return true;
-  }
+function getLuckyRatios(game: T) {
+  const luckyRatios = Array.from({ length: 5 }, () => 0.1);
 
-  const turn = state.config.totalTurn - state.turnLeft + 1;
-  return turn >= min && turn < max;
-}
-
-// setters
-// game
-function createInitialState(config: GameConfiguration): GameState {
-  return {
-    config,
-    phase: "council",
-    turnLeft: config.totalTurn,
-    turnPassed: 0,
-    rerollLeft: 2,
-    effects: [
-      {
-        name: "보스 피해",
-        value: 0,
-        isSealed: false,
-      },
-      {
-        name: "무기 공격력",
-        value: 0,
-        isSealed: false,
-      },
-      {
-        name: "민첩",
-        value: 0,
-        isSealed: false,
-      },
-      {
-        name: "자원의 축복",
-        value: 0,
-        isSealed: false,
-      },
-      {
-        name: "무력화",
-        value: 0,
-        isSealed: false,
-      },
-    ],
-    mutations: [],
-    sages: [
-      sageEntity.createInitialState(0),
-      sageEntity.createInitialState(1),
-      sageEntity.createInitialState(2),
-    ],
-  };
-}
-
-function markAsRestart(state: GameState): GameState {
-  return {
-    ...state,
-    phase: "restart",
-  };
-}
-
-function decreaseTurn(state: GameState, amount: number): GameState {
-  if (state.turnLeft <= 0) {
-    throw new Error("No turn left");
-  }
-
-  return {
-    ...state,
-    turnLeft: state.turnLeft - amount,
-  };
-}
-
-function passTurn(state: GameState, selectedSageIndex: number): GameState {
-  if (state.phase !== "enchant") {
-    throw new Error("Invalid phase");
-  }
-  if (state.turnLeft <= 0) {
-    throw new Error("No turn left");
-  }
-
-  const nextPhase = state.turnLeft === 1 ? "done" : "council";
-
-  return {
-    ...state,
-    phase: nextPhase,
-    turnLeft: state.turnLeft - 1,
-    turnPassed: state.turnPassed + 1,
-    mutations: state.mutations
-      .map(mutationEntity.passTurn)
-      .filter((mutation) => mutation.remainTurn > 0),
-    sages: state.sages.map((sage) =>
-      sageEntity.updatePower(sage, selectedSageIndex)
-    ),
-  };
-}
-
-function increaseRerollLeft(state: GameState, amount: number): GameState {
-  return {
-    ...state,
-    rerollLeft: state.rerollLeft + amount,
-  };
-}
-
-function decreaseRerollLeft(state: GameState): GameState {
-  if (state.rerollLeft <= 0) {
-    throw new Error("No reroll left");
-  }
-
-  return {
-    ...state,
-    rerollLeft: state.rerollLeft - 1,
-  };
-}
-
-// sage
-function exhaustSage(state: GameState, sageIndex: number): GameState {
-  return {
-    ...state,
-    sages: state.sages.map((sage, index) =>
-      index === sageIndex ? sageEntity.exhaust(sage) : sage
-    ),
-  };
-}
-
-// effect
-function setEffectValue(
-  state: GameState,
-  effectIndex: number,
-  value: number
-): GameState {
-  const clampedValue = clamp(value, state.config.maxEnchant);
-
-  return {
-    ...state,
-    effects: state.effects.map((effect, index) =>
-      index === effectIndex
-        ? effectEntity.setValue(effect, clampedValue)
-        : effect
-    ),
-  };
-}
-
-function setEffectValueAll(state: GameState, values: number[]): GameState {
-  const clampedValues = values.map((value) =>
-    clamp(value, state.config.maxEnchant)
+  const luckyRatioMutations = game.state.mutations.filter(
+    (mutation) => mutation.target === "luckyRatio"
   );
+  for (const mutation of luckyRatioMutations) {
+    luckyRatios[mutation.index] = Math.max(
+      Math.min(luckyRatios[mutation.index] + mutation.value, 1),
+      0
+    );
+  }
 
-  return {
-    ...state,
-    effects: state.effects.map((effect, index) =>
-      effectEntity.setValue(effect, clampedValues[index])
-    ),
-  };
+  return luckyRatios;
 }
 
-function increaseEffectValue(
-  state: GameState,
-  effectIndex: number,
-  diff: number
-): GameState {
-  const clampedValue = clamp(
-    getEffectValue(state, effectIndex) + diff,
-    state.config.maxEnchant
+function getEnchantEffectCount(game: T) {
+  return (
+    game.state.mutations.find(
+      (mutation) => mutation.target === "enchantEffectCount"
+    )?.value ?? 1
   );
-
-  return {
-    ...state,
-    effects: state.effects.map((effect, index) =>
-      index === effectIndex
-        ? effectEntity.setValue(effect, clampedValue)
-        : effect
-    ),
-  };
 }
 
-function increaseEffectValueAll(state: GameState, diffs: number[]): GameState {
-  const clampedValues = diffs.map((diff, index) =>
-    clamp(getEffectValue(state, index) + diff, state.config.maxEnchant)
+function getEnchantIncreaseAmount(game: T) {
+  return (
+    game.state.mutations.find(
+      (mutation) => mutation.target === "enchantIncreaseAmount"
+    )?.value ?? 1
   );
+}
 
+function getEnchantInfos(game: T) {
   return {
-    ...state,
-    effects: state.effects.map((effect, index) =>
-      effectEntity.setValue(effect, clampedValues[index])
-    ),
+    effectCount: getEnchantEffectCount(game),
+    increaseAmount: getEnchantIncreaseAmount(game),
+    pickRatios: getPickRatios(game),
+    luckyRatios: getLuckyRatios(game),
   };
 }
 
-function sealEffect(state: GameState, effectIndex: number): GameState {
-  return {
-    ...state,
-    effects: state.effects.map((effect, index) =>
-      index === effectIndex ? effectEntity.seal(effect) : effect
-    ),
-  };
-}
-
-function unsealEffect(state: GameState, effectIndex: number): GameState {
-  return {
-    ...state,
-    effects: state.effects.map((effect, index) =>
-      index === effectIndex ? effectEntity.unseal(effect) : effect
-    ),
-  };
-}
-
-// mutation
-function addMutations(state: GameState, mutations: Mutation[]): GameState {
-  return {
-    ...state,
-    mutations: [...state.mutations, ...mutations],
-  };
-}
-
-export default {
-  // getters
+export const query = {
   isEffectMutable,
-  isEffectSealed,
-  getEffectValue,
-  checkSealNeeded,
-  getCouncilType,
-  isTurnInRange,
-  // setters
-  createInitialState,
-  markAsRestart,
-  decreaseTurn,
-  passTurn,
-  increaseRerollLeft,
-  decreaseRerollLeft,
-  exhaustSage,
-  setEffectValue,
-  setEffectValueAll,
-  increaseEffectValue,
-  increaseEffectValueAll,
-  sealEffect,
-  unsealEffect,
-  addMutations,
+  getPickRatios,
+  getLuckyRatios,
+  getEnchantEffectCount,
+  getEnchantIncreaseAmount,
+  getEnchantInfos,
 };
+
+// constructors
+interface CreateGameProps {
+  config: Config;
+  effectNames: string[];
+  seed?: number;
+}
+
+export function createGame({ config, effectNames, seed }: CreateGameProps) {
+  const rng = createRng(seed);
+  const ctx: Context = {
+    rng,
+    config,
+  };
+  const state = GameState.createInitialState(config.totalTurn, effectNames);
+  const game: T = reducer(
+    {
+      state,
+      config,
+      phase: "council",
+    },
+    { type: "pickCouncils" },
+    ctx
+  );
+
+  function applyCouncil(
+    game: T,
+    props: {
+      sageIndex: number;
+      effectIndex: number | null;
+    }
+  ) {
+    return reducer(game, { ...props, type: "applyCouncil" }, ctx);
+  }
+
+  function enchant(
+    game: T,
+    props: {
+      sageIndex: number;
+      effectIndex: number | null;
+    }
+  ) {
+    return reducer(game, { ...props, type: "enchant" }, ctx);
+  }
+
+  function reroll(game: T) {
+    return reducer(game, { type: "reroll" }, ctx);
+  }
+
+  function step(
+    game: T,
+    props: {
+      sageIndex: number;
+      effectIndex: number | null;
+    }
+  ) {
+    if (
+      SageGroup.query.isCouncilRestart(game.state.sageGroup, props.sageIndex)
+    ) {
+      return applyCouncil(game, props);
+    }
+    return enchant(applyCouncil(game, props), props);
+  }
+
+  function reset() {
+    return createGame({ config, effectNames, seed }).game;
+  }
+
+  return {
+    game,
+    api: {
+      applyCouncil,
+      enchant,
+      reroll,
+      step,
+      reset,
+    },
+  };
+}

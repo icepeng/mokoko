@@ -1,46 +1,46 @@
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import { GameState } from "../src/model/game";
-import { createEffectService } from "../src/service/effect";
-import { createLogicService } from "../src/service/logic";
-import { createRngService } from "../src/service/rng";
+import * as Logic from "../src/model/logic";
+import { createRng } from "../src/model/rng";
+import type * as GameState from "../src/model/game-state";
 
-const chance = createRngService();
-const effectService = createEffectService(chance);
+const rng = createRng(0);
 
 test("shuffle", () => {
-  const chanceMock = {
-    ...chance,
+  const rngMock = {
+    ...rng,
     shuffle: <T>(arr: T[]) => [4, 3, 1, 0] as T[],
   };
-  const logicService = createLogicService(chanceMock, effectService);
+  const reducer = Logic.createReducer({
+    rng: rngMock,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 1, isSealed: false },
       { value: 10, isSealed: false },
       { value: 3, isSealed: true },
       { value: 4, isSealed: false },
       { value: 5, isSealed: false },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "shuffleAll",
       value: [0, 0],
       ratio: 0,
       remainTurn: 1,
     },
-    []
-  );
+    targets: [],
+  });
 
   // then
-  assert.equal(nextState.effects, [
+  assert.equal(nextState.board, [
     { value: 5, isSealed: false },
     { value: 4, isSealed: false },
     { value: 3, isSealed: true },
@@ -50,34 +50,36 @@ test("shuffle", () => {
 });
 
 test("increaseMaxAndDecreaseTarget", () => {
-  const logicService = createLogicService(chance, effectService);
+  const reducer = Logic.createReducer({
+    rng,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 1, isSealed: false },
       { value: 3, isSealed: false },
       { value: 0, isSealed: true },
       { value: 0, isSealed: false },
       { value: 0, isSealed: false },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "increaseMaxAndDecreaseTarget",
       value: [2, 0],
       ratio: 0,
       remainTurn: 1,
     },
-    []
-  );
+    targets: [],
+  });
 
   // then
-  assert.equal(nextState.effects, [
+  assert.equal(nextState.board, [
     { value: 1, isSealed: false },
     { value: 5, isSealed: false },
     { value: 0, isSealed: true },
@@ -87,38 +89,40 @@ test("increaseMaxAndDecreaseTarget", () => {
 });
 
 test("setValueRanged", () => {
-  const chanceMock = {
-    ...chance,
+  const rngMock = {
+    ...rng,
     integer: () => 6,
   };
-  const logicService = createLogicService(chanceMock, effectService);
+  const reducer = Logic.createReducer({
+    rng: rngMock,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 6, isSealed: false },
       { value: 2, isSealed: true },
       { value: 1, isSealed: false },
       { value: 3, isSealed: false },
       { value: 1, isSealed: true },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "setValueRanged",
       value: [5, 6],
       ratio: 0,
       remainTurn: 1,
     },
-    [0]
-  );
+    targets: [0],
+  });
 
   // then
-  assert.equal(nextState.effects, [
+  assert.equal(nextState.board, [
     { value: 6, isSealed: false },
     { value: 2, isSealed: true },
     { value: 1, isSealed: false },
@@ -128,34 +132,36 @@ test("setValueRanged", () => {
 });
 
 test("swapMinMax", () => {
-  const logicService = createLogicService(chance, effectService);
+  const reducer = Logic.createReducer({
+    rng,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 2, isSealed: false },
       { value: 0, isSealed: true },
       { value: 3, isSealed: false },
       { value: 2, isSealed: false },
       { value: 0, isSealed: false },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "swapMinMax",
       value: [0, 0],
       ratio: 0,
       remainTurn: 1,
     },
-    []
-  );
+    targets: [],
+  });
 
   // then
-  assert.equal(nextState.effects, [
+  assert.equal(nextState.board, [
     { value: 2, isSealed: false },
     { value: 0, isSealed: true },
     { value: 0, isSealed: false },
@@ -165,38 +171,40 @@ test("swapMinMax", () => {
 });
 
 test("unsealAndSealOther", () => {
-  const chanceMock = {
-    ...chance,
+  const rngMock = {
+    ...rng,
     pickone: <T>(arr: T[]) => arr[0],
   };
-  const logicService = createLogicService(chanceMock, effectService);
+  const reducer = Logic.createReducer({
+    rng: rngMock,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 1, isSealed: true },
       { value: 1, isSealed: false },
       { value: 3, isSealed: false },
       { value: 5, isSealed: false },
       { value: 2, isSealed: false },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "unsealAndSealOther",
       value: [0, 0],
       ratio: 0,
       remainTurn: 1,
     },
-    []
-  );
+    targets: [],
+  });
 
   // then
-  assert.equal(nextState.effects, [
+  assert.equal(nextState.board, [
     { value: 1, isSealed: false },
     { value: 1, isSealed: true },
     { value: 3, isSealed: false },
@@ -206,34 +214,36 @@ test("unsealAndSealOther", () => {
 });
 
 test("shiftAll - up", () => {
-  const logicService = createLogicService(chance, effectService);
+  const reducer = Logic.createReducer({
+    rng,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 1, isSealed: true },
       { value: 1, isSealed: false },
       { value: 3, isSealed: false },
       { value: 5, isSealed: false },
       { value: 2, isSealed: false },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "shiftAll",
       value: [0, 0],
       ratio: 0,
       remainTurn: 1,
     },
-    []
-  );
+    targets: [],
+  });
 
   // then
-  assert.equal(nextState.effects, [
+  assert.equal(nextState.board, [
     { value: 1, isSealed: true },
     { value: 3, isSealed: false },
     { value: 5, isSealed: false },
@@ -243,34 +253,36 @@ test("shiftAll - up", () => {
 });
 
 test("shiftAll - down", () => {
-  const logicService = createLogicService(chance, effectService);
+  const reducer = Logic.createReducer({
+    rng,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 1, isSealed: true },
       { value: 1, isSealed: false },
       { value: 3, isSealed: false },
       { value: 5, isSealed: false },
       { value: 2, isSealed: false },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "shiftAll",
       value: [1, 0],
       ratio: 0,
       remainTurn: 1,
     },
-    []
-  );
+    targets: [],
+  });
 
   // then
-  assert.equal(nextState.effects, [
+  assert.equal(nextState.board, [
     { value: 1, isSealed: true },
     { value: 2, isSealed: false },
     { value: 1, isSealed: false },
@@ -280,19 +292,22 @@ test("shiftAll - down", () => {
 });
 
 test("exhaust", () => {
-  const logicService = createLogicService(chance, effectService);
+  const reducer = Logic.createReducer({
+    rng,
+    config: { maxEnchant: 10, totalTurn: 14 },
+  });
 
   // given
   const state = {
     config: { maxEnchant: 10 },
-    effects: [
+    board: [
       { value: 1, isSealed: true },
       { value: 1, isSealed: false },
       { value: 3, isSealed: false },
       { value: 5, isSealed: false },
       { value: 2, isSealed: false },
     ],
-    sages: [
+    sageGroup: [
       {
         index: 0,
         isExhausted: false,
@@ -306,22 +321,21 @@ test("exhaust", () => {
         isExhausted: false,
       },
     ],
-  } as unknown as GameState;
+  } as unknown as GameState.T;
 
   // when
-  const nextState = logicService.runLogic(
-    state,
-    {
+  const nextState = reducer(state, {
+    logic: {
       type: "exhaust",
       value: [1, 0],
       ratio: 0,
       remainTurn: 1,
     },
-    []
-  );
+    targets: [],
+  });
 
   // then
-  assert.equal(nextState.sages, [
+  assert.equal(nextState.sageGroup, [
     {
       index: 0,
       isExhausted: true,

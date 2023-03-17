@@ -1,24 +1,27 @@
-import { api, benchmark, GameState } from "../src";
+import { benchmark, Board, GameState, SageGroup } from "../src";
+import { Rng } from "../src/model/rng";
 import { basicSelectEffectPolicy } from "./policy";
 
-function selectionFn(state: GameState) {
-  const selectedSageIndex = api.rng.pickone(api.game.getSelectableSages(state));
-  const councilId = state.sages[selectedSageIndex].councilId;
-  const selectedEffectIndex = basicSelectEffectPolicy(
+function selectionFn(state: GameState.T, rng: Rng) {
+  const sageIndex = rng.pickone(
+    SageGroup.query.getSelectableSageIndices(state.sageGroup)
+  );
+  const councilId = state.sageGroup[sageIndex].councilId;
+  const effectIndex = basicSelectEffectPolicy(
     state,
     councilId,
     [0, 1, 2, 3, 4]
   );
 
   return {
-    selectedSageIndex,
-    selectedEffectIndex,
+    sageIndex,
+    effectIndex,
   };
 }
 
-function scoreFn(state: GameState) {
+function scoreFn(state: GameState.T) {
   const score = [0, 1, 2, 3, 4]
-    .map((index) => api.game.getEffectLevel(state, index))
+    .map((index) => Board.query.getLevel(state.board, index))
     .sort((a, b) => b - a)
     .slice(0, 2)
     .reduce((a, b) => a + b, 0);
