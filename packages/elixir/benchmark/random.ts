@@ -34,7 +34,7 @@ const result = benchmark({
     maxEnchant: 10,
     totalTurn: 14,
   },
-  iteration: 1000000,
+  iteration: 100000,
   seed: 0,
   selectionFn,
   scoreFn,

@@ -1,4 +1,4 @@
-import { api, GameState } from "../src";
+import { api, query, GameState } from "../src";
 import { argmax, argmin } from "./util";
 
 export function randomSelectEffectPolicy(state: GameState) {
@@ -10,7 +10,7 @@ export function basicSelectEffectPolicy(
   councilId: string,
   objectiveIndices: number[]
 ) {
-  const council = api.council.getOne(councilId);
+  const council = query.council.getOne(councilId);
 
   const logic = council.logics[0];
   if (logic.targetType !== "userSelect") {
