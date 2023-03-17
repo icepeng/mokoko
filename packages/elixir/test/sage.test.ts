@@ -1,8 +1,8 @@
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import sageEntity, { SageState, SageType } from "../src/model/sage";
+import { Sage, SageType } from "../src/model/sage";
 
-function sage(index: 0 | 1 | 2, type: SageType, power: number): SageState {
+function sage(index: 0 | 1 | 2, type: SageType, power: number): Sage {
   return {
     index,
     type,
@@ -12,13 +12,13 @@ function sage(index: 0 | 1 | 2, type: SageType, power: number): SageState {
   };
 }
 
-function updatePowers(sages: SageState[], selectedIndex: number): SageState[] {
-  return sages.map((sage) => sageEntity.updatePower(sage, selectedIndex));
+function updatePowers(sages: Sage[], selectedIndex: number): Sage[] {
+  return sages.map((sage) => Sage.updatePower(sage, selectedIndex));
 }
 
 test("updatePowers - 최초 상태", () => {
   // given
-  const sageStates: SageState[] = [
+  const sageStates: Sage[] = [
     sage(0, "none", 0),
     sage(1, "none", 0),
     sage(2, "none", 0),
@@ -34,7 +34,7 @@ test("updatePowers - 최초 상태", () => {
 
 test("updatePowers - 혼돈 선택", () => {
   // given
-  const sageStates: SageState[] = [
+  const sageStates: Sage[] = [
     sage(0, "chaos", 4),
     sage(1, "chaos", 5),
     sage(2, "lawful", 2),
@@ -56,7 +56,7 @@ test("updatePowers - 혼돈 선택", () => {
 
 test("updatePowers - 풀스택 미선택 초기화", () => {
   // given
-  const sageStates: SageState[] = [
+  const sageStates: Sage[] = [
     sage(0, "chaos", 4),
     sage(1, "chaos", 6),
     sage(2, "lawful", 2),
@@ -78,7 +78,7 @@ test("updatePowers - 풀스택 미선택 초기화", () => {
 
 test("updatePowers - 혼돈 풀스택 선택 초기화", () => {
   // given
-  const sageStates: SageState[] = [
+  const sageStates: Sage[] = [
     sage(0, "chaos", 4),
     sage(1, "chaos", 6),
     sage(2, "lawful", 2),
@@ -100,7 +100,7 @@ test("updatePowers - 혼돈 풀스택 선택 초기화", () => {
 
 test("updatePowers - 질서 풀스택 선택 초기화", () => {
   // given
-  const sageStates: SageState[] = [
+  const sageStates: Sage[] = [
     sage(0, "chaos", 3),
     sage(1, "chaos", 3),
     sage(2, "lawful", 3),

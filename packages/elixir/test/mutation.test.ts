@@ -1,11 +1,21 @@
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import game, { GameState } from "../src/model/game";
-import { createMutationService } from "../src/service/mutation";
+import { Effect } from "../src";
+import { GameState } from "../src/model/game";
 
-const { queryPickRatios } = createMutationService();
+const initialState = GameState.createInitialState({
+  maxEnchant: 10,
+  totalTurn: 14,
+});
 
-const initialState = game.createInitialState({ maxEnchant: 10, totalTurn: 14 });
+function createEffects(data: [number, boolean][]): Effect[] {
+  return data.map(([value, isSealed], index) => ({
+    value,
+    isSealed,
+    optionId: "",
+    index,
+  }));
+}
 
 function round(num: number, precision: number) {
   const factor = Math.pow(10, precision);
@@ -21,7 +31,7 @@ test("queryPickRatios - 최초 상태", () => {
   const gameState: GameState = { ...initialState };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(postProcessPickRatios(pickRatios), [0.2, 0.2, 0.2, 0.2, 0.2]);
@@ -35,7 +45,7 @@ test("queryPickRatios - 1회 증가", () => {
   };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(
@@ -55,7 +65,7 @@ test("queryPickRatios - 1회 증가 1회 감소", () => {
   };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(postProcessPickRatios(pickRatios), [0.2, 0.2, 0.2, 0.2, 0.2]);
@@ -69,7 +79,7 @@ test("queryPickRatios - 100% 증가", () => {
   };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(postProcessPickRatios(pickRatios), [1, 0, 0, 0, 0]);
@@ -83,7 +93,7 @@ test("queryPickRatios - 100% 감소", () => {
   };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(postProcessPickRatios(pickRatios), [0, 0.25, 0.25, 0.25, 0.25]);
@@ -102,7 +112,7 @@ test("queryPickRatios - complex", () => {
   };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(
@@ -115,33 +125,13 @@ test("queryPickRatios - complex 2", () => {
   // given
   const gameState: GameState = {
     ...initialState,
-    effects: [
-      {
-        name: "민첩",
-        value: 1,
-        isSealed: true,
-      },
-      {
-        name: "무력화",
-        value: 10,
-        isSealed: false,
-      },
-      {
-        name: "자원의 축복",
-        value: 3,
-        isSealed: false,
-      },
-      {
-        name: "보스 피해",
-        value: 0,
-        isSealed: true,
-      },
-      {
-        name: "무기 공격력",
-        value: 1,
-        isSealed: true,
-      },
-    ],
+    effects: createEffects([
+      [1, true],
+      [10, false],
+      [3, false],
+      [0, true],
+      [1, true],
+    ]),
     mutations: [
       {
         target: "prob",
@@ -153,7 +143,7 @@ test("queryPickRatios - complex 2", () => {
   };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(postProcessPickRatios(pickRatios), [0, 0, 1, 0, 0]);
@@ -163,33 +153,13 @@ test("should not apply mutation to sealed effect", () => {
   // given
   const gameState: GameState = {
     ...initialState,
-    effects: [
-      {
-        name: "자원의 축복",
-        value: 2,
-        isSealed: true,
-      },
-      {
-        name: "무기 공격력",
-        value: 0,
-        isSealed: false,
-      },
-      {
-        name: "민첩",
-        value: 5,
-        isSealed: false,
-      },
-      {
-        name: "보스 피해",
-        value: 0,
-        isSealed: false,
-      },
-      {
-        name: "무력화",
-        value: 3,
-        isSealed: false,
-      },
-    ],
+    effects: createEffects([
+      [2, true],
+      [0, false],
+      [5, false],
+      [0, false],
+      [3, false],
+    ]),
     mutations: [
       {
         target: "prob",
@@ -207,7 +177,7 @@ test("should not apply mutation to sealed effect", () => {
   };
 
   // when
-  const pickRatios = queryPickRatios(gameState);
+  const pickRatios = GameState.query.getPickRatios(gameState);
 
   // then
   assert.equal(postProcessPickRatios(pickRatios), [0, 0.25, 0.25, 0.25, 0.25]);
