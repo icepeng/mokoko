@@ -7,10 +7,6 @@ export function createRngService() {
     chance = new Chance(seed);
   }
 
-  function getSeed(): number {
-    return chance.seed as number;
-  }
-
   function bool(opts?: { likelihood: number }) {
     if (opts?.likelihood === 10000) {
       return true;
@@ -43,7 +39,6 @@ export function createRngService() {
 
   return {
     setSeed,
-    getSeed,
     bool,
     pickone,
     pickset,
