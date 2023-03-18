@@ -247,11 +247,15 @@ function getEffectLevel(state: GameState, index: number): number {
   return Effect.query.getLevel(effect);
 }
 
-function checkSealNeeded(state: GameState) {
+function getEffectCountToSeal(state: GameState): number {
   const sealedEffectCount = state.effects.filter(
     (effect) => effect.isSealed
   ).length;
-  const toSeal = 3 - sealedEffectCount;
+  return 3 - sealedEffectCount;
+}
+
+function checkSealNeeded(state: GameState) {
+  const toSeal = getEffectCountToSeal(state);
 
   return state.turnLeft <= toSeal;
 }
@@ -423,6 +427,7 @@ const query = {
   isEffectSealed,
   getEffectValue,
   getEffectLevel,
+  getEffectCountToSeal,
   checkSealNeeded,
   getCouncilType,
   isTurnInRange,
