@@ -1,4 +1,5 @@
 import { data, GameState } from "../../src";
+import { councilConverter } from "./index-converter";
 
 function createCouncilIndexTable() {
   let i = 0;
@@ -40,7 +41,7 @@ const requireSelect = [
 ];
 
 interface ScoreCalculatorData {
-  adviceCounting: number[][][][][][];
+  adviceCounting: number[][][][];
   curveRankRecord: Record<number, Record<string, number>>;
   curveProbRecord: Record<number, number[]>;
 }
@@ -62,27 +63,34 @@ export function createScoreCalculator({
     return curveScores;
   }
 
-  function getAdviceScores(gameState: GameState) {
+  function getAdviceScores(
+    gameState: GameState,
+    [first, second]: [number, number]
+  ) {
+    const values = gameState.effects.map((effect) =>
+      effect.isSealed ? 0 : effect.value
+    );
+    const sealed = gameState.effects.map((effect) => effect.isSealed);
+
     const adviceScores = gameState.sages.map((sage) => {
       const councilIndex = councilIndexTable[sage.councilId];
       if (councilIndex === -1) {
         return {
           effectIndex: null,
-          score: 0,
+          score: -1,
         };
       }
 
-      const values = gameState.effects.map((effect) => effect.value);
-      const sealed = gameState.effects.map((effect) => effect.isSealed);
-      const a = adviceCounting[sealed[0] ? 0 : values[0]];
-      const b = a[sealed[1] ? 0 : values[1]];
-      const c = b[sealed[2] ? 0 : values[2]];
-      const d = c[sealed[3] ? 0 : values[3]];
-      const e = d[sealed[4] ? 0 : values[4]];
+      const convertedIndex =
+        councilIndexTable[councilConverter([first, second], sage.councilId)];
+
+      const a = adviceCounting[values[first]];
+      const b = a[values[second]];
+      const c = b[gameState.turnLeft - 1];
 
       if (requireSelect.includes(sage.councilId)) {
         const scores = [-5, -4, -3, -2, -1].map((i, index) =>
-          sealed[index] ? -9999999 : e[councilIndex + i]
+          sealed[index] ? -1 : c[convertedIndex + i]
         );
         const score = Math.max(...scores);
         const effectIndex = scores.indexOf(score);
@@ -94,27 +102,62 @@ export function createScoreCalculator({
 
       return {
         effectIndex: null,
-        score: e[councilIndex],
+        score: c[convertedIndex],
       };
     });
 
     return adviceScores;
   }
 
-  function calculateScores(gameState: GameState, currentCurve: number[]) {
+  function getBaselineAdviceScore(
+    gameState: GameState,
+    [first, second]: [number, number]
+  ) {
+    const values = gameState.effects.map((effect) =>
+      effect.isSealed ? 0 : effect.value
+    );
+    const a = adviceCounting[values[first]];
+    const b = a[values[second]];
+    const c = b[gameState.turnLeft - 1];
+    const councilIndex = councilIndexTable["XR286C4T"]; // 비용감소
+    return c[councilIndex] / 2;
+  }
+
+  function calculateScores(
+    gameState: GameState,
+    currentCurve: number[],
+    targetIndices: [number, number]
+  ) {
     const curveScores = getCurveScores(gameState, currentCurve);
-    const adviceScores = getAdviceScores(gameState);
+    const adviceScores = getAdviceScores(gameState, targetIndices);
+
+    // const curveStdev = stdev(curveScores);
+    // const MEAN_CURVE_STDEV = 0.003632;
+
+    // if (curveStdev > MEAN_CURVE_STDEV * 2) {
+    //   return [0, 1, 2].flatMap((sageIndex) => ({
+    //     sageIndex,
+    //     effectIndex: adviceScores[sageIndex].effectIndex,
+    //     score:
+    //       (curveScores[sageIndex] + 0.01) *
+    //       Math.pow(adviceScores[sageIndex].score, 1.5),
+    //   }));
+    // }
 
     return [0, 1, 2].flatMap((sageIndex) => ({
       sageIndex,
       effectIndex: adviceScores[sageIndex].effectIndex,
       score:
-        (0.0001 + curveScores[sageIndex] / 100) *
-        (0.0001 + adviceScores[sageIndex].score),
+        adviceScores[sageIndex].score < 0
+          ? -1
+          : (curveScores[sageIndex] + 0.001) *
+            Math.pow(adviceScores[sageIndex].score, 2),
     }));
   }
 
   return {
+    getAdviceScores,
+    getBaselineAdviceScore,
     calculateScores,
   };
 }

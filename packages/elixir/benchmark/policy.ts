@@ -2,7 +2,7 @@ import { api, query, GameState } from "../src";
 import { argmax, argmin } from "./util";
 
 export function randomSelectEffectPolicy(state: GameState) {
-  return api.rng.pickone(api.game.getSelectableEffects(state));
+  return api.rng.pickone(query.game.getSelectableEffects(state));
 }
 
 export function basicSelectEffectPolicy(
