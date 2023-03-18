@@ -189,6 +189,13 @@ export function createLogicGuardService() {
 
   // 소진
   function exhaust(state: GameState, logic: CouncilLogicData): boolean {
+    const exhaustedCount = state.sages.filter(
+      (sage) => sage.isExhausted
+    ).length;
+    if (exhaustedCount > 0) {
+      return false;
+    }
+
     return true;
   }
 
@@ -249,10 +256,18 @@ export function createLogicGuardService() {
     if (state.turnPassed === 0) {
       return false;
     }
-    return (
+    const isBothMutable =
       GameState.query.isEffectMutable(state, logic.value[0]) &&
-      GameState.query.isEffectMutable(state, logic.value[1])
-    );
+      GameState.query.isEffectMutable(state, logic.value[1]);
+
+    if (!isBothMutable) {
+      return false;
+    }
+
+    const firstValue = GameState.query.getEffectValue(state, logic.value[0]);
+    const secondValue = GameState.query.getEffectValue(state, logic.value[1]);
+
+    return firstValue >= secondValue;
   }
 
   const logicGuards: Record<
