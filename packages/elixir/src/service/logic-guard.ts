@@ -168,6 +168,10 @@ export function createLogicGuardService() {
 
   // <{0}> 효과와 <{1}> 효과의 단계를 뒤바꿔줄게.
   function swapValues(state: GameState, logic: CouncilLogicData): boolean {
+    if (state.turnPassed === 0) {
+      return false;
+    }
+
     return (
       GameState.query.isEffectMutable(state, logic.value[0]) &&
       GameState.query.isEffectMutable(state, logic.value[1])
@@ -176,6 +180,10 @@ export function createLogicGuardService() {
 
   // <최고 단계> 효과 <1>개와  <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.
   function swapMinMax(state: GameState, logic: CouncilLogicData): boolean {
+    if (state.turnPassed === 0) {
+      return false;
+    }
+
     return true;
   }
 
@@ -227,6 +235,9 @@ export function createLogicGuardService() {
     state: GameState,
     logic: CouncilLogicData
   ): boolean {
+    if (state.turnPassed === 0) {
+      return false;
+    }
     return true;
   }
 
@@ -235,6 +246,9 @@ export function createLogicGuardService() {
     state: GameState,
     logic: CouncilLogicData
   ): boolean {
+    if (state.turnPassed === 0) {
+      return false;
+    }
     return (
       GameState.query.isEffectMutable(state, logic.value[0]) &&
       GameState.query.isEffectMutable(state, logic.value[1])
