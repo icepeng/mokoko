@@ -12,7 +12,7 @@ function createEffects(data: [number, boolean][]): Effect[] {
   return data.map(([value, isSealed], index) => ({
     value,
     isSealed,
-    optionId: "",
+    optionName: "",
     index,
   }));
 }

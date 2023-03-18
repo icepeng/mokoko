@@ -30,31 +30,31 @@ function createInitialState(config: GameConfiguration): GameState {
     rerollLeft: 2,
     effects: [
       {
-        optionId: "12000",
+        optionName: "12000",
         index: 0,
         value: 0,
         isSealed: false,
       },
       {
-        optionId: "10101",
+        optionName: "10101",
         index: 1,
         value: 0,
         isSealed: false,
       },
       {
-        optionId: "10001",
+        optionName: "10001",
         index: 2,
         value: 0,
         isSealed: false,
       },
       {
-        optionId: "10106",
+        optionName: "10106",
         index: 3,
         value: 0,
         isSealed: false,
       },
       {
-        optionId: "10108",
+        optionName: "10108",
         index: 4,
         value: 0,
         isSealed: false,
@@ -312,7 +312,7 @@ function getCouncilDescription(state: GameState, sageIndex: number) {
     throw new Error("Invalid council id");
   }
   const effectNames = state.effects.map((eff) =>
-    Effect.query.getEffectOptionNameById(eff.optionId)
+    Effect.query.getEffectOptionNameById(eff.optionName)
   );
 
   return council.descriptions[sageIndex]

@@ -2,13 +2,12 @@ import { effectLevelTable, effectOptionsRecord } from "../data/effect";
 
 export interface Effect {
   index: number;
-  optionId: keyof typeof effectOptionsRecord;
+  optionName: keyof typeof effectOptionsRecord;
   value: number;
   isSealed: boolean;
 }
 
 export interface EffectOption {
-  id: string;
   name: string;
   optionDescriptions: [string, string, string, string, string, string];
 }
@@ -28,14 +27,14 @@ function setValue(effect: Effect, value: number): Effect {
   };
 }
 
-function setOptionId(effect: Effect, optionId: string): Effect {
+function setOptionName(effect: Effect, optionName: string): Effect {
   if (effect.isSealed) {
     throw new Error("Effect is sealed");
   }
 
   return {
     ...effect,
-    optionId,
+    optionName,
   };
 }
 
@@ -103,7 +102,7 @@ const query = {
 
 export const Effect = {
   setValue,
-  setOptionId,
+  setOptionName,
   seal,
   unseal,
   query,
