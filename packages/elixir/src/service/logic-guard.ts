@@ -51,7 +51,13 @@ export function createLogicGuardService() {
     state: GameState,
     logic: CouncilLogicData
   ): boolean {
-    return state.turnLeft - logic.value[0] > 1;
+    // 봉인이 덜된채로 게임 끝나는 경우가 없어야 함
+    const turnLeftAfterEnchant = state.turnLeft - logic.value[0] - 1;
+    const sealedEffectCount = state.effects.filter(
+      (effect) => effect.isSealed
+    ).length;
+    const toSeal = 3 - sealedEffectCount;
+    return turnLeftAfterEnchant >= toSeal;
   }
 
   // <모든 효과>의 단계를 뒤섞도록 하지. 어떻게 뒤섞일지 보자고.
