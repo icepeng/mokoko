@@ -1,9 +1,5 @@
 import { councils } from "./data/council";
 import { effectLevelTable, effectOptions } from "./data/effect";
-import { Council } from "./model/council";
-import { Effect } from "./model/effect";
-import { GameState } from "./model/game";
-import { Sage } from "./model/sage";
 import { createCouncilService } from "./service/council";
 import { createEffectService } from "./service/effect";
 import { createGameService } from "./service/game";
@@ -26,13 +22,6 @@ const gameService = createGameService(
   logicService,
   targetService
 );
-
-export const query = {
-  council: Council.query,
-  effect: Effect.query,
-  game: GameState.query,
-  sage: Sage.query,
-};
 
 export const api = {
   game: gameService,

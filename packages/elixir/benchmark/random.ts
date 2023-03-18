@@ -1,9 +1,9 @@
-import { api, query, benchmark, GameState } from "../src";
+import { api, benchmark, GameState } from "../src";
 import { Action } from "../src/benchmark";
 import { basicSelectEffectPolicy } from "./policy";
 
 function selectionFn(state: GameState): Action {
-  const sageIndex = api.rng.pickone(query.game.getSelectableSages(state));
+  const sageIndex = api.rng.pickone(GameState.query.getSelectableSages(state));
   const councilId = state.sages[sageIndex].councilId;
   const effectIndex = basicSelectEffectPolicy(
     state,
@@ -20,7 +20,7 @@ function selectionFn(state: GameState): Action {
 
 function scoreFn(state: GameState) {
   const score = [0, 1, 2, 3, 4]
-    .map((index) => query.game.getEffectLevel(state, index))
+    .map((index) => GameState.query.getEffectLevel(state, index))
     .sort((a, b) => b - a)
     .slice(0, 2)
     .reduce((a, b) => a + b, 0);

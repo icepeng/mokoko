@@ -44,7 +44,7 @@ export function createEffectService(chance: RngService) {
 
   function getEffectOptionCurrentDescription(state: GameState, index: number) {
     const eff = state.effects[index];
-    const option = Effect.query.getEffectOptionById(eff.optionName);
+    const option = Effect.query.getEffectOptionByName(eff.optionName);
     const level = Effect.query.getLevel(eff);
     return option.optionDescriptions[level];
   }

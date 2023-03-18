@@ -1,8 +1,8 @@
-import { api, query, GameState } from "../src";
+import { api, Council, GameState } from "../src";
 import { argmax, argmin } from "./util";
 
 export function randomSelectEffectPolicy(state: GameState) {
-  return api.rng.pickone(query.game.getSelectableEffects(state));
+  return api.rng.pickone(GameState.query.getSelectableEffects(state));
 }
 
 export function basicSelectEffectPolicy(
@@ -10,7 +10,7 @@ export function basicSelectEffectPolicy(
   councilId: string,
   objectiveIndices: number[]
 ) {
-  const council = query.council.getOne(councilId);
+  const council = Council.query.getOne(councilId);
 
   const logic = council.logics[0];
   if (logic.targetType !== "userSelect") {

@@ -11,7 +11,7 @@ export interface GameConfiguration {
 
 export interface GameState {
   config: GameConfiguration;
-  phase: "restart" | "council" | "enchant" | "done";
+  phase: "restart" | "pickup" | "council" | "enchant" | "done";
   turnLeft: number;
   turnPassed: number;
   rerollLeft: number;
@@ -24,37 +24,37 @@ export interface GameState {
 function createInitialState(config: GameConfiguration): GameState {
   return {
     config,
-    phase: "council",
+    phase: "pickup",
     turnLeft: config.totalTurn,
     turnPassed: 0,
     rerollLeft: 2,
     effects: [
       {
-        optionName: "12000",
+        optionName: "보스 피해",
         index: 0,
         value: 0,
         isSealed: false,
       },
       {
-        optionName: "10101",
+        optionName: "무기 공격력",
         index: 1,
         value: 0,
         isSealed: false,
       },
       {
-        optionName: "10001",
+        optionName: "민첩",
         index: 2,
         value: 0,
         isSealed: false,
       },
       {
-        optionName: "10106",
+        optionName: "자원의 축복",
         index: 3,
         value: 0,
         isSealed: false,
       },
       {
-        optionName: "10108",
+        optionName: "무력화",
         index: 4,
         value: 0,
         isSealed: false,
@@ -97,7 +97,7 @@ function passTurn(state: GameState, selectedSageIndex: number): GameState {
     throw new Error("No turn left");
   }
 
-  const nextPhase = state.turnLeft === 1 ? "done" : "council";
+  const nextPhase = state.turnLeft === 1 ? "done" : "pickup";
 
   return {
     ...state,
@@ -311,9 +311,7 @@ function getCouncilDescription(state: GameState, sageIndex: number) {
   if (!council) {
     throw new Error("Invalid council id");
   }
-  const effectNames = state.effects.map((eff) =>
-    Effect.query.getEffectOptionNameById(eff.optionName)
-  );
+  const effectNames = state.effects.map((eff) => eff.optionName);
 
   return council.descriptions[sageIndex]
     .replaceAll("{0}", effectNames[0])

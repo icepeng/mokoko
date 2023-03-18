@@ -1,9 +1,9 @@
-import { GameState, query } from "../src";
+import { GameState } from "../src";
 import { basicSelectEffectPolicy } from "./policy";
 
 export function createUiState(state: GameState, sageIndex: number) {
   if (![0, 1, 2].includes(sageIndex)) console.log(sageIndex);
-  if (query.game.isEffectSelectionRequired(state, sageIndex)) {
+  if (GameState.query.isEffectSelectionRequired(state, sageIndex)) {
     const councilId = state.sages[sageIndex].councilId;
     const selectedEffectIndex = basicSelectEffectPolicy(
       state,

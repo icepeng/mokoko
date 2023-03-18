@@ -1,11 +1,11 @@
-import { benchmark, GameState, UiState } from "../../src";
+import { benchmark, GameState } from "../../src";
 import { Action } from "../../src/benchmark";
 import { createUiState } from "../ui-state";
 import { argmax, getMaxIndexN } from "../util";
 import { scoreCalculator } from "./calc-init";
 import { shouldReroll } from "./reroll";
 
-function selectionFn(state: GameState, uiHistory: UiState[]): Action {
+function selectionFn(state: GameState): Action {
   const values = state.effects.map((effect) =>
     effect.isSealed ? 0 : effect.value
   );
@@ -16,11 +16,7 @@ function selectionFn(state: GameState, uiHistory: UiState[]): Action {
     };
   }
 
-  const scores = scoreCalculator.calculateScores(
-    state,
-    uiHistory.map((ui) => ui.selectedSageIndex!),
-    targetIndices
-  );
+  const scores = scoreCalculator.calculateScores(state, targetIndices);
 
   const selected = argmax(scores, (x) => x.score);
   const selectedEffectIndex = selected.effectIndex;

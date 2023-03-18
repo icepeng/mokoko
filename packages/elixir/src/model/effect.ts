@@ -74,30 +74,25 @@ function getLevel(effect: Effect) {
   return effectLevelTable[value as keyof typeof effectLevelTable];
 }
 
-function getEffectOptionById(id: string): EffectOption {
-  const option = effectOptionsRecord[id];
+function getEffectOptionByName(name: string): EffectOption {
+  const option = effectOptionsRecord[name];
   if (!option) {
-    throw new Error(`Invalid effect option id: ${id}`);
+    throw new Error(`Invalid effect option id: ${name}`);
   }
 
   return option;
 }
 
-function getEffectOptionNameById(id: string) {
-  return getEffectOptionById(id).name;
-}
-
-function getEffectOptionDescriptionByIdAndLevel(id: string, level: number) {
-  const option = getEffectOptionById(id);
+function getEffectOptionDescriptionByNameAndLevel(name: string, level: number) {
+  const option = getEffectOptionByName(name);
   return option.optionDescriptions[level];
 }
 
 const query = {
   isMutable,
   getLevel,
-  getEffectOptionById,
-  getEffectOptionNameById,
-  getEffectOptionDescriptionByIdAndLevel,
+  getEffectOptionByName,
+  getEffectOptionDescriptionByNameAndLevel,
 };
 
 export const Effect = {

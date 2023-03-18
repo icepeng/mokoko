@@ -1,6 +1,6 @@
 import { test } from "uvu";
 import * as assert from "uvu/assert";
-import { api, Effect, query } from "../src";
+import { api } from "../src";
 import { GameState } from "../src/model/game";
 
 const initialState = GameState.createInitialState({
@@ -19,7 +19,7 @@ test("getEnchantEffectCount", () => {
   };
 
   // when
-  const count = query.game.getEnchantEffectCount(gameState);
+  const count = GameState.query.getEnchantEffectCount(gameState);
 
   // then
   assert.equal(count, 2);
