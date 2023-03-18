@@ -27,10 +27,11 @@ export function createSageService(councilService: CouncilService) {
   }
 
   function rerollCouncils(state: GameState): GameState {
+    // TODO: 예외처리 없이 council에 가중치 1인 조언으로 처리 가능한지 알아볼것
     if (
       state.turnLeft === 1 &&
       [0, 1, 2].every((i) =>
-        ["seal", "exhausted"].includes(query.game.getCouncilType(state, i))
+        ["seal"].includes(query.game.getCouncilType(state, i))
       )
     ) {
       return { ...state };
