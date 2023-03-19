@@ -23,7 +23,7 @@
   "repository": {
     "name": "mokoko",
     "url": "https://github.com/icepeng/mokoko",
-    "directory": "packages/engrave"
+    "directory": "packages/elixir"
   },
   "license": "MIT",
   "scripts": {
