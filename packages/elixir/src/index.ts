@@ -1,5 +1,4 @@
 export { api, data } from "./api";
-export { benchmark } from "./benchmark";
 
 export { Council } from "./model/council";
 export { Effect } from "./model/effect";

@@ -1,3 +1,4 @@
+import * as constant from "./data/const";
 import { councils } from "./data/council";
 import { effectLevelTable, effectOptions } from "./data/effect";
 import { createCouncilService } from "./service/council";
@@ -34,6 +35,7 @@ export const api = {
 };
 
 export const data = {
+  constant: constant,
   councils: councils,
   effectLevelTable: effectLevelTable,
   effectOptions: effectOptions,
