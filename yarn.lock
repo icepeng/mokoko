@@ -395,14 +395,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mokoko/elixir-evaluator@workspace:packages/elixir-evaluator"
   dependencies:
-    "@mokoko/elixir": ^0.0.2
+    "@mokoko/elixir": ^0.0.3
     tsm: ^2.3.0
     tsup: ^6.5.0
     typescript: 4.9.3
   languageName: unknown
   linkType: soft
 
-"@mokoko/elixir@^0.0.2, @mokoko/elixir@workspace:packages/elixir":
+"@mokoko/elixir@^0.0.3, @mokoko/elixir@workspace:packages/elixir":
   version: 0.0.0-use.local
   resolution: "@mokoko/elixir@workspace:packages/elixir"
   dependencies:
