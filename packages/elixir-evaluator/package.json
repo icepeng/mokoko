@@ -1,6 +1,6 @@
 {
   "name": "@mokoko/elixir-evaluator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lostark elixir value calculator",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,7 +38,7 @@
     "typescript": "4.9.3"
   },
   "dependencies": {
-    "@mokoko/elixir": "^0.0.1"
+    "@mokoko/elixir": "^0.0.2"
   },
   "publishConfig": {
     "access": "public"
