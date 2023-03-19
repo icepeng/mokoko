@@ -38,10 +38,7 @@ export function councilConverter(
 ): string {
   const council = Council.query.getOne(councilId);
 
-  if (
-    council.logics[0].type === "swapValues" ||
-    council.logics[0].type === "decreaseFirstTargetAndSwap"
-  ) {
+  if (council.logics[0].type === "swapValues") {
     const target1Idx = council.logics[0].value[0];
     const target2Idx = council.logics[0].value[1];
     const matchCount = [target1Idx, target2Idx].filter(
@@ -52,6 +49,30 @@ export function councilConverter(
       1: [0, 2],
       2: [0, 1],
     }[matchCount];
+
+    return indexedTable[
+      JSON.stringify([
+        {
+          ...council.logics[0],
+          value,
+        },
+      ])
+    ].id;
+  }
+
+  if (council.logics[0].type === "decreaseFirstTargetAndSwap") {
+    const target1Idx = council.logics[0].value[0];
+    const target2Idx = council.logics[0].value[1];
+    const isTarget1Included = [first, second].includes(target1Idx);
+    const isTarget2Included = [first, second].includes(target2Idx);
+    const value =
+      isTarget1Included && isTarget2Included
+        ? [0, 1]
+        : isTarget1Included
+        ? [0, 2]
+        : isTarget2Included
+        ? [2, 0]
+        : [2, 3];
 
     return indexedTable[
       JSON.stringify([
