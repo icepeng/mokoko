@@ -305,8 +305,11 @@ function isTurnInRange(state: GameState, [min, max]: [number, number]) {
   return turn >= min && turn < max;
 }
 
-function getCouncilDescription(state: GameState, sageIndex: number) {
-  const id = state.sages[sageIndex].councilId;
+function getCouncilDescriptionFromId(
+  state: GameState,
+  id: string,
+  sageIndex: number
+) {
   const council = Council.query.getOne(id);
   if (!council) {
     throw new Error("Invalid council id");
@@ -319,6 +322,11 @@ function getCouncilDescription(state: GameState, sageIndex: number) {
     .replaceAll("{2}", effectNames[2])
     .replaceAll("{3}", effectNames[3])
     .replaceAll("{4}", effectNames[4]);
+}
+
+function getCouncilDescription(state: GameState, sageIndex: number) {
+  const id = state.sages[sageIndex].councilId;
+  return getCouncilDescriptionFromId(state, id, sageIndex);
 }
 
 // mutation
@@ -430,6 +438,7 @@ const query = {
   getCouncilType,
   isTurnInRange,
   isSageExhausted,
+  getCouncilDescriptionFromId,
   getCouncilDescription,
   getPickRatios,
   getLuckyRatios,
