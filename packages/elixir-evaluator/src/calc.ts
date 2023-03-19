@@ -1,6 +1,6 @@
 import { api, data, GameState, Sage } from "@mokoko/elixir";
-import { randomSelectEffectPolicy } from "./policy";
 import { councilConverter } from "./index-converter";
+import { randomSelectEffectPolicy } from "./policy";
 
 function createCouncilIndexTable() {
   let i = 0;

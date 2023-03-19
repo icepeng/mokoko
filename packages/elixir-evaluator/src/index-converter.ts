@@ -37,6 +37,32 @@ export function councilConverter(
   councilId: string
 ): string {
   const council = Council.query.getOne(councilId);
+
+  if (
+    council.logics[0].type === "swapValues" ||
+    council.logics[0].type === "decreaseFirstTargetAndSwap"
+  ) {
+    const target1Idx = council.logics[0].value[0];
+    const target2Idx = council.logics[0].value[1];
+    const matchCount = [target1Idx, target2Idx].filter(
+      (idx) => idx === first || idx === second
+    ).length;
+    const value = {
+      0: [2, 3],
+      1: [0, 2],
+      2: [0, 1],
+    }[matchCount];
+
+    return indexedTable[
+      JSON.stringify([
+        {
+          ...council.logics[0],
+          value,
+        },
+      ])
+    ].id;
+  }
+
   if (
     council.logics[0]?.targetType === "proposed" &&
     council.logics[1]?.targetType === "proposed"

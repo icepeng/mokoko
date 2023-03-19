@@ -30,7 +30,8 @@
     "build-fast": "tsup src/index.ts --format esm,cjs",
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
-    "start": "node -r tsm ./src/index.ts"
+    "benchmark": "node -r tsm ./src/index.ts",
+    "baseline": "node -r tsm ./src/baseline.ts"
   },
   "devDependencies": {
     "tsm": "^2.3.0",
