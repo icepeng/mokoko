@@ -265,7 +265,7 @@ export function createLogicService(
     const selectedValue = GameState.query.getEffectValue(state, target);
     const availableIndexes = [0, 1, 2, 3, 4].filter(
       (index) =>
-        !GameState.query.isEffectSealed(state, index) && index !== target
+        GameState.query.isEffectMutable(state, index) && index !== target
     );
     const values = [0, 1, 2, 3, 4].map((index) =>
       index !== target ? GameState.query.getEffectValue(state, index) : 0
@@ -397,8 +397,10 @@ export function createLogicService(
     );
     const availableIndexes = [0, 1, 2, 3, 4].filter(
       (index) =>
-        !GameState.query.isEffectSealed(state, index) && index !== pickedMin
+        GameState.query.isEffectMutable(state, index) && index !== pickedMin
     );
+    console.log(availableIndexes);
+    console.log(minValue, pickedMin);
     const values = [0, 1, 2, 3, 4].map((index) =>
       index !== pickedMin ? GameState.query.getEffectValue(state, index) : 0
     );
@@ -422,7 +424,7 @@ export function createLogicService(
     );
     const availableIndexes = [0, 1, 2, 3, 4].filter(
       (index) =>
-        !GameState.query.isEffectSealed(state, index) && index !== pickedMax
+        GameState.query.isEffectMutable(state, index) && index !== pickedMax
     );
     const values = [0, 1, 2, 3, 4].map((index) =>
       index !== pickedMax ? GameState.query.getEffectValue(state, index) : 0
