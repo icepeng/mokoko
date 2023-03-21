@@ -37,6 +37,60 @@ export function createRngService() {
     return chance.shuffle(arr);
   }
 
+  function redistributeOne(props: {
+    values: number[];
+    indexToRedistribute: number;
+    fixedIndices: number[];
+    limit: number;
+  }): number[] {
+    const { values: _values, indexToRedistribute, fixedIndices, limit } = props;
+    const values = [..._values];
+
+    const amount = values[indexToRedistribute];
+    for (let i = 0; i < amount; i++) {
+      const availableIndexes = [0, 1, 2, 3, 4].filter(
+        (index) =>
+          !fixedIndices.includes(index) &&
+          values[index] < limit &&
+          index !== indexToRedistribute
+      );
+      if (availableIndexes.length === 0) break;
+
+      const index = chance.pickone(availableIndexes);
+      values[index]++;
+      values[indexToRedistribute]--;
+    }
+
+    return values;
+  }
+
+  function redistributeAll(props: {
+    values: number[];
+    fixedIndices: number[];
+    limit: number;
+  }): number[] {
+    const { values: _values, fixedIndices, limit } = props;
+    const values = Array.from(_values, (value, i) =>
+      fixedIndices.includes(i) ? value : 0
+    );
+    const amount = _values.reduce(
+      (acc, val, i) => (fixedIndices.includes(i) ? acc : acc + val),
+      0
+    );
+
+    for (let i = 0; i < amount; i++) {
+      const availableIndexes = [0, 1, 2, 3, 4].filter(
+        (index) => !fixedIndices.includes(index) && values[index] < limit
+      );
+      if (availableIndexes.length === 0) break;
+
+      const index = chance.pickone(availableIndexes);
+      values[index]++;
+    }
+
+    return values;
+  }
+
   return {
     setSeed,
     bool,
@@ -45,6 +99,8 @@ export function createRngService() {
     weighted,
     integer,
     shuffle,
+    redistributeOne,
+    redistributeAll,
   };
 }
 

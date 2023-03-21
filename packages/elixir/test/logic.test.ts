@@ -337,4 +337,246 @@ test("exhaust", () => {
   ]);
 });
 
+test("redistributeMinToOthers", () => {
+  const chanceMock = {
+    ...chance,
+    shuffle: <T>(arr: T[]) => [4, 3, 1, 0] as T[],
+  };
+  const logicService = createLogicService(chanceMock, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 10, isSealed: false },
+      { value: 4, isSealed: false },
+      { value: 1, isSealed: true },
+      { value: 4, isSealed: false },
+      { value: 1, isSealed: true },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "redistributeMinToOthers",
+      value: [0, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    []
+  );
+
+  // then
+  const value1 = GameState.query.getEffectValue(nextState, 1);
+  const value3 = GameState.query.getEffectValue(nextState, 3);
+  assert.is(
+    (value1 === 0 && value3 === 8) || (value1 === 8 && value3 === 0),
+    true
+  );
+});
+
+test("redistributeMinToOthers - 2", () => {
+  const chanceMock = {
+    ...chance,
+    shuffle: <T>(arr: T[]) => [4, 3, 1, 0] as T[],
+  };
+  const logicService = createLogicService(chanceMock, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 10, isSealed: false },
+      { value: 7, isSealed: false },
+      { value: 1, isSealed: true },
+      { value: 4, isSealed: false },
+      { value: 1, isSealed: true },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "redistributeMinToOthers",
+      value: [0, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    []
+  );
+
+  // then
+  assert.equal(nextState.effects, [
+    { value: 10, isSealed: false },
+    { value: 10, isSealed: false },
+    { value: 1, isSealed: true },
+    { value: 1, isSealed: false },
+    { value: 1, isSealed: true },
+  ]);
+});
+
+test("redistributeMaxToOthers", () => {
+  const chanceMock = {
+    ...chance,
+    shuffle: <T>(arr: T[]) => [4, 3, 1, 0] as T[],
+  };
+  const logicService = createLogicService(chanceMock, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 10, isSealed: false },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "redistributeMaxToOthers",
+      value: [0, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    []
+  );
+
+  // then
+  assert.equal(nextState.effects, [
+    { value: 8, isSealed: false },
+    { value: 10, isSealed: false },
+    { value: 1, isSealed: true },
+    { value: 10, isSealed: false },
+    { value: 1, isSealed: true },
+  ]);
+});
+
+test("redistributeSelectedToOthers", () => {
+  const chanceMock = {
+    ...chance,
+    shuffle: <T>(arr: T[]) => [4, 3, 1, 0] as T[],
+  };
+  const logicService = createLogicService(chanceMock, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 10, isSealed: false },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "redistributeSelectedToOthers",
+      value: [0, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    [0]
+  );
+
+  // then
+  assert.equal(nextState.effects, [
+    { value: 8, isSealed: false },
+    { value: 10, isSealed: false },
+    { value: 1, isSealed: true },
+    { value: 10, isSealed: false },
+    { value: 1, isSealed: true },
+  ]);
+});
+
+test("redistributeSelectedToOthers", () => {
+  const chanceMock = {
+    ...chance,
+    shuffle: <T>(arr: T[]) => [4, 3, 1, 0] as T[],
+  };
+  const logicService = createLogicService(chanceMock, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 10, isSealed: false },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "redistributeSelectedToOthers",
+      value: [0, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    [0]
+  );
+
+  // then
+  assert.equal(nextState.effects, [
+    { value: 8, isSealed: false },
+    { value: 10, isSealed: false },
+    { value: 1, isSealed: true },
+    { value: 10, isSealed: false },
+    { value: 1, isSealed: true },
+  ]);
+});
+
+test("redistributeAll", () => {
+  const chanceMock = {
+    ...chance,
+    shuffle: <T>(arr: T[]) => [4, 3, 1, 0] as T[],
+  };
+  const logicService = createLogicService(chanceMock, effectService);
+
+  // given
+  const state = {
+    config: { maxEnchant: 10 },
+    effects: [
+      { value: 10, isSealed: false },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+      { value: 9, isSealed: false },
+      { value: 1, isSealed: true },
+    ],
+  } as unknown as GameState;
+
+  // when
+  const nextState = logicService.runLogic(
+    state,
+    {
+      type: "redistributeAll",
+      value: [0, 0],
+      ratio: 0,
+      remainTurn: 1,
+    },
+    [0]
+  );
+
+  // then
+  assert.equal(
+    nextState.effects.reduce((acc, x) => acc + x.value, 0),
+    10 + 9 + 1 + 9 + 1
+  );
+});
+
 test.run();

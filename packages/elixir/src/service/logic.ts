@@ -235,24 +235,20 @@ export function createLogicService(
     logic: CouncilLogic,
     targets: number[]
   ): GameState {
-    const totalValue = state.effects
-      .filter((eff) => !eff.isSealed)
-      .reduce((acc, eff) => acc + eff.value, 0);
-    const availableIndexes = [0, 1, 2, 3, 4].filter(
-      (index) => !GameState.query.isEffectSealed(state, index)
-    );
     const values = [0, 1, 2, 3, 4].map((index) =>
+      GameState.query.getEffectValue(state, index)
+    );
+    const fixedIndices = [0, 1, 2, 3, 4].filter((index) =>
       GameState.query.isEffectSealed(state, index)
-        ? GameState.query.getEffectValue(state, index)
-        : 0
     );
 
-    for (let i = 0; i < totalValue; i++) {
-      const index = chance.pickone(availableIndexes);
-      values[index]++;
-    }
+    const redistributed = chance.redistributeAll({
+      values,
+      fixedIndices,
+      limit: state.config.maxEnchant,
+    });
 
-    return GameState.setEffectValueAll(state, values);
+    return GameState.setEffectValueAll(state, redistributed);
   }
 
   // <네가 고르는> 효과의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
@@ -262,21 +258,21 @@ export function createLogicService(
     targets: number[]
   ): GameState {
     const target = targets[0];
-    const selectedValue = GameState.query.getEffectValue(state, target);
-    const availableIndexes = [0, 1, 2, 3, 4].filter(
-      (index) =>
-        !GameState.query.isEffectSealed(state, index) && index !== target
-    );
     const values = [0, 1, 2, 3, 4].map((index) =>
-      index !== target ? GameState.query.getEffectValue(state, index) : 0
+      GameState.query.getEffectValue(state, index)
+    );
+    const fixedIndices = [0, 1, 2, 3, 4].filter((index) =>
+      GameState.query.isEffectSealed(state, index)
     );
 
-    for (let i = 0; i < selectedValue; i++) {
-      const index = chance.pickone(availableIndexes);
-      values[index]++;
-    }
+    const redistributed = chance.redistributeOne({
+      values,
+      indexToRedistribute: target,
+      fixedIndices,
+      limit: state.config.maxEnchant,
+    });
 
-    return GameState.setEffectValueAll(state, values);
+    return GameState.setEffectValueAll(state, redistributed);
   }
 
   // <모든 효과>의 단계를 위로 <1> 슬롯 씩 옮겨주겠어.
@@ -392,23 +388,22 @@ export function createLogicService(
     logic: CouncilLogic,
     targets: number[]
   ): GameState {
-    const [minValue, pickedMin] = effectService.pickMinValueIndex(
-      state.effects
-    );
-    const availableIndexes = [0, 1, 2, 3, 4].filter(
-      (index) =>
-        !GameState.query.isEffectSealed(state, index) && index !== pickedMin
-    );
+    const [_, pickedMin] = effectService.pickMinValueIndex(state.effects);
     const values = [0, 1, 2, 3, 4].map((index) =>
-      index !== pickedMin ? GameState.query.getEffectValue(state, index) : 0
+      GameState.query.getEffectValue(state, index)
+    );
+    const fixedIndices = [0, 1, 2, 3, 4].filter((index) =>
+      GameState.query.isEffectSealed(state, index)
     );
 
-    for (let i = 0; i < minValue; i++) {
-      const index = chance.pickone(availableIndexes);
-      values[index]++;
-    }
+    const redistributed = chance.redistributeOne({
+      values,
+      indexToRedistribute: pickedMin,
+      fixedIndices,
+      limit: state.config.maxEnchant,
+    });
 
-    return GameState.setEffectValueAll(state, values);
+    return GameState.setEffectValueAll(state, redistributed);
   }
 
   // <최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
@@ -417,23 +412,22 @@ export function createLogicService(
     logic: CouncilLogic,
     targets: number[]
   ): GameState {
-    const [maxValue, pickedMax] = effectService.pickMaxValueIndex(
-      state.effects
-    );
-    const availableIndexes = [0, 1, 2, 3, 4].filter(
-      (index) =>
-        !GameState.query.isEffectSealed(state, index) && index !== pickedMax
-    );
+    const [_, pickedMax] = effectService.pickMaxValueIndex(state.effects);
     const values = [0, 1, 2, 3, 4].map((index) =>
-      index !== pickedMax ? GameState.query.getEffectValue(state, index) : 0
+      GameState.query.getEffectValue(state, index)
+    );
+    const fixedIndices = [0, 1, 2, 3, 4].filter((index) =>
+      GameState.query.isEffectSealed(state, index)
     );
 
-    for (let i = 0; i < maxValue; i++) {
-      const index = chance.pickone(availableIndexes);
-      values[index]++;
-    }
+    const redistributed = chance.redistributeOne({
+      values,
+      indexToRedistribute: pickedMax,
+      fixedIndices,
+      limit: state.config.maxEnchant,
+    });
 
-    return GameState.setEffectValueAll(state, values);
+    return GameState.setEffectValueAll(state, redistributed);
   }
 
   // <최고 단계> 효과 <1>개의 단계를 <1> 소모하겠다. 대신 <최고 단계> 효과 <1>개와 <최하 단계> 효과 <1>개의 단계를 뒤바꿔주지.
