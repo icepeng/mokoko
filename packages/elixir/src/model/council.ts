@@ -80,35 +80,6 @@ export interface Council {
 }
 
 // queries
-
-function isCouncilAvailable(
-  state: GameState,
-  council: Council,
-  sageIndex: number,
-  pickedCouncils: string[]
-) {
-  if (!GameState.query.isTurnInRange(state, council.range)) {
-    return false;
-  }
-
-  if (
-    council.applyLimit < 99 &&
-    council.applyLimit <= state.councilCount[council.id]
-  ) {
-    return false;
-  }
-
-  if (pickedCouncils.includes(council.id)) {
-    return false;
-  }
-
-  if (council.slotType === 3) {
-    return true;
-  }
-
-  return council.slotType === sageIndex;
-}
-
 function getOne(id: string) {
   const council = councilRecord[id];
   if (!council) {
@@ -127,7 +98,6 @@ function isIncludingLogicType(id: string, type: CouncilLogicType) {
 }
 
 const query = {
-  isCouncilAvailable,
   getOne,
   getLogics,
   isIncludingLogicType,

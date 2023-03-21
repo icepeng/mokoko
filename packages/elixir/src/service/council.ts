@@ -1,4 +1,4 @@
-import { councilsPerType } from "../data/council";
+import { indexedCouncils } from "../data/council";
 import { Council } from "../model/council";
 import { GameState } from "../model/game";
 import { LogicGuardService } from "./logic-guard";
@@ -14,9 +14,22 @@ export function createCouncilService(
     pickedCouncils: string[]
   ): string {
     const councilType = GameState.query.getCouncilType(state, sageIndex);
-    const availableCouncils = councilsPerType[councilType].filter((data) =>
-      Council.query.isCouncilAvailable(state, data, sageIndex, pickedCouncils)
-    );
+    const availableCouncils = indexedCouncils[councilType][sageIndex][
+      state.config.totalTurn - state.turnLeft + 1
+    ].filter((council) => {
+      if (
+        council.applyLimit < 99 &&
+        council.applyLimit <= state.councilCount[council.id]
+      ) {
+        return false;
+      }
+
+      if (pickedCouncils.includes(council.id)) {
+        return false;
+      }
+
+      return true;
+    });
     if (availableCouncils.length === 0) {
       throw new Error("No council available");
     }

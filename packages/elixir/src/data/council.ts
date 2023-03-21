@@ -7433,12 +7433,32 @@ export const councilRecord = Object.fromEntries(
   councils.map((item) => [item.id, item])
 );
 
-export const councilsPerType: Record<CouncilType, Council[]> = {
-  common: councils.filter((data) => data.type === "common"),
-  exhausted: councils.filter((data) => data.type === "exhausted"),
-  lawful: councils.filter((data) => data.type === "lawful"),
-  lawfulSeal: councils.filter((data) => data.type === "lawfulSeal"),
-  chaos: councils.filter((data) => data.type === "chaos"),
-  chaosSeal: councils.filter((data) => data.type === "chaosSeal"),
-  seal: councils.filter((data) => data.type === "seal"),
-};
+// council.type, sageIndex, turn
+export const indexedCouncils = councils.reduce(
+  (acc, council) => {
+    const sageIndices = council.slotType === 3 ? [0, 1, 2] : [council.slotType];
+    sageIndices.forEach((sageIndex) => {
+      Array.from({ length: 20 }, (_, i) => i).forEach((turn) => {
+        if (!acc[council.type][sageIndex][turn]) {
+          acc[council.type][sageIndex][turn] = [];
+        }
+        if (
+          council.range[0] === 0 ||
+          (turn >= council.range[0] && turn < council.range[1])
+        ) {
+          acc[council.type][sageIndex][turn].push(council);
+        }
+      });
+    });
+    return acc;
+  },
+  {
+    common: { 0: {}, 1: {}, 2: {} },
+    exhausted: { 0: {}, 1: {}, 2: {} },
+    lawful: { 0: {}, 1: {}, 2: {} },
+    lawfulSeal: { 0: {}, 1: {}, 2: {} },
+    chaos: { 0: {}, 1: {}, 2: {} },
+    chaosSeal: { 0: {}, 1: {}, 2: {} },
+    seal: { 0: {}, 1: {}, 2: {} },
+  } as Record<CouncilType, Record<number, Record<number, Council[]>>>
+);
