@@ -18,6 +18,7 @@ export interface GameState {
   effects: Effect[];
   mutations: Mutation[];
   sages: Sage[];
+  councilCount: Record<string, number>;
 }
 
 // constructor
@@ -66,6 +67,7 @@ function createInitialState(config: GameConfiguration): GameState {
       Sage.createInitialState(1),
       Sage.createInitialState(2),
     ],
+    councilCount: {},
   };
 }
 

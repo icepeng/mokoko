@@ -55,6 +55,9 @@ export function createGameService(
     return {
       ...counciledState,
       phase: nextPhase,
+      councilCount: {
+        [council.id]: (counciledState.councilCount[council.id] || 0) + 1,
+      },
     };
   }
 

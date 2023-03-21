@@ -91,6 +91,13 @@ function isCouncilAvailable(
     return false;
   }
 
+  if (
+    council.applyLimit < 99 &&
+    council.applyLimit <= state.councilCount[council.id]
+  ) {
+    return false;
+  }
+
   if (pickedCouncils.includes(council.id)) {
     return false;
   }
