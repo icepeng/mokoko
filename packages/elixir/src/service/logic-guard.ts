@@ -1,4 +1,3 @@
-import { query } from "../api";
 import { CouncilLogicData, CouncilLogicType } from "../model/council";
 import { GameState } from "../model/game";
 
@@ -31,6 +30,12 @@ export function createLogicGuardService() {
   ): boolean {
     if (logic.targetType === "proposed") {
       return GameState.query.isEffectMutable(state, logic.targetCondition - 1);
+    }
+    if (logic.targetType === "lteValue") {
+      const count = state.effects.filter(
+        (eff) => !eff.isSealed && eff.value <= logic.targetCondition
+      ).length;
+      return count > 0;
     }
     return true;
   }
@@ -224,7 +229,11 @@ export function createLogicGuardService() {
     state: GameState,
     logic: CouncilLogicData
   ): boolean {
-    return true;
+    const minValue = Math.min(
+      ...state.effects.filter((eff) => !eff.isSealed).map((x) => x.value)
+    );
+
+    return minValue > 0;
   }
 
   // <최고 단계> 효과 <1>개의 단계를 전부 다른 효과에 나누지. 어떻게 나뉠지 보자고.
