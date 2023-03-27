@@ -30,11 +30,17 @@ export function benchmark({
   api.rng.setSeed(seed);
 
   let totalScore: number = 0;
+  let time = performance.now();
   for (let i = 0; i < iteration; i++) {
     if (i % 1000 === 0) {
+      const newTime = performance.now();
+      const iterationPerSecond = 1000 / ((newTime - time) / 1000);
       console.log(
-        `Iteration: ${i} Score: ${totalScore} Ratio: ${totalScore / i}`
+        `Iteration: ${i} Score: ${totalScore} Ratio: ${
+          totalScore / i
+        } | ${iterationPerSecond} it/s`
       );
+      time = newTime;
     }
 
     let state = api.game.getInitialGameState(config);
