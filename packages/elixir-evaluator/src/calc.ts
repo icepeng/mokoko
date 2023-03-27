@@ -83,14 +83,17 @@ export function createScoreCalculator({
    * 스택/스택/스택/남은연성횟수/남은 봉인가능횟수
    */
   function getCurveScores(gameState: GameState) {
+    if (gameState.turnLeft === 1) return [1, 1, 1];
+
     return [0, 1, 2].map((index) => {
       if (gameState.sages[index].isExhausted) return -1;
 
       const stateToAnalyze = step(gameState, index);
+      const turnLeft = stateToAnalyze.turnLeft;
+
       const [first, second, third] = stateToAnalyze.sages.map((sage) =>
         sageToIndex(sage)
       );
-      const turnLeft = stateToAnalyze.turnLeft;
       const toSeal = GameState.query.getEffectCountToSeal(stateToAnalyze);
 
       const curveScore =
